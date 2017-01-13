@@ -8,7 +8,7 @@ Checkout the [roadmap](roadmap.md) to see where it's all going.
 
 View the [summary](SUMMARY.md) to navigate the docs.
 
-# Overview
+## Overview
 
 The goal of Micro is to provide a toolkit for microservice development and management. 
 At the core, micro is simple and accessible enough that anyone can easily get started 
@@ -41,6 +41,10 @@ It provides the features of the CLI via messaging. Additional commands can be ad
   <img src="images/overview.png" />
 </p>
 
-# Next
+## Blog
+
+Read the [blog](https://medium.com/microhq) for broader understanding of micro
+
+## Next
 
 Go to the [summary](SUMMARY.md)
