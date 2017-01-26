@@ -19,7 +19,6 @@ Jan 2017
 - [ ] DB Library
 
 Long Term:
-- [ ] Proto generate publisher/subscriber helpers [#3](https://github.com/micro/protobuf/pull/3)
 - [ ] Micro Run
 - [ ] JS Micro
 - [ ] http2 transport
@@ -29,3 +28,4 @@ Long Term:
 - [ ] Sidecar HTTP/gRPC/Thrift
 - [x] Sidecar HTTP proxy
 - [x] Sidecar RPC handler
+- [x] Proto generate publisher/subscriber helpers [#3](https://github.com/micro/protobuf/pull/3)
