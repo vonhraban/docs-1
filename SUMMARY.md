@@ -2,6 +2,7 @@
 
 * [Getting Started](getting-started.md)
 * [Architecture](architecture.md)
+  - [Go-Micro](go-micro.md)
   - [API](https://github.com/micro/micro/blob/master/api/README.md)
   - [Web](https://github.com/micro/micro/blob/master/web/README.md)
   - [Sidecar](https://github.com/micro/micro/blob/master/car/README.md)
