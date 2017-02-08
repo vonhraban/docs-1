@@ -13,12 +13,19 @@ Dec 2016
 - [x] Update Kubernetes Deployment
 - [x] AWS X-Ray support
 - [x] Configurable Encoders for Broker/Transport
-- [ ] DB Library (in progress)
 
 Jan 2017
-- [ ] DB Library
+
+- [x] Docs
+- [x] Examples
+- [x] HTTP Client
+
+Feb 2017
+
+- [ ] Docs website
 
 Long Term:
+- [ ] DB Library
 - [ ] Micro Run
 - [ ] JS Micro
 - [ ] http2 transport
