@@ -33,7 +33,7 @@ The roadmap displays larger milestones or just gives visibility to whats going o
 
 ### Feb 2017
 
-- [ ] Docs website
+- [x] Docs website
 
 ## Long Term:
 - [ ] DB Library
