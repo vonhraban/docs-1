@@ -1,0 +1,125 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar
+  product: 
+  version: 
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage
+      output: pdf
+      type: frontmatter
+
+  - title: Overview
+    output: web, pdf
+    folderitems:
+
+    - title: Introduction
+      url: /index.html
+      output: web, pdf
+      type: homepage
+
+    - title: Architecture
+      url: /architecture.html
+      output: web, pdf
+
+    - title: FAQ
+      url: /faq.html
+      output: web, pdf
+
+    - title: Features
+      url: /features.html
+      output: web, pdf
+
+    - title: Roadmap
+      url: /roadmap.html
+      output: web, pdf
+ 
+    - title: Resources
+      url: /resources.html
+      output: web, pdf
+
+    - title: Users
+      url: /users.html
+      output: web, pdf
+
+  - title: Getting Started
+    output: web, pdf
+    folderitems:
+
+    - title: Install Guide
+      url: /install-guide.html
+      output: web, pdf
+
+    - title: Writing a Go Service
+      url: /writing-a-go-service.html
+      output: web, pdf
+
+  - title: Architecture
+    output: web, pdf
+    folderitems:
+
+    - title: Go Micro
+      url: /go-micro.html
+      output: web, pdf
+
+    - title: API
+      url: /api.html
+      output: web, pdf
+
+    - title: Web
+      url: /web.html
+      output: web, pdf
+
+    - title: Sidecar
+      url: /sidecar.html
+      output: web, pdf
+
+    - title: CLI
+      url: /cli.html
+      output: web, pdf
+
+    - title: Bot
+      url: /bot.html
+      output: web, pdf
+
+    - title: New
+      url: /new.html
+      output: web, pdf
+
+  - title: Deploy
+    output: web, pdf
+    folderitems:
+
+    - title: Docker
+      url: /deploy-docker.html
+      output: web, pdf
+
+    - title: Kubernetes
+      url: /deploy-kubernetes.html
+      output: web, pdf
+
+  - title: Plugins
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /plugins.html
+      output: web, pdf
+
+    - title: Go Micro
+      url: /plugins-go-micro.html
+      output: web, pdf
+
+    - title: Toolkit
+      url: /plugins-toolkit.html
+      output: web, pdf
