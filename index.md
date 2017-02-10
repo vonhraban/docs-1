@@ -19,7 +19,7 @@ will provide the fundamental tools required to manage a microservice environment
 
 ## Overview
 
-The main piece of software provided is [Micro](https://github.com/micro/micro), is a microservice toolkit.
+The main piece of software provided is [Micro](https://github.com/micro/micro), a microservice toolkit.
 
 The toolkit is composed of the following components:
 
@@ -53,19 +53,15 @@ The toolkit is pluggable and runtime agnostic. Run micro on your laptop, in dock
   <img src="images/overview.png" />
 </p>
 
+## Learn more
+
+Navigate through the documentation to learn more, check out the resources below or try out some [examples](https://github.com/micro/examples).
+
 ## Resources
 
-### Blog
-
-Read the [blog](https://medium.com/microhq) for a deeper look at micro and broader microservice ideas.
-
-### Talks
-
-Watch the [video](https://www.youtube.com/watch?v=xspaDovwk34) on Simplifying Microservices with Micro presented at Golang UK Conf 2016.
-
-### Slides
-
-View the [slides](https://speakerdeck.com/asim) for various presentations on speakerdeck.
+- Read the [blog](https://medium.com/microhq) for a deeper look at micro and broader microservice ideas.
+- Watch the [video](https://www.youtube.com/watch?v=xspaDovwk34) on Simplifying Microservices with Micro presented at Golang UK Conf 2016.
+- View the [slides](https://speakerdeck.com/asim) for various presentations on speakerdeck.
 
 ## Sponsors
 
