@@ -41,7 +41,7 @@ An example service can be found in [**examples/service**](https://github.com/mic
 
 For the complete greeter example look at [**examples/greeter**](https://github.com/micro/examples/tree/master/greeter). Other examples can be found throughout the GitHub repository.
 
-Check out the blog post to learn how to write go-micro services [https://blog.micro.mu/2016/03/28/go-micro.html](https://blog.micro.mu/2016/03/28/go-micro.html) or watch the talk from the [Golang UK Conf 2016](https://www.youtube.com/watch?v=xspaDovwk34).
+Check out the blog post to learn how to write go-micro services [https://micro.mu/blog/2016/03/28/go-micro.html](https://micro.mu/blog/2016/03/28/go-micro.html) or watch the talk from the [Golang UK Conf 2016](https://www.youtube.com/watch?v=xspaDovwk34).
 
 ## Writing a Service
 

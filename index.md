@@ -59,12 +59,12 @@ Navigate through the documentation to learn more, check out the resources below 
 
 ## Resources
 
-- Read the [blog](https://medium.com/microhq) for a deeper look at micro and broader microservice ideas.
+- Read the [blog](https://micro.mu/blog/) for a deeper look at micro and broader microservice ideas.
 - Watch the [video](https://www.youtube.com/watch?v=xspaDovwk34) on Simplifying Microservices with Micro presented at Golang UK Conf 2016.
 - View the [slides](https://speakerdeck.com/asim) for various presentations on speakerdeck.
 
 ## Sponsors
 
-Open source development of Micro is sponsored by Sixt.
+Open source development of Micro is sponsored by <img src="images/sixt_logo.png" style="width:50px; height=auto; vertical-align: bottom; padding-left: 5px;" />
 
 {% include links.html %}

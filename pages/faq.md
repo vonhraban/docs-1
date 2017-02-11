@@ -110,7 +110,7 @@ If you want a quick start just use [micro/go-grpc](https://github.com/micro/go-g
 ## Where Can I Learn More?
 
 - Join the slack community - [slack.micro.mu](http://slack.micro.mu)
-- Read the blog - [blog.micro.mu](https://blog.micro.mu)
+- Read the blog - [micro.mu/blog](https://micro.mu/blog)
 - Reach out if you want to talk - [contact@micro.mu](mailto:contact@micro.mu)
 
 {% include links.html %}

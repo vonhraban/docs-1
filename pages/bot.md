@@ -58,6 +58,7 @@ micro bot --inputs=hipchat,slack --slack_token=SLACK_TOKEN --hipchat_username=XM
 ### Help
 
 In slack
+
 ```shell
 micro help
 
