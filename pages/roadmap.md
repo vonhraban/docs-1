@@ -34,12 +34,17 @@ The roadmap displays larger milestones or just gives visibility to whats going o
 ### Feb 2017
 
 - [x] Docs website
+- [x] Bot commands as micro services
+- [x] Json RPC 2.0 Codec
+- [x] RPC File server
 
 ## Long Term:
-- [ ] DB Library
 - [ ] Micro Run
+- [ ] Micro Enterprise
 - [ ] JS Micro
-- [ ] http2 transport
+- [ ] HTTP2 transport
+- [ ] DB Library
+- [ ] Call strategies {shard, spread, scatter gather}
 - [ ] GraphQL Handler
 - [ ] Metadata API handler
 - [ ] Let's Encrypt support
