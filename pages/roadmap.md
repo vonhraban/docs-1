@@ -13,19 +13,6 @@ The roadmap displays larger milestones or just gives visibility to whats going o
 
 ## Months
 
-### Jan 2017
-
-- [x] Docs
-- [x] Examples
-- [x] HTTP Client
-
-### Feb 2017
-
-- [x] Docs website
-- [x] Bot commands as micro services
-- [x] Json RPC 2.0 Codec
-- [x] RPC File server
-
 ### March 2017
 
 - [x] Micro Explorer
@@ -33,8 +20,21 @@ The roadmap displays larger milestones or just gives visibility to whats going o
 - [x] Go API Library
 - [x] Go Bot Library
 
+### April 2017
+
+- [x] Go Bot
+- [x] Go NATS
+- [x] Plugins
+
+## May 2017
+
+- [x] Go Log
+- [x] Go Run
+- [x] Micro Run
+
+### May 2017
+
 ## Long Term:
-- [ ] Micro Run
 - [ ] Micro Enterprise
 - [ ] Micro Edge
 - [ ] Micro OS

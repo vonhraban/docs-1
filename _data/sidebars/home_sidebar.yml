@@ -96,6 +96,10 @@ entries:
       url: /new.html
       output: web, pdf
 
+    - title: Run
+      url: /run.html
+      output: web, pdf
+
   - title: Deploy
     output: web, pdf
     folderitems:
