@@ -64,6 +64,10 @@ entries:
       url: /writing-a-go-service.html
       output: web, pdf
 
+    - title: Writing a Go Function
+      url: /writing-a-go-function.html
+      output: web, pdf
+
   - title: Architecture
     output: web, pdf
     folderitems:

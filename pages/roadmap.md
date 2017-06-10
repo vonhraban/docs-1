@@ -26,13 +26,16 @@ The roadmap displays larger milestones or just gives visibility to whats going o
 - [x] Go NATS
 - [x] Plugins
 
-## May 2017
+### May 2017
 
 - [x] Go Log
 - [x] Go Run
 - [x] Micro Run
 
-### May 2017
+### June 2017
+
+- [x] Functions
+- [x] Graceful Exit
 
 ## Long Term:
 - [ ] Micro Enterprise
