@@ -15,20 +15,24 @@ The FAQ should provide quick answers to the most common questions.
 
 Micro is a toolkit to help simplify microservices development. 
 
-It currently consists of a couple components:
+It consists of a couple components:
 
-- **go-micro** - A pluggable Go library for writing a microservice; service discovery, client/server rpc, pub/sub, etc.
-- **micro** - The overarching toolkit containing a CLI, Web UI, API and Sidecar (http interface for go-micro).
+- **go-micro** - A pluggable Go RPC framework for writing a microservice; service discovery, client/server rpc, pub/sub, etc.
+- **micro** - A microservice toolkit containing traditional entry points; API Gateway, CLI, Slack Bot, Sidecar and Web UI.
 
 There are also other libraries like [go-plugins](https://github.com/micro/go-plugins) for implementations of each package in go-micro and [protobuf](https://github.com/micro/protobuf), a fork of golang/protobuf, which provides experimental code generation for go-micro
+
+## Where do I start?
+
+Start with [go-micro](https://github.com/micro/go-micro). You likely want to write microservices, go-micro is the best place to begin for that. As you learn more look at the [micro](https://github.com/micro/micro) to help you access those microservices via the command line, web ui or behind a http api gateway.
 
 ## Who's using Micro?
 
 There's a [Users](users.md) page with a list of companies using Micro. Many more are also using it but not yet publicly listed. Feel free to add your company if you're using Micro.
 
-## Where is the community?
+## Is there a community?
 
-There's a slack community with hundreds of members. You can invite yourself [here](http://slack.micro.mu/).
+There's a slack community with hundreds of members. Invite yourself [here](http://slack.micro.mu/).
 
 ## How do I use Micro?
 
@@ -58,7 +62,7 @@ import (
 service --registry=etcd --registry_address=127.0.0.1:2379
 ```
 
-### Zero Dependency MDNS
+### Zero Dependency Discovery
 
 Alternatively we can use multicast DNS with the built in MDNS registry for a zero dependency configuration. Just pass `--registry=mdns` to your application on startup.
 
@@ -106,6 +110,26 @@ If you're still concerned with performance. The simplest way to extract the most
 Yes. There are plugins for a transport, client and server in [micro/go-plugins](https://github.com/micro/go-plugins). 
 
 If you want a quick start just use [micro/go-grpc](https://github.com/micro/go-grpc).
+
+## Micro vs Go-Kit
+
+This question comes up a lot. What's the difference between micro and go-kit?
+
+Go-kit describes itself as a standard library for microservices. Like Go, go-kit provides you with individual packages 
+which can be used to construct your applications. Go-kit is great where you want complete control over how you define 
+your services.
+
+Go-micro is a pluggable RPC framework for microservices. It's an opinionated framework which attempts to simplify 
+the communication aspects of distributed systems so you can focus on the business logic itself. Go-micro is great 
+where you want to get up and running quickly while having something pluggable to switch out infrastructure without 
+code changes.
+
+Micro is a microservice toolkit. It's like a swiss army knife for microservices which builds on go-micro to provide 
+traditional entry points like http api gateway, web ui, cli, slack bot, etc. Micro uses tooling to guide the logical 
+separation of concerns in your architecture, pushing you to create an API layer of microservices for a public API and 
+separately creating a WEB layer of microservices for web UIs.
+
+Use go-kit where you want complete control. Use go-micro where you want an opinionated framework.
 
 ## Where Can I Learn More?
 

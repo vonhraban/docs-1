@@ -13,19 +13,6 @@ The roadmap displays larger milestones or just gives visibility to whats going o
 
 ## Months
 
-### March 2017
-
-- [x] Micro Explorer
-- [x] Metadata Handler
-- [x] Go API Library
-- [x] Go Bot Library
-
-### April 2017
-
-- [x] Go Bot
-- [x] Go NATS
-- [x] Plugins
-
 ### May 2017
 
 - [x] Go Log
@@ -36,6 +23,13 @@ The roadmap displays larger milestones or just gives visibility to whats going o
 
 - [x] Functions
 - [x] Graceful Exit
+- [x] Versioning
+
+### July 2017
+
+- [x] Sharding
+- [x] Stateful Round Robin
+- [x] gRPC connection pooling 
 
 ## Long Term:
 - [ ] Micro Enterprise

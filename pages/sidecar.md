@@ -9,9 +9,12 @@ summary:
 
 # micro sidecar
 
-The **micro sidecar** is a language agnostic proxy for building highly available and fault tolerant microservices.
+The **micro sidecar** is a service mesh for building highly available and fault tolerant microservices.
 
-It is similar to Netflix's sidecar [Prana](https://github.com/Netflix/Prana) or Buoyant's RPC Proxy [Linkerd](https://linkerd.io).
+It is similar to Netflix's sidecar [Prana](https://github.com/Netflix/Prana), Buoyant's RPC Proxy [Linkerd](https://linkerd.io)
+or Lyft's [Envoy](https://lyft.github.io/envoy/).
+
+The micro sidecar builds on [go-micro](https://github.com/micro/go-micro) with the same defaults and pluggability.
 
 <p align="center">
   <img src="images/car.png" />
@@ -20,6 +23,8 @@ It is similar to Netflix's sidecar [Prana](https://github.com/Netflix/Prana) or 
 Example usage in many languages can be found at [examples/sidecar](https://github.com/micro/examples/tree/master/sidecar)
 
 ## API
+
+The sidecar has the following HTTP api
 
 ```
 - /[service]/[method]
@@ -32,12 +37,13 @@ Example usage in many languages can be found at [examples/sidecar](https://githu
 
 The sidecar has all the features of [go-micro](https://github.com/micro/go-micro). Here are the most relevant.
 
-- Service registration and discovery
-- Broker PubSub via WebSockets
-- Healthchecking of services
-- RPC or HTTP handler
+- Service Discovery
+- Message Broker
+- RPC and Proxy Handlers
 - Load balancing, retries, timeouts
+- Healthchecking
 - Stats UI
+- Pluggable via go-micro
 
 ## Getting Started
 
@@ -45,6 +51,15 @@ The sidecar has all the features of [go-micro](https://github.com/micro/go-micro
 
 ```shell
 go get github.com/micro/micro
+```
+
+### Deps
+
+The sidecar uses go-micro which means it has one default dependency, consul for service discovery.
+
+```
+brew install consul
+consul agent -dev
 ```
 
 ### Run
@@ -85,9 +100,9 @@ micro sidecar --server_name=foo --server_address=127.0.0.1:9090 \
 	--healthcheck_url=http://127.0.0.1:9090/health
 ```
 
-### Registry
+## Registry
 
-**Register Service**
+### Register Service
 
 ```shell
 // specify ttl as a param to expire the registration
@@ -105,7 +120,7 @@ curl -H 'Content-Type: application/json' http://127.0.0.1:8081/registry -d
 }
 ```
 
-**Deregister Service**
+### Deregister Service
 
 ```shell
 curl -X "DELETE" -H 'Content-Type: application/json' http://127.0.0.1:8081/registry -d 
@@ -119,7 +134,7 @@ curl -X "DELETE" -H 'Content-Type: application/json' http://127.0.0.1:8081/regis
 }
 ```
 
-**Get Service**
+### Get Service
 
 ```shell
 curl http://127.0.0.1:8081/registry?service=go.micro.srv.example
@@ -132,7 +147,9 @@ curl http://127.0.0.1:8081/registry?service=go.micro.srv.example
 }
 ```
 
-### RPC Handler
+## Handlers
+
+### RPC
 
 Query micro services using json or protobuf. Requests to the backend will be made using the go-micro RPC client.
 
@@ -152,7 +169,7 @@ curl -d 'service=go.micro.srv.example' \
 	-d 'request={"name": "John"}' http://127.0.0.1:8081/rpc
 ```
 
-### Proxy Handler
+### Proxy
 
 Like the api and web servers, the sidecar can provide a full http proxy.
 
@@ -164,7 +181,7 @@ micro sidecar --handler=proxy
 
 The first element in the url path will be used along with the namespace as the service to route to.
 
-### RPC Request Mapping
+## Request Mapping
 
 URL Path mapping is the same as the micro API
 
@@ -187,34 +204,38 @@ Path	|	Service	|	Method
 /v2/foo/bar/baz	|	go.micro.srv.v2.foo	|	Bar.Baz
 
 
-### Broker
+## Broker
 
-Connect to the micro broker via websockets
+### Publish
+
+```
+curl -XPOST \
+        -H "Timestamp: 1499951537" \
+        -d "Hello World!" \
+        "http://localhost:8081/broker?topic=foo"
+```
+
+### Subscribe
 
 ```go
-c, _, _ := websocket.DefaultDialer.Dial("ws://127.0.0.1:8081/broker?topic=foo", make(http.Header))
+conn, _, _ := websocket.DefaultDialer.Dial("ws://127.0.0.1:8081/broker?topic=foo", make(http.Header))
 
 // optionally specify "queue=[queue name]" param to distribute traffic amongst subscribers
 // websocket.DefaultDialer.Dial("ws://127.0.0.1:8081/broker?topic=foo&queue=group-1", make(http.Header))
 
-go func() {
-	for {
-		_, p, err := c.ReadMessage()
-		if err != nil {
-			return
-		}
-		var msg *broker.Message
-		json.Unmarshal(p, &msg)
-		fmt.Println(msg.Data)
-	}
-}()
-
-ticker := time.NewTicker(time.Second)
-
-for _ = range ticker.C {
-	if err := c.WriteMessage(1, []byte(`hello world`)); err != nil {
+for {
+	// Read message
+	_, p, err := conn.ReadMessage()
+	if err != nil {
 		return
 	}
+
+	// Unmarshal into broker.Message
+	var msg *broker.Message
+	json.Unmarshal(p, &msg)
+	
+	// Print message body
+	fmt.Println(msg.Body)
 }
 ```
 
