@@ -68,7 +68,7 @@ entries:
       url: /writing-a-go-function.html
       output: web, pdf
 
-  - title: Architecture
+  - title: Components
     output: web, pdf
     folderitems:
 

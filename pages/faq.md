@@ -13,42 +13,64 @@ The FAQ should provide quick answers to the most common questions.
 
 ## What is Micro?
 
-Micro is a toolkit to help simplify microservices development. 
+Micro is a microservice ecosystem focused on simplifying distributed systems development.
 
-It consists of a couple components:
+- Micro is a [framework](https://github.com/micro/go-micro)
+- Micro is a [toolkit](https://github.com/micro/micro)
+- Micro is a [community](http://slack.micro.mu/)
+- Micro is an [ecosystem](https://micro.mu/explore/)
+
+### Open Source
+
+Micro consists of open source libraries and tools to help with microservice development.
 
 - **go-micro** - A pluggable Go RPC framework for writing a microservice; service discovery, client/server rpc, pub/sub, etc.
+- **go-plugins** - Plugins for go-micro including etcd, kubernetes, nats, rabbitmq, grpc, etc.
 - **micro** - A microservice toolkit containing traditional entry points; API Gateway, CLI, Slack Bot, Sidecar and Web UI.
 
-There are also other libraries like [go-plugins](https://github.com/micro/go-plugins) for implementations of each package in go-micro and [protobuf](https://github.com/micro/protobuf), a fork of golang/protobuf, which provides experimental code generation for go-micro
+Various other libraries and services can be found in [github.com/micro](https://github.com/micro).
+
+### Community
+
+There's a slack community with a thousand members. 
+
+Invite yourself at [slack.micro.mu](http://slack.micro.mu/).
+
+### Ecosystem
+
+Micro spans beyond a single organisation. Open source tools and services are being contributed by the community itself.
+
+Explore the ecosystem at [micro.mu/explore/](https://micro.mu/explore/).
 
 ## Where do I start?
 
-Start with [go-micro](https://github.com/micro/go-micro). You likely want to write microservices, go-micro is the best place to begin for that. As you learn more look at the [micro](https://github.com/micro/micro) to help you access those microservices via the command line, web ui or behind a http api gateway.
+Start with [go-micro](https://github.com/micro/go-micro). The readme provides a sample microservice.
+
+Learn more by reading the [getting started](https://micro.mu/docs/writing-a-go-service.html) guide or checkout the [examples](https://github.com/micro/examples).
+
+Use the [micro](https://github.com/micro/micro) toolkit to access microservices via the cli, web ui, slack or api gateway.
 
 ## Who's using Micro?
 
-There's a [Users](users.md) page with a list of companies using Micro. Many more are also using it but not yet publicly listed. Feel free to add your company if you're using Micro.
+See the [users](https://micro.mu/docs/users.html) page with a list of companies using Micro (but note it may be out of date). 
 
-## Is there a community?
-
-There's a slack community with hundreds of members. Invite yourself [here](http://slack.micro.mu/).
+Many more are also using it but not yet publicly listed. Feel free to add your company if you're using Micro.
 
 ## How do I use Micro?
 
-You can start by writing a microservice with [**go-micro**](https://github.com/micro/go-micro) or playing with the example [**greeter**](https://github.com/micro/examples/tree/master/greeter) app. The greeter also demonstrates how to integrate non-Go applications. Micro uses proto-rpc and json-rpc by default, libraries are available for both protocols in most languages.
+It's quite simple.
 
-You can find a guide to getting started writing apps [**here**](getting-started.md) and a shorter version in the go-micro [readme](https://github.com/micro/go-micro).
+1. Write services using [go-micro](https://github.com/micro/go-micro).
+2. Access them via the [micro](https://github.com/micro/micro) toolkit.
+3. Profit.
 
-Once you have an app running you can use the [**CLI**](https://github.com/micro/micro/tree/master/cli) to query it and also the [**Web UI**](https://github.com/micro/micro/tree/master/web).
+Checkout the full [greeter](https://github.com/micro/examples/tree/master/greeter) example.
 
-There's also docker images on [Docker Hub](https://hub.docker.com/r/microhq/).
-
-## Can I use something besides Consul?
+## Can I use something instead of Consul?
 
 Yes! The registry for service discovery is completely pluggable as is every other package. Consul was used as the default due to its features and simplicity.
 
-### Using etcd
+### Etcd
 
 As an example. If you would like to use etcd, import the plugin and set the command line flags on your binary.
 
@@ -62,9 +84,11 @@ import (
 service --registry=etcd --registry_address=127.0.0.1:2379
 ```
 
-### Zero Dependency Discovery
+### Zero Dependency
 
-Alternatively we can use multicast DNS with the built in MDNS registry for a zero dependency configuration. Just pass `--registry=mdns` to your application on startup.
+There's a built in Multicast DNS service registry for a zero dependency configuration. 
+
+Pass `--registry=mdns` or `MICRO_REGISTRY=mdns` to your application on startup.
 
 ## Where can I run Micro?
 
