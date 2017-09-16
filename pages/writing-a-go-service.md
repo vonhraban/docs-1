@@ -1,5 +1,5 @@
 ---
-title: Micro Docs
+title: Writing a Go Service
 keywords: development
 tags: [development]
 sidebar: home_sidebar

@@ -1,5 +1,5 @@
 ---
-title: Micro Docs
+title: Install Guide
 keywords: install
 tags: [install]
 sidebar: home_sidebar

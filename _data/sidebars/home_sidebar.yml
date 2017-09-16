@@ -60,6 +60,10 @@ entries:
       url: /install-guide.html
       output: web, pdf
 
+    - title: GRPC Gateway
+      url: /grpc-gateway.html
+      output: web, pdf
+
     - title: Writing a Go Service
       url: /writing-a-go-service.html
       output: web, pdf
