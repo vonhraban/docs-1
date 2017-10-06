@@ -72,6 +72,40 @@ random hash or round robin to select a node to send the request to.
 
 Client side load balancing is built into the go-micro client. This is done automatically.
 
+## Retries
+
+Retries are a method of retrying a request if it was unsuccessful
+
+### Rationale
+
+A request may fail for any number of reasons; network error, request load, application death. In these instances it would be ideal 
+if we could retry the request against a different copy of the application to receive a successful response.
+
+### Solution
+
+The micro client includes a mechanism for retrying requests. The selector (mentioned above) returns a Next function which when executed 
+uses a load balancing strategy to return a node from the list. The Next function can be executed multiple times, returning a new node 
+based on the load balancing strategy. With retries set, if a request fails, the Next function will be executed and the request 
+will be retried against a new node.
+
+### Usage
+
+Retries can be set as a flag or option to the client. It defaults to 1, meaning 1 attempt at a request.
+
+To change via flag
+
+```
+micro --client_retries=3
+```
+
+To set as an option
+
+```
+client.Init(
+	client.Retries(3),
+)
+```
+
 ## Caching Discovery
 
 A discovery cache is a client side cache of service discovery information
