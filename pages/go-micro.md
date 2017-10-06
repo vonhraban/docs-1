@@ -17,14 +17,16 @@ Go Micro is a pluggable RPC framework for microservices. It comes with sane defa
 
 ## Features
 
-Go Micro abstracts way the details of distributed systems. Here are the main features.
+Go Micro abstracts away the details of distributed systems. Here are the main features.
 
-- **Service Discovery** - Applications are automatically registered with service discovery so they can find each other.
-- **Load Balancing** - Smart client side load balancing is used to balance requests between instances of a service.
-- **Synchronous Communication** - Request-response is provided as a bidirectional streaming transport layer.
-- **Asynchronous Communication** - Microservices should promote an event driven architecture. Publish and Subscribe semantics are built in.
-- **Message Encoding** - Micro services can encode requests in a number of encoding formats and seamlessly decode based on the Content-Type header.
-- **RPC Client/Server** - The client and server leverage the above features and provide a clean simple interface for building microservices.
+- **Service Discovery** - Automatic registration and name resolution with service discovery
+- **Load Balancing** - Smart client side load balancing of services built on discovery
+- **Synchronous Comms** - RPC based communication with support for bidirectional streaming
+- **Asynchronous Comms** - PubSub interface built in for event driven architectures
+- **Message Encoding** - Dynamic encoding based on content-type with protobuf and json out of the box
+- **Service Interface** - All features are packaged in a simple high level interface for developing microservices
+
+Go Micro supports both the Service and Function programming models. Read on to learn more.
 
 ## Default Plugins
 
@@ -37,11 +39,14 @@ The default plugins are as follows
 
 ## Examples
 
-An example service can be found in [**examples/service**](https://github.com/micro/examples/tree/master/service). The [**examples**](https://github.com/micro/examples) directory contains many more examples for using things such as middleware/wrappers, selector filters, pub/sub and code generation. 
 
-For the complete greeter example look at [**examples/greeter**](https://github.com/micro/examples/tree/master/greeter). Other examples can be found throughout the GitHub repository.
+An example service can be found in [**examples/service**](https://github.com/micro/examples/tree/master/service) and function in [**examples/function**](https://github.com/micro/examples/tree/master/function). 
 
-Check out the blog post to learn how to write go-micro services [https://micro.mu/blog/2016/03/28/go-micro.html](https://micro.mu/blog/2016/03/28/go-micro.html) or watch the talk from the [Golang UK Conf 2016](https://www.youtube.com/watch?v=xspaDovwk34).
+The [**examples**](https://github.com/micro/examples) directory contains examples for using things such as middleware/wrappers, selector filters, pub/su
+b, grpc, plugins and much more. For the complete greeter example look at [**examples/greeter**](https://github.com/micro/examples/tree/master/greeter). 
+Other examples can be found throughout the GitHub repository.
+
+Watch the [Golang UK Conf 2016](https://www.youtube.com/watch?v=xspaDovwk34) video for a high level overview.
 
 ## Writing a Service
 

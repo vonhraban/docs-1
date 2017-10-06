@@ -17,6 +17,10 @@ Micro attempts to solve this problem with a developer first focus.
 At the core, micro is simple and accessible enough that anyone can easily get started writing microservices. As you scale to hundreds of services, micro 
 will provide the fundamental tools required to manage a microservice environment.
 
+## Get Started
+
+If you want to start writing microservices go directly to the [go-micro](https://github.com/micro/go-micro) repo.
+
 ## Overview
 
 The main piece of software provided is [Micro](https://github.com/micro/micro), a microservice toolkit.

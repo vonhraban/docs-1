@@ -78,6 +78,20 @@ Optionally specify app server name and address if you want to auto register an a
 micro sidecar --server_name=foo --server_address=127.0.0.1:9090
 ```
 
+### ACME via Let's Encrypt
+
+Serve securely by default using ACME via letsencrypt
+
+```
+micro --enable_acme sidecar
+```
+
+Optionally specify a host whitelist
+
+```
+micro --enable_acme --acme_hosts=example.com,proxy.example.com sidecar
+```
+
 ### Serve Secure TLS
 
 The Sidecar supports serving securely with TLS certificates
