@@ -50,6 +50,28 @@ service := micro.NewService(
 )
 ```
 
+## Load Balancing
+
+Load balancing is a way of spreading request load or maintaining high availability
+
+### Rationale
+
+There are limitations to availability and scaling with any single process application. If an application dies for any reason 
+you are no longer able to serve requests. If enough request load is sent to the application it may begin to respond slowly 
+or not at all. Sending requests across multiple copies of an application would solve these problems.
+
+### Solution
+
+Micro does client side load balancing via the [selector](https://godoc.org/github.com/micro/go-micro/selector#Selector) interface 
+to spread requests across any number of nodes of a service. When a service is started it registers with service discovery as a 
+service node with a unique address and id. When making a request the micro client uses the selector to decide which node to make 
+the request to. The selector uses the service registry to find the nodes of a service, then use a load balancing strategy such as 
+random hash or round robin to select a node to send the request to.
+
+### Usage
+
+Client side load balancing is built into the go-micro client. This is done automatically.
+
 ## Caching Discovery
 
 A discovery cache is a client side cache of service discovery information
