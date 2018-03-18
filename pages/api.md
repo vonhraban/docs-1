@@ -6,22 +6,138 @@ sidebar: home_sidebar
 permalink: api.html
 summary: 
 ---
+
 # micro api
 
 The **micro api** is an API gateway for microservices. Use the API gateway [pattern](http://microservices.io/patterns/apigateway.html) to provide a 
-single entry point for your services. The micro api serves HTTP and dynamically routes to the appropriate backend service.
+single entry point for your services. The micro api serves HTTP and dynamically routes to the appropriate backend using service discovery.
 
 <p align="center">
-  <img src="images/api.png" />
+  <img src="https://github.com/micro/docs/blob/master/images/api.png" />
 </p>
 
-## How it works
+## Overview
 
-The micro api builds on [go-micro](https://github.com/micro/go-micro), leveraging it for service discovery, load balancing, encoding and 
-RPC based communication. Requests to the API are served over HTTP and internally routed via RPC. 
+The micro api is a HTTP api. Requests to the API are served over HTTP and internally routed via RPC. It builds on 
+[go-micro](https://github.com/micro/go-micro), leveraging it for service discovery, load balancing, encoding and RPC based communication.
 
-Because the micro api uses go-micro internally, this also makes it pluggable, so feel free to switch out consul service discovery for the 
-kubernetes api or RPC for gRPC.
+Because the micro api uses go-micro internally, this also makes it pluggable. See [go-plugins](https://github.com/micro/go-plugins) for 
+support for gRPC, kubernetes, etcd, nats, rabbitmq and more.
+
+## Getting started
+
+### Install
+
+```shell
+go get -u github.com/micro/micro
+```
+
+### Run
+
+```shell
+micro api
+```
+
+### Use ACME 
+
+Serve securely by default using ACME via letsencrypt
+
+```
+MICRO_ENABLE_ACME=true micro api
+```
+
+Optionally specify a host whitelist
+
+```
+MICRO_ENABLE_ACME=true \
+MICRO_ACME_HOSTS=example.com,api.example.com \
+micro api
+```
+
+### Use TLS Certs
+
+The API supports serving securely with TLS certificates
+
+```shell
+MICRO_ENABLE_TLS=true \
+MICRO_TLS_CERT_FILE=/path/to/cert \
+MICRO_TLS_KEY_FILE=/path/to/key \
+micro api
+```
+
+### Set Namespace
+
+The API makes use of namespaces to logically separate backend and public facing services. The namespace and http path 
+are used to resolve service name/method. The default namespace is `go.micro.api`.
+
+```shell
+MICRO_NAMESPACE=com.example.api micro api
+```
+
+## Examples
+
+Here we have an example of a 3 tier architecture
+
+- `micro api`: (localhost:8080) - serving as the http entry point
+- `api service`: (go.micro.api.greeter) - serving a public facing api
+- `backend service`: (go.micro.srv.greeter) - internally scoped service
+
+The full example is at [examples/greeter](https://github.com/micro/examples/tree/master/greeter)
+
+### Run Example
+
+Prereq: Ensure you are running service discovery e.g consul agent -dev
+
+Get examples
+
+```
+git clone https://github.com/micro/examples
+```
+
+Start the service
+
+```shell
+go run examples/greeter/srv/main.go
+```
+
+Start the API
+
+```shell
+go run examples/greeter/api/api.go
+```
+
+Start the micro api
+
+```
+micro api
+```
+
+### Query
+
+Make a HTTP call via the micro api
+
+```shell
+curl "http://localhost:8080/greeter/say/hello?name=John"
+```
+
+The HTTP path /greeter/say/hello maps to service go.micro.api.greeter method Say.Hello
+
+Bypass the api service and call the backend directly via /rpc
+
+```shell
+curl -d 'service=go.micro.srv.greeter' \
+     -d 'method=Say.Hello' \
+     -d 'request={"name": "John"}' \
+     http://localhost:8080/rpc
+```
+
+Make the same call entirely as JSON
+
+```shell
+curl -H 'Content-Type: application/json' \
+     -d '{"service": "go.micro.srv.greeter", "method": "Say.Hello", "request": {"name": "John"}}' \
+     http://localhost:8080/rpc
+```
 
 ## API
 
@@ -41,172 +157,109 @@ Handlers are HTTP handlers which manage request routing.
 The default handler uses endpoint metadata from the registry to determine service routes. If a route match is not found it will 
 fallback to the API handler. You can configure routes on registration using the [go-api](https://github.com/micro/go-api).
 
-The API has three types of configurable request handlers.
+The API has the following configurable request handlers.
 
-1. API Handler: /[service]/[method]
-	- Request/Response: api.Request/api.Response
-	- The path is used to resolve service and method.
-	- Requests are handled via API services which take the request api.Request and response api.Response types. 
-	- Definitions for the Request/Response can be found at [go-api/proto](https://github.com/micro/go-api/blob/master/proto/api.proto)
-	- The content type of the request/response body can be anything.
-	- The default fallback handler where routes are not available.
-	- Set via `--handler=api`
-2. RPC Handler: /[service]/[method]
-	- Request/Response: json/protobuf
-	- An alternative to the default handler which uses the go-micro client to forward the request body as an RPC request.
-	- Allows API handlers to be defined with concrete Go types.
-	- Useful where you do not need full control of headers or request/response.
-	- Can be used to run a single layer of backend services rather than additional API services.
-	- Supported content-type `application/json` and `application/protobuf`.
-	- Set via `--handler=rpc`
-3. Reverse Proxy: /[service]
-	- Request/Response: http
-	- The request will be reverse proxied to the service resolved by the first element in the path
-	- This allows REST to be implemented behind the API
-	- Set via `--handler=proxy`.
+- [`api`](#api-handler) - Handles any HTTP request. Gives full control over the http request/response via RPC.
+- [`rpc`](#rpc-handler) - Handles json and protobuf POST requests. Forwards as RPC.
+- [`proxy`](#proxy-handler) - Handles HTTP and forwards as a reverse proxy.
+- [`event`](#event-handler) -  Handles any HTTP request and publishes to a message bus.
+- [`web`](#web-handler) - HTTP reverse proxy which includes web sockets.
 
-Alternatively use the /rpc endpoint to speak to any service directly
-- Expects params: `service`, `method`, `request`, optionally accepts `address` to target a specific host
+Optionally bypass the handlers with the [`/rpc`](#rpc-endpoint) endpoint
+
+### API Handler
+
+The API handler is the default handler. It serves any HTTP requests and forwards on as an RPC request with a specific format.
+
+- Content-Type: Any
+- Body: Any
+- Forward Format: [api.Request](https://github.com/micro/go-api/blob/master/proto/api.proto#L11)/[api.Response](https://github.com/micro/go-api/blob/master/proto/api.proto#L21)
+- Path: `/[service]/[method]`
+- Resolver: Path is used to resolve service and method
+- Configure: Flag `--handler=api` or env var `MICRO_API_HANDLER=api`
+- The default handler when no handler is specified
+
+### RPC Handler
+
+The RPC handler serves json or protobuf HTTP POST requests and forwards as an RPC request.
+
+- Content-Type: `application/json` or `application/protobuf`
+- Body: JSON or Protobuf
+- Forward Format: json-rpc or proto-rpc based on content
+- Path: `/[service]/[method]`
+- Resolver: Path is used to resolve service and method
+- Configure: Flag `--handler=rpc` or env var `MICRO_API_HANDLER=rpc`
+
+### Proxy Handler
+
+The proxy handler is a http reserve proxy with built in service discovery.
+
+- Content-Type: Any
+- Body: Any
+- Forward Format: HTTP Reverse proxy
+- Path: `/[service]`
+- Resolver: Path is used to resolve service name
+- Configure: Flag `--handler=proxy` or env var `MICRO_API_HANDLER=proxy`
+- REST can be implemented behind the API as microservices
+
+### Event Handler
+
+The event handler serves HTTP and forwards the request as a message over a message bus using the go-micro broker.
+
+- Content-Type: Any
+- Body: Any
+- Forward Format: Request is formatted as [go-api/proto.Event](https://github.com/micro/go-api/blob/master/proto/api.proto#L28L39) 
+- Path: `/[topic]/[event]`
+- Resolver: Path is used to resolve topic and event name
+- Configure: Flag `--handler=event` or env var `MICRO_API_HANDLER=event`
+
+### Web Handler
+
+The web handler is a http reserve proxy with built in service discovery and web socket support.
+
+- Content-Type: Any
+- Body: Any
+- Forward Format: HTTP Reverse proxy including web sockets
+- Path: `/[service]`
+- Resolver: Path is used to resolve service name
+- Configure: Flag `--handler=web` or env var `MICRO_API_HANDLER=web`
+- Info: Path /[service] is stripped from the path when forwarded and set in the `X-Micro-Web-Base-Path` header
+
+### RPC endpoint
+
+The /rpc endpoint let's you bypass the main handler to speak to any service directly
+
+- Request Params
+  * `service` - sets the service name
+  * `method` - sets the service method
+  * `request` - the request body
+  * `address` - optionally specify host address to target
+
+Example call:
 
 ```
 curl -d 'service=go.micro.srv.greeter' \
-	-d 'method=Say.Hello' \
-	-d 'request={"name": "Bob"}' \
-	http://localhost:8080/rpc
+     -d 'method=Say.Hello' \
+     -d 'request={"name": "Bob"}' \
+     http://localhost:8080/rpc
 ```
 
 Find working examples in [github.com/micro/examples/api](https://github.com/micro/examples/tree/master/api)
 
-### API Handler Request/Response Proto
 
-The API Handler which is also the default handler expects services to use specific request and response protos, available 
-at [go-api/proto](https://github.com/micro/go-api/blob/master/proto/api.proto). This allows the micro api to deconstruct 
-a HTTP request into RPC and back to HTTP.
+## Resolver
 
-## Getting started
+Micro dynamically routes to services using a namespace value and the HTTP path.
 
-### Install
+The default namespace is `go.micro.api`. Set namespace via `--namespace` or `MICRO_NAMESPACE=`.
 
-```shell
-go get github.com/micro/micro
-```
+The resolvers used are explained below.
 
-### Run
+### RPC Resolver
 
-```shell
-micro api
-```
+RPC services have a name (go.micro.api.greeter) and a method (Greeter.Hello).
 
-### ACME via Let's Encrypt
-
-Serve securely by default using ACME via letsencrypt
-
-```
-micro --enable_acme api
-```
-
-Optionally specify a host whitelist
-
-```
-micro --enable_acme --acme_hosts=example.com,api.example.com api
-```
-
-### Serve Secure TLS
-
-The API supports serving securely with TLS certificates
-
-```shell
-micro --enable_tls --tls_cert_file=/path/to/cert --tls_key_file=/path/to/key api
-```
-
-### Set Namespace
-
-The API defaults to serving the namespace **go.micro.api**. The combination of namespace and request path 
-are used to resolve an API service and method to send the query to.
-
-```shell
-micro api --namespace=com.example.api
-```
-
-## Examples
-
-Here we have an example of a 3 tier architecture
-
-- micro api (localhost:8080) - serving as the http entry point
-- api service (go.micro.api.greeter) - serving a public facing api
-- backend service (go.micro.srv.greeter) - internally scoped service
-
-The full working example is [here](https://github.com/micro/examples/tree/master/greeter)
-
-### Run Example
-
-Prereq: Ensure you are running service discovery e.g consul agent -dev
-
-Get examples
-
-```
-git clone https://github.com/micro/examples
-```
-
-Start the service go.micro.srv.greeter
-
-```shell
-go run examples/greeter/srv/main.go
-```
-
-Start the API service go.micro.api.greeter
-
-```shell
-go run examples/greeter/api/api.go
-```
-
-Start the micro api
-
-```
-micro api
-```
-
-### Query
-
-Make a HTTP call via the micro api
-
-```shell
-curl "http://localhost:8080/greeter/say/hello?name=Asim+Aslam"
-```
-
-The HTTP path /greeter/say/hello maps to service go.micro.api.greeter method Say.Hello
-
-Bypass the api service and call the backend directly via /rpc
-
-```shell
-curl -d 'service=go.micro.srv.greeter' \
-	-d 'method=Say.Hello' \
-	-d 'request={"name": "Asim Aslam"}' \
-	http://localhost:8080/rpc
-```
-
-Make the same call entirely as JSON
-
-```shell
-$ curl -H 'Content-Type: application/json' \
-	-d '{"service": "go.micro.srv.greeter", "method": "Say.Hello", "request": {"name": "Asim Aslam"}}' \
-	http://localhost:8080/rpc
-```
-
-## Request Mapping
-
-Micro dynamically routes to services using a fixed namespace and the HTTP path.
-
-The default namespace for these services is **go.micro.api** but the namespace can be set via the `--namespace` flag. 
-
-### API per Service
-
-We promote a pattern of creating an API service per backend service for public facing traffic. This logically separates the concerns 
-of serving an API frontend and backend services. 
-
-### RPC Mapping
-
-URLs are mapped as follows:
+URLs are resolved as follows:
 
 Path	|	Service	|	Method
 ----	|	----	|	----
@@ -224,29 +277,19 @@ Path	|	Service	|	Method
 /v2/foo/bar	|	go.micro.api.v2.foo	|	Foo.Bar
 /v2/foo/bar/baz	|	go.micro.api.v2.foo	|	Bar.Baz
 
-### REST Mapping
+### Proxy Resolver
 
-You can serve a RESTful API by using the API as a reverse proxy and implementing RESTful paths with libraries such as [go-restful](https://github.com/emicklei/go-restful). 
-An example of a REST API service can be found at [greeter/api/rest](https://github.com/micro/examples/tree/master/greeter/api/rest).
+With the proxy handler we only need to deal with resolving the service name. So the resolution differs slightly to the RPC resolver.
 
-Running the micro api with `--handler=proxy` will reverse proxy requests to services  within the API namespace.
+URLS are resolved as follows:
 
 Path	|	Service	|	Service Path
 ---	|	---	|	---
+/foo	|	go.micro.api.foo	|	/foo
 /foo/bar	|	go.micro.api.foo	|	/foo/bar
 /greeter	|	go.micro.api.greeter	|	/greeter
 /greeter/:name	|	go.micro.api.greeter	|	/greeter/:name
 
-Using this handler means speaking HTTP directly with the backend service, ignoring any go-micro transport plugins.
 
-## Stats Dashboard
-
-Enable a stats dashboard via the `--enable_stats` flag. It will be exposed on /stats.
-
-```shell
-micro --enable_stats api
-```
-
-<img src="images/stats.png">
 
 {% include links.html %}

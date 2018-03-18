@@ -1,5 +1,5 @@
 ---
-title: Micro Docs
+title: Roadmap
 keywords: roadmap
 tags: [roadmap]
 sidebar: home_sidebar
@@ -7,41 +7,13 @@ permalink: roadmap.html
 summary: 
 ---
 
-# Roadmap
-
 The roadmap displays larger milestones or just gives visibility to whats going on
 
-## Months
+## Project
 
-### May 2017
+We're using GitHub projects to manage the roadmap
 
-- [x] Go Log
-- [x] Go Run
-- [x] Micro Run
+[https://github.com/micro/micro/projects/1](https://github.com/micro/micro/projects/1)
 
-### June 2017
-
-- [x] Functions
-- [x] Graceful Exit
-- [x] Versioning
-
-### July 2017
-
-- [x] Sharding
-- [x] Stateful Round Robin
-- [x] gRPC connection pooling 
-
-## Long Term:
-- [ ] Micro Enterprise
-- [ ] Micro Edge
-- [ ] Micro OS
-- [ ] Micro Play
-- [ ] JS Micro
-- [ ] HTTP2 transport
-- [ ] DB Library
-- [ ] Call strategies {shard, spread, scatter gather}
-- [ ] GraphQL Handler
-- [ ] Let's Encrypt support
-- [ ] Sidecar HTTP/gRPC/Thrift
 
 {% include links.html %}

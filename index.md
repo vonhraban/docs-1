@@ -1,61 +1,39 @@
 ---
-title: Micro Docs
+title: Docs
 keywords: homepage
 tags: [introduction]
 sidebar: home_sidebar
 permalink: index.html
-summary: Micro is a microservice ecosystem simplifying distributed development. It provides the fundamental building blocks for developing distributed applications. The micro documentation is here as a guide for adopting Micro.
+summary: Micro is simplifying cloud-native development. The docs should help you get started.
 ---
 
 # Introduction
 
-Micro is a microservice ecosystem. It's goal is to simplify distributed systems development. 
-
-Technology is rapidly evolving. Cloud computing now gives us almost unlimited scale, however leveraging that scale with existing tools is still difficult. 
-Micro attempts to solve this problem with a developer first focus.
-
-At the core, micro is simple and accessible enough that anyone can easily get started writing microservices. As you scale to hundreds of services, micro 
-will provide the fundamental tools required to manage a microservice environment.
+Micro addresses the key requirements for building cloud-native systems. It takes the microservice architecture pattern and transforms 
+it into a set of tools which act as the building blocks for scalable platforms. Micro hides the complexity of distributed systems and 
+provides well understood concepts to developers.
 
 ## Get Started
 
-If you want to start writing microservices go directly to the [go-micro](https://github.com/micro/go-micro) repo.
+Start writing services using [go-micro](https://github.com/micro/go-micro).
 
 ## Overview
 
-The main piece of software provided is [Micro](https://github.com/micro/micro), a microservice toolkit.
+The main piece of software provided is [Micro](https://github.com/micro/micro), a cloud-native toolkit.
 
-The toolkit is composed of the following components:
+The toolkit is composed of the following features:
 
-- **Go Micro** - A pluggable RPC framework for writing microservices in Go. It provides libraries for 
-service discovery, client side load balancing, encoding, synchronous and asynchronous communication.
+- [**`api`**](api.html) - API Gateway. A single HTTP entry point. Dynamic routing using service discovery.
 
+- [**`web`**](web.html) - Web Gateway and dashboard. Build web apps as microservices.
 
-- **API** - An API Gateway that serves HTTP and routes requests to appropriate micro services. 
-It acts as a single entry point and can either be used as a reverse proxy or translate HTTP requests to RPC.
+- [**`cli`**](cli.html) - Command line interface. Describe, query and interact directly from the terminal. 
 
-- **Sidecar** - A language agnostic RPC proxy with all the features of go-micro as HTTP endpoints. While Go is a great language for building microservices, 
-you may also want to use other languages, so the Sidecar provides a way to integrate your other apps into the Micro world.
+- [**`bot`**](bot.html) - Slack and hipchat bot. The CLI via messaging.
 
-- **Web** - A web dashboard and reverse proxy for micro web applications. We believe that 
-web apps should be built as microservices and therefore treated as a first class citizen in a microservice world. It behaves much the like the API 
-reverse proxy but also includes support for web sockets.
+- [**`new`**](new.html) - New template generation for services.
 
-- **CLI** - A straight forward command line interface to interact with your micro services. 
-It also allows you to leverage the Sidecar as a proxy where you may not want to directly connect to the service registry.
-
-- **Bot** - A Hubot style bot that sits inside your microservices platform and can be interacted with via Slack, HipChat, XMPP, etc. 
-It provides the features of the CLI via messaging. Additional commands can be added to automate common ops tasks.
-  
-Note: Go-micro is a standalone library and can be used independent of the rest of the toolkit.
-
-## Runtime
-
-The toolkit is pluggable and runtime agnostic. Run micro on your laptop, in docker, using kubernetes, AWS and so on.
-
-<p align="center">
-  <img src="images/overview.png" />
-</p>
+Micro builds on [go-micro](https://github.com/micro/go-micro), making it a pluggable toolkit.
 
 ## Learn more
 

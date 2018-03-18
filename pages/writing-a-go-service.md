@@ -113,15 +113,24 @@ Here we're defining a service handler called Greeter with the method Hello which
 
 ### 3. Generate the API interface
 
-We use protoc and protoc-gen-go to generate the concrete go implementation for this definition.
+You'll need the following to generate protobuf code
 
-Go-micro uses code generation to provide client stub methods to reduce boiler plate code much like gRPC. It's done via a protobuf plugin 
-which requires a fork of [golang/protobuf](https://github.com/golang/protobuf) that can be found here 
-[github.com/micro/protobuf](github.com/micro/protobuf).
+- [protoc](https://github.com/google/protobuf)
+- [protoc-gen-go](https://github.com/golang/protobuf)
+- [protoc-gen-micro](https://github.com/micro/protoc-gen-micro)
+
+We use protoc, protoc-gen-go and protoc-gen-micro to generate the concrete go implementation for this definition.
 
 ```shell
-go get github.com/micro/protobuf/{proto,protoc-gen-go}
-protoc --go_out=plugins=micro:. greeter.proto
+go get github.com/golang/protobuf/{proto,protoc-gen-go}
+```
+
+```shell
+go get github.com/micro/protoc-gen-micro
+```
+
+```
+protoc --proto_path=$GOPATH/src:. --micro_out=. --go_out=. greeter.proto
 ```
 
 The types generated can now be imported and used within a **handler** for a server or the client when making a request.

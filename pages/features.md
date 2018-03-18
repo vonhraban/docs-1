@@ -1,5 +1,5 @@
 ---
-title: Micro Docs
+title: Features
 keywords: features
 tags: [features]
 sidebar: home_sidebar

@@ -1,13 +1,11 @@
 ---
-title: Micro Docs
+title: Architecture
 keywords: architecture
 tags: [architecture]
 sidebar: home_sidebar
 permalink: architecture.html
 summary: 
 ---
-
-# Architecture
 
 Micro provides the fundamental building blocks for microservices. It's goal is to simplify distributed systems development. Because microservices is an architecture pattern, Micro looks to logically separate responsibility through tooling. 
 

@@ -1,13 +1,11 @@
 ---
-title: Micro Docs
+title: FAQ
 keywords: faq
 tags: [faq]
 sidebar: home_sidebar
 permalink: faq.html
 summary:
 ---
-
-# FAQ
 
 The FAQ should provide quick answers to the most common questions.
 

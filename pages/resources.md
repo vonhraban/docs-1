@@ -1,15 +1,11 @@
 ---
-title: Micro Docs
+title: Resources
 keywords: resources
 tags: [resources]
 sidebar: home_sidebar
 permalink: resources.html
 summary: 
 ---
-
-# Resources
-
-Here's some help to get started
 
 ## Articles
 
