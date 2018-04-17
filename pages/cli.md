@@ -46,7 +46,7 @@ micro query go.micro.srv.example Example.Call '{"name": "John"}'
 
 ### Query Service Health
 ```shell
-micro health go.micro.sv.example
+micro health go.micro.srv.example
 
 node		address:port		status
 go.micro.srv.example-fccbb6fb-0301-11e5-9f1f-68a86d0d36b6		[::]:62421		ok
