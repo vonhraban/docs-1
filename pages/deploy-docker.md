@@ -42,8 +42,8 @@ api:
   - consul
   ports:
   - "8080:8080"
-sidecar:
-  command: --registry_address=registry:8500 --register_interval=5 --register_ttl=10 sidecar
+proxy:
+  command: --registry_address=registry:8500 --register_interval=5 --register_ttl=10 proxy
   build: .
   links:
   - consul

@@ -33,6 +33,8 @@ The toolkit is composed of the following features:
 
 - [**`new`**](new.html) - New template generation for services.
 
+- [**`proxy`**](https://github.com/micro/micro/tree/master/proxy) - A proxy for remote environments.
+
 Micro builds on [go-micro](https://github.com/micro/go-micro), making it a pluggable toolkit.
 
 ## Learn more

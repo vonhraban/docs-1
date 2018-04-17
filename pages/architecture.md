@@ -33,10 +33,9 @@ it up in the registry and then reverse proxies to it.
   <img src="images/web.png" />
 </p>
 
-### Sidecar
+### Proxy
 
-The sidecar is a HTTP Interface version of go-micro. It's a way of integrating non-Go appications into a micro 
-environment. 
+The proxy is a cli proxy for remote environments.
 
 <p align="center">
   <img src="images/car.png" />

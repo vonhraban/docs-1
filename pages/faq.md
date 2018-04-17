@@ -24,7 +24,7 @@ Micro consists of open source libraries and tools to help with microservice deve
 
 - **go-micro** - A pluggable Go RPC framework for writing a microservice; service discovery, client/server rpc, pub/sub, etc.
 - **go-plugins** - Plugins for go-micro including etcd, kubernetes, nats, rabbitmq, grpc, etc.
-- **micro** - A microservice toolkit containing traditional entry points; API Gateway, CLI, Slack Bot, Sidecar and Web UI.
+- **micro** - A microservice toolkit containing traditional entry points; API Gateway, CLI, Slack Bot, Proxy and Web UI.
 
 Various other libraries and services can be found in [github.com/micro](https://github.com/micro).
 

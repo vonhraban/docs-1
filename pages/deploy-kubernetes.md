@@ -7,43 +7,264 @@ permalink: deploy-kubernetes.html
 summary: 
 ---
 
-# Kubernetes Deployment
 
-Micro easily runs on kubernetes an can even use the kubernetes API for service discovery.
+Micro on Kubernetes is kubernetes native micro.
 
-## Configuration
+Micro is a microservice toolkit. Kubernetes is a container orchestrator.
 
-The repo [github.com/micro/kubernetes](https://github.com/micro/kubernetes) provides an example configuration for Micro on Kubernetes
+Together they provide the foundations for a microservice platform.
 
-```
-git clone https://github.com/micro/kubernetes
-```
+## Features
 
-### What's in the repo?
-
-Currently config to run Micro on Kubernetes (Testing on Google Container Engine).
-
-- Micro - API, Web UI and Sidecar (spins up GCE Load Balancers)
-- Services - Some example micro services
-- run.sh - a simple shell script which uses kubectl to start/stop services
+- No external dependencies
+- Client side discovery caching
+- Optional k8s service load balancing
+- gRPC transport protocol
+- Pre-initialised toolkit
 
 ## Getting Started
 
-Here's the steps I took to get started.
+- [Installing Micro](#installing-micro)
+- [Writing a Service](#writing-a-service)
+- [Deploying a Service](#deploying-a-service)
+- [Healthchecking Sidecar](#healthchecking-sidecar)
+- [K8s Load Balancing](#k8s-load-balancing)
+- [Contribute](#contribute)
 
-### Run Kubernetes
+## Installing Micro
 
-GKE is the easiest way to run a managed kubernetes cluster. What's even better? $300 free credit for 60 days.
 
-1. Get yourself a [Free Trial](https://cloud.google.com/free-trial/) of Google Container Engine
-2. Visit the [Quickstart](https://cloud.google.com/container-engine/docs/quickstart) guide to create a cluster
-
-### Run Micro
-
-Make sure kubectl is in your path
-
-```shell
-./run.sh start
 ```
+go get github.com/micro/kubernetes/cmd/micro
+```
+
+or
+
+```
+docker pull microhq/micro:kubernetes
+```
+
+For go-micro
+
+```
+import "github.com/micro/kubernetes/go/micro"
+```
+
+## Writing a Service
+
+Write a service as you would any other [go-micro](https://github.com/micro/go-micro) service.
+
+```go
+import (
+	"github.com/micro/go-micro"
+	k8s "github.com/micro/kubernetes/go/micro"
+)
+
+func main() {
+	service := k8s.NewService(
+		micro.Name("greeter")
+	)
+	service.Init()
+	service.Run()
+}
+```
+
+## Deploying a Service
+
+Here's an example k8s deployment for a micro service
+
+```
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  namespace: default
+  name: greeter
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: greeter-srv
+    spec:
+      containers:
+        - name: greeter
+          command: [
+		"/greeter-srv",
+		"--server_address=0.0.0.0:8080",
+		"--broker_address=0.0.0.0:10001"
+	  ]
+          image: microhq/greeter-srv:kubernetes
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 8080
+            name: greeter-port
+```
+
+Deploy with kubectl
+
+```
+kubectl create -f greeter.yaml
+```
+
+## Healthchecking Sidecar
+
+The healthchecking sidecar exposes `/health` as a http endpoint and calls the rpc endpoint `Debug.Health` on a service. 
+Every go-micro service has a built in Debug.Health endpoint.
+
+### Install healthchecker
+
+```
+go get github.com/micro/health
+```
+
+or
+
+```
+docker pull microhq/health:kubernetes
+```
+
+### Run healtchecker
+
+Run e.g healthcheck greeter service with address localhost:9091
+
+```
+health --server_name=greeter --server_address=localhost:9091
+```
+
+Call the healthchecker on localhost:8080
+
+```
+curl http://localhost:8080/health
+```
+
+### K8s Deployment
+
+Add to a kubernetes deployment
+
+```
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  namespace: default
+  name: greeter
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: greeter-srv
+    spec:
+      containers:
+        - name: greeter
+          command: [
+		"/greeter-srv",
+		"--server_address=0.0.0.0:8080",
+		"--broker_address=0.0.0.0:10001"
+	  ]
+          image: microhq/greeter-srv:kubernetes
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 8080
+            name: greeter-port
+        - name: health
+          command: [
+		"/health",
+                "--health_address=0.0.0.0:8081",
+		"--server_name=greeter",
+		"--server_address=0.0.0.0:8080"
+	  ]
+          image: microhq/health:kubernetes
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8081
+            initialDelaySeconds: 3
+            periodSeconds: 3
+```
+
+## K8s Load Balancing
+
+Micro includes client side load balancing by default but kubernetes also provides Service load balancing strategies. 
+We can offload load balancing to k8s by using the [static selector](https://github.com/micro/go-plugins/tree/master/selector/static) 
+and k8s services.
+
+Rather than doing address resolution, the static selector returns the service name plus a fixed port e.g greeter returns greeter:8080. 
+Read about the [static selector](https://github.com/micro/go-plugins/tree/master/selector/static).
+
+### Usage
+
+To use the static selector when running your service specify the flag or env var 
+
+```
+MICRO_SELECTOR=static ./service
+```
+
+or
+
+```
+./service --selector=static
+```
+
+### K8s Deployment
+
+An example deployment
+
+```
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  namespace: default
+  name: greeter
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: greeter-srv
+    spec:
+      containers:
+        - name: greeter
+          command: [
+		"/greeter-srv",
+		"--selector=static",
+		"--server_address=0.0.0.0:8080",
+		"--broker_address=0.0.0.0:10001"
+	  ]
+          image: microhq/greeter-srv:kubernetes
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 8080
+            name: greeter-port
+```
+
+### K8s Service
+
+The static selector offloads load balancing to k8s services. So ensure you create a k8s Service for each micro service. 
+
+Here's a sample service
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: greeter
+  labels:
+    app: greeter
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+  selector:
+    app: greeter
+```
+
+Deploy with kubectl
+
+```
+kubectl create -f service.yaml
+```
+
+Calling micro service "greeter" from your service will route to the k8s service greeter:8080.
+
 
 {% include links.html %}

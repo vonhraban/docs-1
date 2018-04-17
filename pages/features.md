@@ -24,9 +24,9 @@ Micro is a toolkit to query and access microservices
 
 * API Gateway for http to rpc
 * Web proxy for web microservices
-* Sidecar as a service mesh
 * CLI for command line access
 * Bot to query via Slack
+* Proxy for remote environments
 
 ## [Go Micro](https://github.com/micro/go-micro)
 

@@ -96,8 +96,8 @@ entries:
       url: /web.html
       output: web, pdf
 
-    - title: Sidecar
-      url: /sidecar.html
+    - title: Proxy
+      url: /proxy.html
       output: web, pdf
 
     - title: CLI

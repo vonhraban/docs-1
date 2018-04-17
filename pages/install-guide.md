@@ -44,13 +44,9 @@ go get github.com/micro/go-micro
 
 ### Protobuf
 
-You will also need protoc-gen-go if you're using code generation
+You will also need protoc-gen-micro for code generation
 
-```
-go get github.com/micro/protobuf/{proto,protoc-gen-go}
-```
-
-Visit [github.com/micro/go-micro](https://github.com/micro/go-micro) to learn more
+- [protoc-gen-micro](https://github.com/micro/protoc-gen-micro)
 
 ## Toolkit
 
