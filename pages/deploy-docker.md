@@ -1,5 +1,5 @@
 ---
-title: Micro Docs
+title: Docker Deployment
 keywords: docker
 tags: [docker]
 sidebar: home_sidebar

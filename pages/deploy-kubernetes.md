@@ -1,5 +1,5 @@
 ---
-title: Micro Docs
+title: Kubernetes Deployment
 keywords: kubernetes
 tags: [kubernetes]
 sidebar: home_sidebar

@@ -1,5 +1,5 @@
 ---
-title: Micro Docs
+title: Plugins
 keywords: plugins
 tags: [plugins]
 sidebar: home_sidebar

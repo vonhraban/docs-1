@@ -1,5 +1,5 @@
 ---
-title: Micro Docs
+title: CLI
 keywords: cli
 tags: [cli]
 sidebar: home_sidebar

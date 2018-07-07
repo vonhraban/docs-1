@@ -16,6 +16,7 @@ If you're using Micro, feel free to add your company
 - [Dark Cubed](http://darkcubed.com)
 - [Hightech](https://hightech.fm/)
 - [Imgur](https://imgur.com/)
+- [Jumia](https://food.jumia.com/)
 - [Karhoo](https://karhoo.com/)
 - [Kazoup](http://www.kazoup.com)
 - [Kyperion](https://kyperion.com)

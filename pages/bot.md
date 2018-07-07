@@ -1,5 +1,5 @@
 ---
-title: Micro Docs
+title: Bot
 keywords: bot
 tags: [bot]
 sidebar: home_sidebar

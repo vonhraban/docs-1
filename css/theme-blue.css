@@ -14,7 +14,7 @@ h4 {color: #808080; }
 }
 
 .nav > li.active > a {
-    background-color: #333333;
+    background-color: #252531;
 }
 
 .nav > li > a:hover {
@@ -22,7 +22,7 @@ h4 {color: #808080; }
 }
 
 div.navbar-collapse .dropdown-menu > li > a:hover {
-    background-color: #333333;
+    background-color: #252531;
 }
 
 .nav li.thirdlevel > a {
@@ -38,16 +38,16 @@ a[data-toggle="tooltip"] {
 }
 
 .navbar-inverse {
-    background-color: #333333;
-    border-color: #333333;
+    background-color: #252531;
+    border-color: #252531;
 }
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
-    color: #333333;
+    color: #252531;
 }
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
-    background-color: #333333;
+    background-color: #252531;
     color: #ffffff;
 }
 
@@ -58,12 +58,12 @@ a[data-toggle="tooltip"] {
 
 .btn-primary {
     color: #ffffff;
-    background-color: #333333;
-    border-color: #333333;
+    background-color: #252531;
+    border-color: #252531;
 }
 
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
-    background-color: #333333;
+    background-color: #252531;
 }
 
 .btn-primary:hover,
@@ -72,14 +72,14 @@ a[data-toggle="tooltip"] {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
     background-color: #4E4E4E;
-    border-color: #333333;
+    border-color: #252531;
 }
 
 .printTitle {
-    color: #333333 !important;
+    color: #252531 !important;
 }
 
-body.print h1 {color: #333333 !important; font-size:28px !important;}
+body.print h1 {color: #252531 !important; font-size:28px !important;}
 body.print h2 {color: #595959 !important; font-size:20px !important;}
 body.print h3 {color: #E50E51 !important; font-size:14px !important;}
 body.print h4 {color: #679DCE !important; font-size:14px; font-style: italic !important;}
@@ -89,7 +89,7 @@ body.print h4 {color: #679DCE !important; font-size:14px; font-style: italic !im
 }
 
 div.sidebarTitle {
-    color: #333333;
+    color: #252531;
 }
 
 li.sidebarTitle {

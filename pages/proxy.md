@@ -1,5 +1,5 @@
 ---
-title: Micro Docs
+title: Proxy
 keywords: proxy
 tags: [proxy]
 sidebar: home_sidebar

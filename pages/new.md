@@ -1,5 +1,5 @@
 ---
-title: Micro Docs
+title: New Template
 keywords: new
 tags: [new]
 sidebar: home_sidebar

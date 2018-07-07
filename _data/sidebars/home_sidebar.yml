@@ -28,10 +28,6 @@ entries:
       output: web, pdf
       type: homepage
 
-    - title: Microservices
-      url: /microservices.html
-      output: web, pdf
-
     - title: Architecture
       url: /architecture.html
       output: web, pdf
@@ -54,6 +50,14 @@ entries:
 
     - title: Users
       url: /users.html
+      output: web, pdf
+
+  - title: Concepts
+    output: web, pdf
+    folderitems:
+
+    - title: Microservices
+      url: /microservices.html
       output: web, pdf
 
   - title: Guides
@@ -80,12 +84,32 @@ entries:
       url: /fault-tolerance.html
       output: web, pdf
 
-  - title: Components
+  - title: Go Micro
     output: web, pdf
     folderitems:
 
-    - title: Go Micro
-      url: /go-micro.html
+    - title: Overview
+      url: /go-micro.html"
+      output: web, pdf
+
+    - title: Architecture
+      url: /go-micro-architecture.html
+      output: web, pdf
+
+  - title: Go Config
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /go-config.html
+      output: web, pdf
+
+  - title: Toolkit
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /toolkit.html
       output: web, pdf
 
     - title: API
@@ -112,11 +136,7 @@ entries:
       url: /new.html
       output: web, pdf
 
-    - title: Run
-      url: /run.html
-      output: web, pdf
-
-  - title: Deploy
+  - title: Deployment
     output: web, pdf
     folderitems:
 

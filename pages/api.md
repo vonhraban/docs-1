@@ -1,19 +1,17 @@
 ---
-title: Micro Docs
+title: API
 keywords: api
 tags: [api]
 sidebar: home_sidebar
 permalink: api.html
-summary: 
+summary: The micro api is an api gateway
 ---
 
-# micro api
-
-The **micro api** is an API gateway for microservices. Use the API gateway [pattern](http://microservices.io/patterns/apigateway.html) to provide a 
+Use the API gateway [pattern](http://microservices.io/patterns/apigateway.html) to provide a 
 single entry point for your services. The micro api serves HTTP and dynamically routes to the appropriate backend using service discovery.
 
 <p align="center">
-  <img src="https://github.com/micro/docs/blob/master/images/api.png" />
+  <img src="images/api.png" />
 </p>
 
 ## Overview
@@ -24,21 +22,19 @@ The micro api is a HTTP api. Requests to the API are served over HTTP and intern
 Because the micro api uses go-micro internally, this also makes it pluggable. See [go-plugins](https://github.com/micro/go-plugins) for 
 support for gRPC, kubernetes, etcd, nats, rabbitmq and more.
 
-## Getting started
-
-### Install
+## Install
 
 ```shell
 go get -u github.com/micro/micro
 ```
 
-### Run
+## Run
 
 ```shell
 micro api
 ```
 
-### Use ACME 
+## Use ACME 
 
 Serve securely by default using ACME via letsencrypt
 
@@ -54,7 +50,7 @@ MICRO_ACME_HOSTS=example.com,api.example.com \
 micro api
 ```
 
-### Use TLS Certs
+## Set TLS Certificate
 
 The API supports serving securely with TLS certificates
 
@@ -65,7 +61,7 @@ MICRO_TLS_KEY_FILE=/path/to/key \
 micro api
 ```
 
-### Set Namespace
+## Set Namespace
 
 The API makes use of namespaces to logically separate backend and public facing services. The namespace and http path 
 are used to resolve service name/method. The default namespace is `go.micro.api`.
