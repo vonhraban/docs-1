@@ -54,7 +54,7 @@ In the example we've created a greeter microservice using [go-grpc](https://gith
 
 The proto is as follows:
 
-```
+```proto
 syntax = "proto3";
 
 package go.micro.srv.greeter;
@@ -120,8 +120,7 @@ func main() {
 
 The grpc gateway uses the same proto as the service with the addition of a http option
 
-```
-
+```proto
 syntax = "proto3";
 
 package greeter;

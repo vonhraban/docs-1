@@ -96,7 +96,7 @@ Here's an example definition.
 
 greeter.proto
 
-```
+```proto
 syntax = "proto3";
 
 service Greeter {
