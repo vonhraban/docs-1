@@ -187,7 +187,7 @@ to exist for usage info.
 
 The service interface is as follows and can be found at [go-bot/proto](https://github.com/micro/go-bot/blob/master/proto/bot.proto)
 
-```
+```proto
 syntax = "proto3";
 
 package go.micro.bot;
