@@ -136,6 +136,14 @@ entries:
       url: /new.html
       output: web, pdf
 
+  - title: Enterprise
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /enterprise.html
+      output: web, pdf
+
   - title: Deployment
     output: web, pdf
     folderitems:
