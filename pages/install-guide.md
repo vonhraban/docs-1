@@ -105,10 +105,10 @@ Response: {
 }
 ```
 
-Query service
+Call service
 
 ```shell
-$ micro query go.micro.srv.greeter Say.Hello '{"name": "John"}'
+$ micro call go.micro.srv.greeter Say.Hello '{"name": "John"}'
 {
 	"msg": "Hello John"
 }
