@@ -32,7 +32,6 @@ If you're using Micro, feel free to add your company
 - [Savvy](https://www.joinsavvy.com/en/)
 - [Sipsynergy](http://www.sipsynergy.co.uk/)
 - [Sixt](https://www.sixt.com)
-- [Splunk](https://www.splunk.com/)
 - [Stillwater Supercomputing](http://www.stillwater-sc.com/)
 - [TodayTix](https://www.todaytix.com/)
 - [Vimeo](https://vimeo.com/)
