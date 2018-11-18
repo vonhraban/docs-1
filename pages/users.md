@@ -25,6 +25,7 @@ If you're using Micro, feel free to add your company
 - [Kyperion](https://kyperion.com)
 - [Neds](https://www.neds.com.au/)
 - [Pie](http://pie.io/)
+- [Popsa](https://popsa.com/)
 - [Profects](https://profects.com/)
 - [Pydio](https://pydio.com/)
 - [Reserve](https://reserve.com/)
