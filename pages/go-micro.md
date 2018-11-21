@@ -7,13 +7,7 @@ permalink: "/go-micro.html"
 summary: 
 ---
 
-Go Micro is a pluggable RPC framework for distributed systems development.
-
-The **micro** philosophy is sane defaults with a pluggable architecture. We provide defaults to get you started quickly but everything can be easily swapped out. It comes with built in support for {json,proto}-rpc encoding, consul or multicast dns for service discovery, http for communication and random hashed client side load balancing.
-
-Plugins are available at [github.com/micro/go-plugins](https://github.com/micro/go-plugins).
-
-Follow us on [Twitter](https://twitter.com/microhq) or join the [Slack](http://slack.micro.mu/) community.
+Go Micro is a pluggable framework for distributed systems development.
 
 ## Features
 
@@ -25,16 +19,6 @@ Go Micro abstracts away the details of distributed systems. Here are the main fe
 - **Sync Streaming** - RPC based communication with support for bidirectional streaming
 - **Async Messaging** - Native PubSub messaging built in for event driven architectures
 
-Go Micro supports both the Service and Function programming models. Read on to learn more.
-
-## Learn By Example
-
-An example service can be found in [**examples/service**](https://github.com/micro/examples/tree/master/service) and function in [**examples/function**](https://github.com/micro/examples/tree/master/function). 
-
-The [**examples**](https://github.com/micro/examples) directory contains examples for using things such as middleware/wrappers, selector filters, pub/sub, grpc, plugins and much more. For the complete greeter example look at [**examples/greeter**](https://github.com/micro/examples/tree/master/greeter). Other examples can be found throughout the GitHub repository.
-
-Watch the [Golang UK Conf 2016](https://www.youtube.com/watch?v=xspaDovwk34) video for a high level overview.
-
 ## Getting started
 
 - [Install Protobuf](#install-protobuf)
@@ -44,6 +28,7 @@ Watch the [Golang UK Conf 2016](https://www.youtube.com/watch?v=xspaDovwk34) vid
 - [Publish & Subscribe](#publish--subscribe)
 - [Plugins](#plugins)
 - [Wrappers](#wrappers)
+- [Examples](#examples)
 
 ## Install Protobuf
 
@@ -448,6 +433,14 @@ service := micro.NewService(
 	micro.WrapClient(logWrap),
 )
 ```
+
+## Examples
+
+An example service can be found in [**examples/service**](https://github.com/micro/examples/tree/master/service) and function in [**examples/function**](https://github.com/micro/examples/tree/master/function). 
+
+The [**examples**](https://github.com/micro/examples) directory contains examples for using things such as middleware/wrappers, selector filters, pub/sub, grpc, plugins and much more. For the complete greeter example look at [**examples/greeter**](https://github.com/micro/examples/tree/master/greeter). Other examples can be found throughout the GitHub repository.
+
+Watch the [Golang UK Conf 2016](https://www.youtube.com/watch?v=xspaDovwk34) video for a high level overview.
 
 ## Other Languages
 

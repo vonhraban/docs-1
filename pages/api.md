@@ -8,7 +8,7 @@ summary: The micro api is an api gateway
 ---
 
 Use the API gateway [pattern](http://microservices.io/patterns/apigateway.html) to provide a 
-single entry point for your services. The micro api serves HTTP and dynamically routes to the appropriate backend using service discovery.
+single public entry point for your services. The micro api serves HTTP and dynamically routes using service discovery.
 
 <p align="center">
   <img src="images/api.png" />
@@ -16,11 +16,12 @@ single entry point for your services. The micro api serves HTTP and dynamically 
 
 ## Overview
 
-The micro api is a HTTP api. Requests to the API are served over HTTP and internally routed via RPC. It builds on 
+The micro api is a HTTP api. Requests to the API are served over HTTP and routed via service discovery. It builds on 
 [go-micro](https://github.com/micro/go-micro), leveraging it for service discovery, load balancing, encoding and RPC based communication.
 
 Because the micro api uses go-micro internally, this also makes it pluggable. See [go-plugins](https://github.com/micro/go-plugins) for 
-support for gRPC, kubernetes, etcd, nats, rabbitmq and more.
+support for gRPC, kubernetes, etcd, nats, rabbitmq and more. Additionally it makes use of [go-api](https://github.com/micro/go-api) which 
+allows handlers to be configured too. 
 
 ## Install
 
@@ -151,7 +152,7 @@ See below for examples
 Handlers are HTTP handlers which manage request routing.
 
 The default handler uses endpoint metadata from the registry to determine service routes. If a route match is not found it will 
-fallback to the API handler. You can configure routes on registration using the [go-api](https://github.com/micro/go-api).
+fallback to the "rpc" handler. You can configure routes on registration using the [go-api](https://github.com/micro/go-api).
 
 The API has the following configurable request handlers.
 
@@ -165,7 +166,7 @@ Optionally bypass the handlers with the [`/rpc`](#rpc-endpoint) endpoint
 
 ### API Handler
 
-The API handler is the default handler. It serves any HTTP requests and forwards on as an RPC request with a specific format.
+The API handler serves any HTTP requests and forwards on as an RPC request with a specific format.
 
 - Content-Type: Any
 - Body: Any
@@ -173,7 +174,6 @@ The API handler is the default handler. It serves any HTTP requests and forwards
 - Path: `/[service]/[method]`
 - Resolver: Path is used to resolve service and method
 - Configure: Flag `--handler=api` or env var `MICRO_API_HANDLER=api`
-- The default handler when no handler is specified
 
 ### RPC Handler
 
@@ -185,6 +185,7 @@ The RPC handler serves json or protobuf HTTP POST requests and forwards as an RP
 - Path: `/[service]/[method]`
 - Resolver: Path is used to resolve service and method
 - Configure: Flag `--handler=rpc` or env var `MICRO_API_HANDLER=rpc`
+- The default handler when no handler is specified
 
 ### Proxy Handler
 

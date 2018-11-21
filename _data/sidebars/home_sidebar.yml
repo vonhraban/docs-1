@@ -84,27 +84,7 @@ entries:
       url: /fault-tolerance.html
       output: web, pdf
 
-  - title: Go Micro
-    output: web, pdf
-    folderitems:
-
-    - title: Overview
-      url: /go-micro.html"
-      output: web, pdf
-
-    - title: Architecture
-      url: /go-micro-architecture.html
-      output: web, pdf
-
-  - title: Go Config
-    output: web, pdf
-    folderitems:
-
-    - title: Overview
-      url: /go-config.html
-      output: web, pdf
-
-  - title: Toolkit
+  - title: Micro
     output: web, pdf
     folderitems:
 
@@ -134,6 +114,34 @@ entries:
 
     - title: New
       url: /new.html
+      output: web, pdf
+
+  - title: Go Micro
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /go-micro.html"
+      output: web, pdf
+
+    - title: Architecture
+      url: /go-micro-architecture.html
+      output: web, pdf
+
+  - title: Go Config
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /go-config.html
+      output: web, pdf
+
+  - title: Go gRPC
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /go-grpc.html"
       output: web, pdf
 
   - title: Enterprise
