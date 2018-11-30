@@ -16,6 +16,7 @@ If you're using Micro, feel free to add your company
 - [Bottos](https://bottos.org/)
 - [Capital One](https://www.capitalone.com/)
 - [Dark Cubed](http://darkcubed.com)
+- [Glue](https://glue.group)
 - [Hightech](https://hightech.fm/)
 - [Human Ventures](https://humanventures.co/)
 - [Imgur](https://imgur.com/)

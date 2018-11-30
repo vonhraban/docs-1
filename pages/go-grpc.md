@@ -11,12 +11,16 @@ A micro gRPC framework. A simplified experience for building gRPC services.
 
 ## Overview
 
-Go-grpc makes use of [go-micro](https://github.com/micro/go-micro) plugins to create a better framework for gRPC development. It interoperates with 
-standard gRPC services seamlessly, including the [grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway).
+Go gRPC makes use of [go-micro](https://github.com/micro/go-micro) plugins to create a simpler framework for gRPC development. It interoperates with 
+standard gRPC services seamlessly, including the [grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway). The go-grpc library uses 
+the go-micro client and server plugins which make use of [github.com/grpc/grpc-go](https://github.com/grpc/grpc-go). This means we ignore 
+the go-micro codec and transport but you get a native grpc experience.
+
+<img src="images/go-grpc.png" />
+
+## Examples
 
 Find an example greeter service in [examples/greeter](https://github.com/micro/go-grpc/tree/master/examples/greeter).
-
-Note: This is an alternative to [github.com/grpc/grpc-go](https://github.com/grpc/grpc-go). We support the gRPC protocol but not the framework.
 
 ## Getting Started
 

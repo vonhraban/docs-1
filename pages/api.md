@@ -32,12 +32,13 @@ go get -u github.com/micro/micro
 ## Run
 
 ```shell
+# Default port 8080
 micro api
 ```
 
 ## Use ACME 
 
-Serve securely by default using ACME via letsencrypt
+Serve securely by default using ACME via **Let's Encrypt**
 
 ```
 MICRO_ENABLE_ACME=true micro api
@@ -65,7 +66,10 @@ micro api
 ## Set Namespace
 
 The API makes use of namespaces to logically separate backend and public facing services. The namespace and http path 
-are used to resolve service name/method. The default namespace is `go.micro.api`.
+are used to resolve service name/method e.g `GET /foo HTTP/1.1` routes to service name `go.micro.api.foo`. 
+
+The default namespace is `go.micro.api` and can be changed like so
+
 
 ```shell
 MICRO_NAMESPACE=com.example.api micro api
@@ -83,29 +87,19 @@ The full example is at [examples/greeter](https://github.com/micro/examples/tree
 
 ### Run Example
 
-Prereq: Ensure you are running service discovery e.g consul agent -dev
+Prerequisite: We use consul by default for service discovery so ensure its installed and running e.g consul agent -dev
 
-Get examples
-
-```
+```shell
+# Download example
 git clone https://github.com/micro/examples
-```
 
-Start the service
-
-```shell
+# Start the service
 go run examples/greeter/srv/main.go
-```
 
-Start the API
-
-```shell
+# Start the API
 go run examples/greeter/api/api.go
-```
 
-Start the micro api
-
-```
+# Start the micro api
 micro api
 ```
 

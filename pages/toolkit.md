@@ -1,10 +1,10 @@
 ---
-title: Toolkit
+title: Micro Toolkit
 keywords: toolkit
 tags: [micro, toolkit]
 sidebar: home_sidebar
 permalink: /toolkit.html
-summary: 
+summary: A blueprint for cloud-native software
 ---
 
 Micro is a toolkit for cloud-native development. It helps you build future-proof application platforms and services.
