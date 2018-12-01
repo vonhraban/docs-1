@@ -121,7 +121,7 @@ entries:
     folderitems:
 
     - title: Overview
-      url: /go-micro.html"
+      url: /go-micro.html
       output: web, pdf
 
     - title: Architecture
@@ -141,7 +141,7 @@ entries:
     folderitems:
 
     - title: Overview
-      url: /go-grpc.html"
+      url: /go-grpc.html
       output: web, pdf
 
   - title: Enterprise
