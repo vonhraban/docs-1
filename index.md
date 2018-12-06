@@ -4,12 +4,12 @@ keywords: homepage
 tags: [introduction]
 sidebar: home_sidebar
 permalink: index.html
-summary: Simplifying cloud-native development. The docs should help you get started.
+summary: Simplifying microservice development. The docs should help you get started.
 ---
 
 # Introduction
 
-Micro addresses the key requirements for building cloud-native systems. It takes the microservice architecture pattern and transforms 
+Micro addresses the key requirements for building microservice systems. It takes the microservice architecture pattern and transforms 
 it into a set of tools which act as the building blocks for scalable platforms. Micro hides the complexity of distributed systems and 
 provides well understood concepts to developers.
 
@@ -19,7 +19,7 @@ Start writing services using [go-micro](https://github.com/micro/go-micro).
 
 ## Overview
 
-The main piece of software provided is [Micro](https://github.com/micro/micro), a cloud-native toolkit.
+The main piece of software provided is [Micro](https://github.com/micro/micro), a microservice toolkit.
 
 The toolkit is composed of the following features:
 

@@ -7,17 +7,35 @@ permalink: "/go-micro.html"
 summary: 
 ---
 
-Go Micro is a pluggable framework for distributed systems development.
+Go Micro is a pluggable framework for micro service development.
 
 ## Features
 
 Go Micro abstracts away the details of distributed systems. Here are the main features.
 
-- **Service Discovery** - Automatic service registration and name resolution
-- **Load Balancing** - Client side load balancing built on discovery
-- **Message Encoding** - Dynamic encoding based on content-type with protobuf and json support
-- **Sync Streaming** - RPC based communication with support for bidirectional streaming
-- **Async Messaging** - Native PubSub messaging built in for event driven architectures
+- **Service Discovery** - Automatic service registration and name resolution. Service discovery is at the core of micro service  
+development. When service A needs to speak to service B it needs the location of that service. Consul is the default discovery 
+system with multicast DNS being a local option.
+
+- **Load Balancing** - Client side load balancing built on service discovery. Once we have the addresses of any number of instances  
+of a service we now need a way to decide which node to route to. We use random hashed load balancing to provide even distribution  
+across the services and retry a different node if there's a problem.  
+
+- **Message Encoding** - Dynamic message encoding based on content-type. The client and server will use codecs along with content-type  
+to seamlessly encode and decode Go types for you. Any variety of messages could be encoded and sent from different clients. The client  
+and server handle this by default. This includes proto-rpc and json-rpc by default. 
+
+- **Sync Streaming** - RPC based request/response with support for bidirectional streaming. We provide an abstraction for synchronous  
+communication. A request made to a service will be automatically resolved, load balanced, dialled and streamed. The default  
+transport is http/1.1 or http2 when tls is enabled. 
+
+- **Async Messaging** - PubSub is built in as a first class citizen for asynchronous communication and event driven architectures. 
+Event notifications are a core pattern in micro service development. The default messaging is point-to-point http/1.1 or http2 when tls 
+is enabled. 
+
+- **Pluggable Interfaces** - Go Micro makes use of Go interfaces for each distributed system abstraction. Because of this these interfaces 
+are pluggable and allows Go Micro to be runtime agnostic. You can plugin any underlying technology. Find plugins in 
+[github.com/micro/go-plugins](https://github.com/micro/go-plugins).
 
 ## Getting started
 
