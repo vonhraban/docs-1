@@ -19,23 +19,7 @@ Below is info on go-micro plugin usage.
 
 Plugins can be added to go-micro in the following ways. By doing so they'll be available to set via command line args or environment variables.
 
-### Import Plugins
-
-```go
-import (
-	"github.com/micro/go-micro/cmd"
-	_ "github.com/micro/go-plugins/broker/rabbitmq"
-	_ "github.com/micro/go-plugins/registry/kubernetes"
-	_ "github.com/micro/go-plugins/transport/nats"
-)
-
-func main() {
-	// Parse CLI flags
-	cmd.Init()
-}
-```
-
-The same is achieved when calling ```service.Init```
+Import the plugins in a Go program then call service.Init to parse the command line and environment variables.
 
 ```go
 import (
@@ -56,17 +40,28 @@ func main() {
 }
 ```
 
-### Use via CLI Flags
+### Flags
 
-Activate via a command line flag
+Specify the plugins as flags
 
 ```shell
 go run service.go --broker=rabbitmq --registry=kubernetes --transport=nats
 ```
 
-### Use Plugins Directly
+### Env
 
-CLI Flags provide a simple way to initialise plugins but you can do the same yourself.
+Use env vars to specify the plugins
+
+```
+MICRO_BROKER=rabbitmq \
+MICRO_REGISTRY=kubernetes \ 
+MICRO_TRANSPORT=nats \ 
+go run service.go
+```
+
+### Options
+
+Import and set as options when creating a new service
 
 ```go
 import (
@@ -86,12 +81,14 @@ func main() {
 }
 ```
 
-## Build Pattern
+## Build
 
-You may want to swap out plugins using automation or add plugins to the micro toolkit. 
-An easy way to do this is by maintaining a separate file for plugin imports and including it during the build.
+An anti-pattern is modifying the `main.go` file to include plugins. Best practice recommendation is to include
+plugins in a separate file and rebuild with it included. This allows for automation of building plugins and
+clean separation of concerns.
 
 Create file plugins.go
+
 ```go
 package main
 
@@ -103,16 +100,21 @@ import (
 ```
 
 Build with plugins.go
+
 ```shell
 go build -o service main.go plugins.go
 ```
 
 Run with plugins
+
 ```shell
-service --broker=rabbitmq --registry=kubernetes --transport=nats
+MICRO_BROKER=rabbitmq \
+MICRO_REGISTRY=kubernetes \
+MICRO_TRANSPORT=nats \
+service
 ```
 
-## Rebuild Toolkit With Plugins
+## Rebuild Toolkit
 
 If you want to integrate plugins simply link them in a separate file and rebuild
 

@@ -4,15 +4,15 @@ keywords: toolkit
 tags: [micro, toolkit]
 sidebar: home_sidebar
 permalink: /toolkit.html
-summary: A blueprint for cloud-native software
+summary: A microservice toolkit
 ---
 
-Micro is a toolkit for cloud-native development. It helps you build future-proof application platforms and services.
+Micro is a toolkit for microservice development.
 
 # Overview
 
-Micro addresses the key requirements for building cloud-native systems. It takes the microservice architecture pattern and transforms it into 
-a set of tools which act as the building blocks for scalable platforms. Micro deals with the complexity of distributed systems and provides 
+Micro addresses the key requirements for building scalable systems. It takes the microservice architecture pattern and transforms it into 
+a set of tools which act as the building blocks of a platform. Micro deals with the complexity of distributed systems and provides 
 simple abstractions already understood by developers.
 
 Technology is constantly evolving. The infrastructure stack is always changing. Micro is a pluggable toolkit which addresses these issues. 
@@ -22,21 +22,25 @@ Plug in any stack or underlying technology. Build future-proof systems using mic
 
 The toolkit is composed of the following features:
 
-- **API Gateway:** A single entry point with dynamic request routing using service discovery. The API gateway allows you to build a scalable 
-microservice architecture on the backend and consolidate serving a public http api in one place. The micro api provides powerful routing 
+- **API Gateway:** A single http entry point with dynamic request routing using service discovery. The API gateway allows you to build a scalable 
+microservice architecture on the backend and consolidate serving a public api on the frontend. The micro api provides powerful routing 
 via discovery and pluggable handlers to serve http, grpc, websockets, publish events and more.
 
-- **Slack bot:** A bot which runs on your platform and lets you manage your applications from Slack itself. The micro bot enables ChatOps 
-and gives you the ability to do everything with your team via messaging. It also includes ability to create slack commmands as services which
-are discovered dynamically. 
-
-- **Command line interface:** A CLI to describe, query and interact directly with your platform and services from the terminal. The CLI 
+- **Interactive CLI:** A CLI to describe, query and interact directly with your platform and services from the terminal. The CLI 
 gives you all the commands you expect to understand what's happening with your micro services. It also includes an interactive mode.
 
-- **Service templates:** Generate new service templates to get started quickly. Micro provides predefined templates for writing micro services.  
-Always start in the same way, build identical services to be more productive. 
+- **Service Proxy:** A transparent proxy built on [Go Micro](https://github.com/micro/go-micro) and the [MUCP](https://github.com/micro/protocol) 
+protocol. Offload service discovery, load balancing, message encoding, middleware, transport and broker plugins to a single a location. 
+Run it standalone or alongside your service.
 
-- **Web Dashboard:** The web dashboard allows you to explore your services, describe their endpoints, the request and response formats and even
+- **Service Templates:** Generate new service templates to get started quickly. Micro provides predefined templates for writing micro services. 
+Always start in the same way, build identical services to be more productive.
+
+- **SlackOps Bot:** A bot which runs on your platform and lets you manage your applications from Slack itself. The micro bot enables ChatOps 
+and gives you the ability to do everything with your team via messaging. It also includes ability to create slack commmands as services which 
+are discovered dynamically.
+
+- **Web Dashboard:** The web dashboard allows you to explore your services, describe their endpoints, the request and response formats and even 
 query them directly. The dashboard is also includes a built in CLI like experience for developers who want to drop into the terminal on the fly.
 
 ## Getting Started

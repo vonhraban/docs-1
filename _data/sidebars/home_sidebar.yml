@@ -92,41 +92,50 @@ entries:
       url: /toolkit.html
       output: web, pdf
 
-    - title: API
+    - title: API Gateway
       url: /api.html
       output: web, pdf
 
-    - title: Web
+    - title: Web Dashboard
       url: /web.html
       output: web, pdf
 
-    - title: Proxy
+    - title: Service Proxy
       url: /proxy.html
       output: web, pdf
 
-    - title: CLI
+    - title: Command Line
       url: /cli.html
       output: web, pdf
 
-    - title: Bot
+    - title: SlackOps Bot
       url: /bot.html
       output: web, pdf
 
-    - title: New
+    - title: New Template
       url: /new.html
       output: web, pdf
 
-  - title: Go Micro
+  - title: Enterprise
     output: web, pdf
     folderitems:
 
     - title: Overview
-      url: /go-micro.html
+      url: /enterprise.html
       output: web, pdf
 
-    - title: Architecture
-      url: /go-micro-architecture.html
+  - title: Go API
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /go-api.html
       output: web, pdf
+
+    - title: Handlers
+      url: /go-api-handlers.html
+      output: web, pdf
+
 
   - title: Go Config
     output: web, pdf
@@ -144,12 +153,16 @@ entries:
       url: /go-grpc.html
       output: web, pdf
 
-  - title: Enterprise
+  - title: Go Micro
     output: web, pdf
     folderitems:
 
     - title: Overview
-      url: /enterprise.html
+      url: /go-micro.html
+      output: web, pdf
+
+    - title: Architecture
+      url: /go-micro-architecture.html
       output: web, pdf
 
   - title: Deployment
