@@ -37,7 +37,7 @@ entries:
       output: web, pdf
 
     - title: 特性
-      url: /features.html
+      url: /features_cn.html
       output: web, pdf
 
     - title: 项目开发进展
