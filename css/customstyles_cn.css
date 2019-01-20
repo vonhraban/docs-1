@@ -1,5 +1,9 @@
 @import url("customstyles.css");
 
+.summary:before {
+    content: "摘要: ";
+}
+
 div#toc >ul::before {
     content: "内容题干";
     font-weight: 500;
