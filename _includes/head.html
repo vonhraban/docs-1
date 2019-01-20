@@ -3,15 +3,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines | truncate: 160 }}{% endif %}">
 <meta name="keywords" content="{{page.tags}}{% if page.tags %}, {% endif %} {{page.keywords}}">
-<title>{{ page.title }} | {{ site.site_title }}</title>
-<link rel="stylesheet" href="{{ "css/syntax.css" }}">
 
+{% if page.lang == "cn" %}
+<title>{{ page.title }} | {{ site.site_title_cn }}</title>
+{% else %}
+<title>{{ page.title }} | {{ site.site_title }}</title>
+{% endif %}
+
+
+<link rel="stylesheet" href="{{ "css/syntax.css" }}">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
 <link rel="stylesheet" href="{{ "css/modern-business.css" }}">
 <link rel="stylesheet" href="{{ "css/lavish-bootstrap.css" }}">
+
+{% if page.lang == "cn" %}
+<link rel="stylesheet" href="{{ "css/customstyles_cn.css" }}">
+{% else %}
 <link rel="stylesheet" href="{{ "css/customstyles.css" }}">
+{% endif %}
 <link rel="stylesheet" href="{{ "css/theme-blue.css" }}">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

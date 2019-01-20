@@ -4,9 +4,11 @@ output: web
 # this property is useful for conditional filtering of content that is separate from the PDF.
 
 topnav_title: Micro Documentation
+topnav_title_cn: Micro文档
 # this appears on the top navigation bar next to the home button
 
 site_title: Micro Documentation
+site_title_cn: Micro文档
 # this appears in the html browser tab for the site title (seen mostly by search engines, not users)
 
 company_name: Micro Technologies
@@ -34,6 +36,7 @@ exclude:
 # these are the files and directories that jekyll will exclude from the build
 
 feedback_subject_line: Micro Documentation
+feedback_subject_line_cn: Micro文档
 
 feedback_email: contact@micro.mu
 # used as a contact email for the Feedback link in the top navigation bar
@@ -74,11 +77,13 @@ defaults:
       comments: true
       search: true
       sidebar: home_sidebar
+      lang: en
 
 # these are defaults used for the frontmatter for these file types
 
 sidebars:
 - home_sidebar
+- home_sidebar_cn
 
 description: "Documentation for Micro the microservice toolkit"
 # the description is used in the feed.xml file
