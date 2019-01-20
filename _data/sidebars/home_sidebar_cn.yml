@@ -48,8 +48,8 @@ entries:
       url: /resources_cn.html
       output: web, pdf
 
-    - title: 用户群体
-      url: /users.html
+    - title: 相关用户
+      url: /users_cn.html
       output: web, pdf
 
   - title: Concepts
