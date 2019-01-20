@@ -45,7 +45,7 @@ entries:
       output: web, pdf
  
     - title: 相关资源
-      url: /resources.html
+      url: /resources_cn.html
       output: web, pdf
 
     - title: 用户群体
