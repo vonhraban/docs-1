@@ -8,7 +8,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+            {% if page.lang == "cn" %}
+            <a class="navbar-brand" href="index_cn.html">&nbsp;<span class="projectTitle"> {{site.topnav_title_cn}}</span></a>
+            {% else %}
             <a class="navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> {{site.topnav_title}}</span></a>
+            {% endif %}
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -45,10 +49,10 @@
                 {% endfor %}
                 {% endfor %}
                 {% if site.feedback_disable == null or site.feedback_disable == false %}
-			{% include feedback.html %}
-		{% endif %}
+                {% include feedback.html %}
+                {% endif %}
             </ul>
         </div>
-        </div>
-        <!-- /.container -->
+    </div>
+    <!-- /.container -->
 </nav>

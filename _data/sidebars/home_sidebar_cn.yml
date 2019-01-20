@@ -1,0 +1,198 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar_cn
+  product: 
+  version: 
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage
+      output: pdf
+      type: frontmatter
+
+  - title: 概览
+    output: web, pdf
+    folderitems:
+
+    - title: 简介
+      url: /index_cn.html
+      output: web, pdf
+      type: homepage
+
+    - title: 架构
+      url: /architecture_cn.html
+      output: web, pdf
+
+    - title: 常见问题
+      url: /faq_cn.html
+      output: web, pdf
+
+    - title: 特性
+      url: /features.html
+      output: web, pdf
+
+    - title: 项目开发进展
+      url: /roadmap.html
+      output: web, pdf
+ 
+    - title: 相关资源
+      url: /resources.html
+      output: web, pdf
+
+    - title: 用户群体
+      url: /users.html
+      output: web, pdf
+
+  - title: Concepts
+    output: web, pdf
+    folderitems:
+
+    - title: Microservices
+      url: /microservices.html
+      output: web, pdf
+
+  - title: Guides
+    output: web, pdf
+    folderitems:
+
+    - title: Install Guide
+      url: /install-guide.html
+      output: web, pdf
+
+    - title: GRPC Gateway
+      url: /grpc-gateway.html
+      output: web, pdf
+
+    - title: Writing a Go Service
+      url: /writing-a-go-service.html
+      output: web, pdf
+
+    - title: Writing a Go Function
+      url: /writing-a-go-function.html
+      output: web, pdf
+
+    - title: Fault Tolerance
+      url: /fault-tolerance.html
+      output: web, pdf
+
+  - title: Micro
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /toolkit.html
+      output: web, pdf
+
+    - title: API Gateway
+      url: /api.html
+      output: web, pdf
+
+    - title: Web Dashboard
+      url: /web.html
+      output: web, pdf
+
+    - title: Service Proxy
+      url: /proxy.html
+      output: web, pdf
+
+    - title: Command Line
+      url: /cli.html
+      output: web, pdf
+
+    - title: SlackOps Bot
+      url: /bot.html
+      output: web, pdf
+
+    - title: New Template
+      url: /new.html
+      output: web, pdf
+
+  - title: Enterprise
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /enterprise.html
+      output: web, pdf
+
+  - title: Go API
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /go-api.html
+      output: web, pdf
+
+    - title: Handlers
+      url: /go-api-handlers.html
+      output: web, pdf
+
+
+  - title: Go Config
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /go-config.html
+      output: web, pdf
+
+  - title: Go gRPC
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /go-grpc.html
+      output: web, pdf
+
+  - title: Go Micro
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /go-micro.html
+      output: web, pdf
+
+    - title: Architecture
+      url: /go-micro-architecture.html
+      output: web, pdf
+
+  - title: Deployment
+    output: web, pdf
+    folderitems:
+
+    - title: Docker
+      url: /deploy-docker.html
+      output: web, pdf
+
+    - title: Kubernetes
+      url: /deploy-kubernetes.html
+      output: web, pdf
+
+  - title: Plugins
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /plugins.html
+      output: web, pdf
+
+    - title: Go Micro
+      url: /plugins-go-micro.html
+      output: web, pdf
+
+    - title: Toolkit
+      url: /plugins-toolkit.html
+      output: web, pdf
+
+    - title: NATS
+      url: /plugins-nats.html
+      output: web, pdf
