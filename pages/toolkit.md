@@ -77,10 +77,12 @@ The micro toolkit has two dependencies:
 
 Service discovery is used for name resolution, routing and centralising metadata.
 
-Micro uses the [go-micro](https://github.com/micro/go-micro) registry for service discovery. Consul is the default registry. 
+Micro uses the [go-micro](https://github.com/micro/go-micro) registry for service discovery. MDNS is the default. This 
+enables a zeroconf setup. In case you want something more resilient make use of consul
 
 ### Consul
 
+If you want 
 Install and run consul
 
 ```shell
@@ -91,18 +93,14 @@ brew install consul
 consul agent -dev
 ```
 
-### mDNS
-
-Multicast DNS is an alternative built in registry for zero dependency service discovery.
-
-Pass `--registry=mdns` or set the env var `MICRO_REGISTRY=mdns` for any command
+Pass `--registry=consul` or set the env var `MICRO_REGISTRY=consul` for any command
 
 ```shell
 # Use flag
-micro --registry=mdns list services
+micro --registry=consul list services
 
 # Use env var
-MICRO_REGISTRY=mdns micro list services`
+MICRO_REGISTRY=consul micro list services`
 ```
 
 See [go-plugins](https://github.com/micro/go-plugins) for more service discovery plugins.

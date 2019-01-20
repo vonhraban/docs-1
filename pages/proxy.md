@@ -31,9 +31,9 @@ go get -u github.com/micro/micro
 
 ### Dependencies
 
-The proxy uses go-micro which means it depends on service discovery.
+The proxy uses Go Micro which means it depends on service discovery. The default is MDNS which means zeroconf. 
 
-Install consul
+If you want something more resilient you can install consul and specify with the `--registry=consul` flag.
 
 ```
 brew install consul

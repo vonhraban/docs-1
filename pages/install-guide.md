@@ -11,9 +11,12 @@ summary:
 
 ## Dependencies
 
-We need service discovery, so let's spin up Consul (the default); checkout [go-plugins](https://github.com/micro/go-plugins) to swap it out.
+We use service discovery to locate services. The default is multicast DNS so a zeroconf configuration. If you needs something multi-host and 
+more resilient use consul. Checkout [go-plugins](https://github.com/micro/go-plugins) to try something else.
 
 ### Consul
+
+If using consul
 
 ```shell
 brew install consul
@@ -26,11 +29,7 @@ Or
 docker run consul
 ```
 
-### Multicast DNS
-
-We can use multicast DNS for zero dependency discovery
-
-Pass `--registry=mdns` to any commands e.g `micro --registry=mdns list services`
+Pass `--registry=consul` to any commands e.g `micro --registry=consul list services`
 
 ## Go Micro
 
