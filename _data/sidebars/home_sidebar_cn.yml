@@ -37,35 +37,35 @@ entries:
       output: web, pdf
 
     - title: 特性
-      url: /features.html
+      url: /features_cn.html
       output: web, pdf
 
     - title: 项目开发进展
-      url: /roadmap.html
+      url: /roadmap_cn.html
       output: web, pdf
  
     - title: 相关资源
-      url: /resources.html
+      url: /resources_cn.html
       output: web, pdf
 
-    - title: 用户群体
-      url: /users.html
+    - title: 相关用户
+      url: /users_cn.html
       output: web, pdf
 
-  - title: Concepts
+  - title: 相关概念
     output: web, pdf
     folderitems:
 
-    - title: Microservices
-      url: /microservices.html
+    - title: 微服务
+      url: /microservices_cn.html
       output: web, pdf
 
-  - title: Guides
+  - title: 指导手册
     output: web, pdf
     folderitems:
 
-    - title: Install Guide
-      url: /install-guide.html
+    - title: 安装指导
+      url: /install-guide_cn.html
       output: web, pdf
 
     - title: GRPC Gateway
