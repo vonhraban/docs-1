@@ -34,7 +34,7 @@ Micro依赖[go-micro](https://github.com/micro/go-micro)，通过它来使其变
 
 ## 相关资源
 
-- [示例](https://github.com/micro/examples)，上面有相关如何使用micro的信息。
+- [示例](https://github.com/micro/examples)，上面有相关如何使用micro的信息。
 - [搜索](https://micro.mu/explore/)搜索可使用的相关micro开源项目。
 - [博客](https://micro.mu/blog/)，深入理解micro，了解更多的服务设计思路。
 - [视频](https://www.youtube.com/watch?v=xspaDovwk34) 2016年在英国Golong会议上，关于micro的简单介绍。
