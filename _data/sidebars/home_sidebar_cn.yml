@@ -60,12 +60,12 @@ entries:
       url: /microservices_cn.html
       output: web, pdf
 
-  - title: Guides
+  - title: 指导手册
     output: web, pdf
     folderitems:
 
-    - title: Install Guide
-      url: /install-guide.html
+    - title: 安装指导
+      url: /install-guide_cn.html
       output: web, pdf
 
     - title: GRPC Gateway
