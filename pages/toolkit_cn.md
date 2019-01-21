@@ -37,16 +37,14 @@ micro工具库由以下几个部分组成：
 
 - **Web Dashboard:** Web管理控制台允许直接在Web页面上查看服务的运行情况，展示端点信息，请求与响应状态，甚至直接向服务进行查询。管理控制台也有CLI交互页面提供给开发者在线上处理，就像直接操作终端一样。
 
-## Getting Started
+## 开始使用
 
-- [Install Micro](#install-micro)
-- [Dependencies](#dependencies)
-- [Writing a Service](#writing-a-service)
-- [Example usage](#example)
-- [Plugins](#plugins)
-- [Learn More](#learn-more)
-- [Community](#community)
-- [Sponsors](#sponsors)
+- [安装Micro](#安装Micro)
+- [依赖](#依赖)
+- [服务发现](#服务发现)
+- [编写服务](#编写服务)
+- [示例](#示例)
+- [相关插件](#相关插件)
 
 ## 安装Micro
 
