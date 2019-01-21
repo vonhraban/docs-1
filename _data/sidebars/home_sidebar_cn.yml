@@ -52,12 +52,12 @@ entries:
       url: /users_cn.html
       output: web, pdf
 
-  - title: Concepts
+  - title: 相关概念
     output: web, pdf
     folderitems:
 
-    - title: Microservices
-      url: /microservices.html
+    - title: 微服务
+      url: /microservices_cn.html
       output: web, pdf
 
   - title: Guides
