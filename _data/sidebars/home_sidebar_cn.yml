@@ -112,8 +112,8 @@ entries:
       url: /bot_cn.html
       output: web, pdf
 
-    - title: New Template
-      url: /new.html
+    - title: 新建模板
+      url: /new_cn.html
       output: web, pdf
 
   - title: Enterprise
