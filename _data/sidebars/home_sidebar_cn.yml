@@ -96,8 +96,8 @@ entries:
       url: /api_cn.html
       output: web, pdf
 
-    - title: Web Dashboard
-      url: /web.html
+    - title: Web管理控制台
+      url: /web_cn.html
       output: web, pdf
 
     - title: Service Proxy
