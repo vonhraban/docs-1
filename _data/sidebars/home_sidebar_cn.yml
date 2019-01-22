@@ -116,24 +116,24 @@ entries:
       url: /new_cn.html
       output: web, pdf
 
-  - title: Enterprise
-    output: web, pdf
-    folderitems:
-
-    - title: Overview
-      url: /enterprise.html
-      output: web, pdf
+  #- title: Enterprise
+  #  output: web, pdf
+  #  folderitems:
+#
+  #  - title: Overview
+  #    url: /enterprise.html
+  #    output: web, pdf
 
   - title: Go API
     output: web, pdf
     folderitems:
 
-    - title: Overview
-      url: /go-api.html
+    - title: 概览
+      url: /go-api_cn.html
       output: web, pdf
 
-    - title: Handlers
-      url: /go-api-handlers.html
+    - title: Handler处理器
+      url: /go-api-handlers_cn.html
       output: web, pdf
 
 
