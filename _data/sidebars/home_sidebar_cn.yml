@@ -88,52 +88,52 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Overview
-      url: /toolkit.html
+    - title: 概览
+      url: /toolkit_cn.html
       output: web, pdf
 
-    - title: API Gateway
-      url: /api.html
+    - title: API 网关
+      url: /api_cn.html
       output: web, pdf
 
-    - title: Web Dashboard
-      url: /web.html
+    - title: Web管理控制台
+      url: /web_cn.html
       output: web, pdf
 
-    - title: Service Proxy
-      url: /proxy.html
+    - title: 服务代理
+      url: /proxy_cn.html
       output: web, pdf
 
-    - title: Command Line
-      url: /cli.html
+    - title: 命令行接口
+      url: /cli_cn.html
       output: web, pdf
 
-    - title: SlackOps Bot
-      url: /bot.html
+    - title: Slack小机器人
+      url: /bot_cn.html
       output: web, pdf
 
-    - title: New Template
-      url: /new.html
+    - title: 新建模板
+      url: /new_cn.html
       output: web, pdf
 
-  - title: Enterprise
-    output: web, pdf
-    folderitems:
-
-    - title: Overview
-      url: /enterprise.html
-      output: web, pdf
+  #- title: Enterprise
+  #  output: web, pdf
+  #  folderitems:
+#
+  #  - title: Overview
+  #    url: /enterprise.html
+  #    output: web, pdf
 
   - title: Go API
     output: web, pdf
     folderitems:
 
-    - title: Overview
-      url: /go-api.html
+    - title: 概览
+      url: /go-api_cn.html
       output: web, pdf
 
-    - title: Handlers
-      url: /go-api-handlers.html
+    - title: Handler处理器
+      url: /go-api-handlers_cn.html
       output: web, pdf
 
 

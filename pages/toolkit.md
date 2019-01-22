@@ -45,14 +45,28 @@ query them directly. The dashboard is also includes a built in CLI like experien
 
 ## Getting Started
 
-- [Install Micro](#install-micro)
-- [Dependencies](#dependencies)
-- [Writing a Service](#writing-a-service)
-- [Example usage](#example)
-- [Plugins](#plugins)
-- [Learn More](#learn-more)
-- [Community](#community)
-- [Sponsors](#sponsors)
+- [Overview](#overview)
+	- [Features](#features)
+	- [Getting Started](#getting-started)
+	- [Install Micro](#install-micro)
+	- [Dependencies](#dependencies)
+	- [Service Discovery](#service-discovery)
+		- [Consul](#consul)
+		- [mDNS](#mdns)
+	- [Protobuf](#protobuf)
+	- [Writing a service](#writing-a-service)
+		- [Generate template](#generate-template)
+	- [Example](#example)
+		- [List services](#list-services)
+		- [Get Service](#get-service)
+		- [Call service](#call-service)
+		- [Run API](#run-api)
+		- [Call API](#call-api)
+	- [Plugins](#plugins)
+		- [Pluggable Features](#pluggable-features)
+		- [Using Plugins](#using-plugins)
+		- [Building Binary](#building-binary)
+		- [Enable Plugins](#enable-plugins)
 
 ## Install Micro
 
