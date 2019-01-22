@@ -235,7 +235,7 @@ curl -d 'service=go.micro.srv.greeter' \
 
 ## Resolver
 
-解析器，Micro使用命令空间与HTTP请求路径来动态路由到具体的服务。
+解析器，Micro使用命名空间与HTTP请求路径来动态路由到具体的服务。
 
 API命名的空间是`go.micro.api`。可以通过指令`--namespace`或者环境变量`MICRO_NAMESPACE=`设置命名空间。
 

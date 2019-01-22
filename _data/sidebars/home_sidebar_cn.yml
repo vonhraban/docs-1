@@ -104,12 +104,12 @@ entries:
       url: /proxy_cn.html
       output: web, pdf
 
-    - title: Command Line
-      url: /cli.html
+    - title: 命令行接口
+      url: /cli_cn.html
       output: web, pdf
 
-    - title: SlackOps Bot
-      url: /bot.html
+    - title: Slack小机器人
+      url: /bot_cn.html
       output: web, pdf
 
     - title: New Template
