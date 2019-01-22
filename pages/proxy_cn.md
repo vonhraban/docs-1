@@ -59,7 +59,7 @@ MICRO_ENABLE_ACME=true MICRO_ACME_HOSTS=example.com,api.example.com micro proxy
 
 ## Proxy CLI
 
-客户端如果要指定代理，可以像下面这样设置：
+命令行如果要指定代理，可以像下面这样设置：
 
 ```shell
 MICRO_PROXY_ADDRESS=127.0.0.1:8081 micro list services
