@@ -100,8 +100,8 @@ entries:
       url: /web_cn.html
       output: web, pdf
 
-    - title: Service Proxy
-      url: /proxy.html
+    - title: 服务代理
+      url: /proxy_cn.html
       output: web, pdf
 
     - title: Command Line
