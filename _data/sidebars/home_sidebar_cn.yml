@@ -92,8 +92,8 @@ entries:
       url: /toolkit_cn.html
       output: web, pdf
 
-    - title: API Gateway
-      url: /api.html
+    - title: API 网关
+      url: /api_cn.html
       output: web, pdf
 
     - title: Web Dashboard
