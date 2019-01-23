@@ -68,8 +68,8 @@ entries:
       url: /install-guide_cn.html
       output: web, pdf
 
-    - title: GRPC Gateway
-      url: /grpc-gateway.html
+    - title: GRPC 网关
+      url: /grpc-gateway_cn.html
       output: web, pdf
 
     - title: Writing a Go Service
