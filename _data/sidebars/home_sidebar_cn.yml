@@ -72,8 +72,8 @@ entries:
       url: /grpc-gateway_cn.html
       output: web, pdf
 
-    - title: Writing a Go Service
-      url: /writing-a-go-service.html
+    - title: 编写Golang服务
+      url: /writing-a-go-service_cn.html
       output: web, pdf
 
     - title: Writing a Go Function
