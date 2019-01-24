@@ -76,8 +76,8 @@ entries:
       url: /writing-a-go-service_cn.html
       output: web, pdf
 
-    - title: Writing a Go Function
-      url: /writing-a-go-function.html
+    - title: 编写Go Function
+      url: /writing-a-go-function_cn.html
       output: web, pdf
 
     - title: Fault Tolerance
