@@ -157,12 +157,12 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Overview
-      url: /go-micro.html
+    - title: 概览
+      url: /go-micro_cn.html
       output: web, pdf
 
-    - title: Architecture
-      url: /go-micro-architecture.html
+    - title: 架构
+      url: /go-micro-architecture_cn.html
       output: web, pdf
 
   - title: Deployment

@@ -3,6 +3,7 @@ title: 编写Golang Function
 keywords: development
 tags: [development]
 sidebar: home_sidebar_cn
+lang: cn
 permalink: writing-a-go-function_cn.html
 summary: 
 ---
@@ -20,7 +21,7 @@ summary:
 ```go
 // Function 是只执行一次的函数
 type Function interface {
-	// 继承服务接口
+	// Inherits Service interface
 	Service
 	// Done signals to complete execution
 	Done() error
@@ -270,7 +271,7 @@ func main() {
 
         function.Init()
 
-	function.Handle(new(Greeter))
+	    function.Handle(new(Greeter))
 	
         if err := function.Run(); err != nil {
                 log.Fatal(err)
