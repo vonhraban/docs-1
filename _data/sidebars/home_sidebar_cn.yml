@@ -80,8 +80,8 @@ entries:
       url: /writing-a-go-function_cn.html
       output: web, pdf
 
-    - title: Fault Tolerance
-      url: /fault-tolerance.html
+    - title: 容错
+      url: /fault-tolerance_cn.html
       output: web, pdf
 
   - title: Micro
