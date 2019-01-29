@@ -10,7 +10,7 @@ summary:
 Go Micro is a pluggable RPC framework. It's used for distributed systems development.
 
 <p align="center">
-  <img src="images/go-micro.png" />
+  <img src="images/go-micro.svg" />
 </p>
 
 ## Features

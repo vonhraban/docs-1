@@ -57,7 +57,7 @@ CLI模块很好理解，它是go-micro的命令行工具，提供与实际运行
 Go-micro是独立的RPC框架，它是micro工具集的核心，上面介绍的各个模块组件会基于它来完成工作。下图可以看到每个go-mciro的独立特性。
 
 <p align="center">
-  <img src="images/go-micro.png" />
+  <img src="images/go-micro.svg" />
 </p>
 
 ### Registry

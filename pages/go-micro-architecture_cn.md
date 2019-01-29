@@ -11,7 +11,7 @@ summary:
 Go Micro是一个可插拔的RPC框架，用于分布式系统的开发。
 
 <p align="center">
-  <img src="images/go-micro.png" />
+  <img src="images/go-micro.svg" />
 </p>
 
 ## 特性

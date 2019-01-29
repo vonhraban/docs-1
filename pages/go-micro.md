@@ -405,7 +405,7 @@ Here's an example service handler wrapper which logs the incoming request
 // implements the server.HandlerWrapper
 func logWrapper(fn server.HandlerFunc) server.HandlerFunc {
 	return func(ctx context.Context, req server.Request, rsp interface{}) error {
-		fmt.Printf("[%v] server request: %s", time.Now(), req.Method())
+		fmt.Printf("[%v] server request: %s", time.Now(), req.Endpoint())
 		return fn(ctx, req, rsp)
 	}
 }
@@ -431,7 +431,7 @@ type logWrapper struct {
 }
 
 func (l *logWrapper) Call(ctx context.Context, req client.Request, rsp interface{}, opts ...client.CallOption) error {
-	fmt.Printf("[wrapper] client request to service: %s method: %s\n", req.Service(), req.Method())
+	fmt.Printf("[wrapper] client request to service: %s endpoint: %s\n", req.Service(), req.Endpoint())
 	return l.Client.Call(ctx, req, rsp)
 }
 
