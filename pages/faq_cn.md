@@ -128,7 +128,7 @@ SRV 服务是RPC服务的基础，也就是你常写的服务类型。我们一�
 
 ## Micro支持gRPC吗
 
-支持。这儿有几个插件：transport, client and server。
+支持。这儿有几个插件：transport、client、server。
 
 可以查看[micro/go-plugins](https://github.com/micro/go-plugins). 
 
@@ -146,7 +146,7 @@ Micro作为一个微服务工具库，好比一把瑞士军刀，在我们构建
 
 如果想全盘掌控，那么使用go-kit；但是如果想弄一个有想法框架，使用go-micro。
 
-## Where Can I Learn More?
+## 想了解更多
 
 - slack社区 - [slack.micro.mu](http://slack.micro.mu)
 - 博客 - [micro.mu/blog](https://micro.mu/blog)

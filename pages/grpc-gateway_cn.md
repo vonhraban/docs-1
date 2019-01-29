@@ -17,7 +17,7 @@ GRPC网关[grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway)是[prot
 
 ## 代码
 
-可以在[examples/grpc](https://github.com/micro/examples/tree/master/grpc)中查找相关代码。
+可以在[examples/grpc](https://github.com/micro/examples/tree/cn-lang/grpc)中查找相关代码。
 
 ## 预置条件
 
@@ -114,7 +114,7 @@ func main() {
 
 ## GRPC Gateway
 
-The grpc gateway uses the same proto as the service with the addition of a http option
+GRPC网关使用相同的proto文件配上http选项提供服务
 
 ```proto
 syntax = "proto3";
@@ -141,7 +141,7 @@ message Response {
 }
 ```
 
-The proto generates a grpc stub and reverse proxy with the following commands
+通过下面的proto命令生成grpc的存根和反向代理
 
 ```
 protoc -I/usr/local/include -I. \
