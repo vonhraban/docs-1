@@ -1,5 +1,5 @@
 ---
-title: API
+title: API Gateway
 keywords: api
 tags: [api]
 sidebar: home_sidebar
