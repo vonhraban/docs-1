@@ -16,7 +16,7 @@ standard gRPC services seamlessly, including the [grpc-gateway](https://github.c
 the go-micro client and server plugins which make use of [github.com/grpc/grpc-go](https://github.com/grpc/grpc-go). This means we ignore 
 the go-micro codec and transport but you get a native grpc experience.
 
-<img src="images/go-grpc.png" />
+<img src="images/go-grpc.svg" />
 
 ## Examples
 
