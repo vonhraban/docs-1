@@ -43,31 +43,6 @@ are discovered dynamically.
 - **Web Dashboard:** The web dashboard allows you to explore your services, describe their endpoints, the request and response formats and even 
 query them directly. The dashboard is also includes a built in CLI like experience for developers who want to drop into the terminal on the fly.
 
-## Getting Started
-
-- [Overview](#overview)
-	- [Features](#features)
-	- [Getting Started](#getting-started)
-	- [Install Micro](#install-micro)
-	- [Dependencies](#dependencies)
-	- [Service Discovery](#service-discovery)
-		- [Consul](#consul)
-		- [mDNS](#mdns)
-	- [Protobuf](#protobuf)
-	- [Writing a service](#writing-a-service)
-		- [Generate template](#generate-template)
-	- [Example](#example)
-		- [List services](#list-services)
-		- [Get Service](#get-service)
-		- [Call service](#call-service)
-		- [Run API](#run-api)
-		- [Call API](#call-api)
-	- [Plugins](#plugins)
-		- [Pluggable Features](#pluggable-features)
-		- [Using Plugins](#using-plugins)
-		- [Building Binary](#building-binary)
-		- [Enable Plugins](#enable-plugins)
-
 ## Install Micro
 
 ```shell

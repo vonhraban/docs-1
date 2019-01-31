@@ -18,14 +18,6 @@ offloading service discovery, load balancing, fault tolerance, plugins, wrappers
 app for infrastructure level concerns, its easier to put them in the proxy. It also allows any language to be integrated with a thin client 
 rather than having to implement all the features.
 
-## Getting Started
-
-- [Install](#install)
-- [Dependencies](#dependencies)
-- [Run Proxy](#run)
-- [ACME](#acme)
-- [Proxy CLI](#proxy-cli)
-
 ## Install
 
 ```shell
@@ -43,9 +35,7 @@ brew install consul
 consul agent -dev
 ```
 
-## Run
-
-The micro proxy http interface runs on port 8081 by default. 
+## Run Proxy
 
 Start the proxy
 
@@ -53,10 +43,10 @@ Start the proxy
 micro proxy
 ```
 
-The go-micro server address is dynamic but can be configured as follows.
+The server address is dynamic but can be configured as follows.
 
 ```
-micro proxy
+MICRO_SERVER_ADDRESS=localhost:9090 micro proxy
 ```
 
 ## Proxy Services
@@ -84,5 +74,17 @@ Ensure the proxy is running on the address specified.
 ```
 MICRO_SERVER_ADDRESS=localhost:9090 micro proxy
 ```
+
+## Single Backend
+
+Use the proxy as a front proxy for a single backend
+
+```
+MICRO_SERVER_NAME=helloworld \
+MICRO_PROXY_BACKEND=localhost:10001 \
+micro proxy
+```
+
+All requests to helloworld will be sent to the backend at localhost:10001
 
 {% include links.html %}
