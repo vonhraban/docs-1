@@ -246,7 +246,7 @@ Go-micro默认包含点到点的http代理，但是也可以通过go-plugins把�
 
 ### 发布
 
-创建发布器，传入`topic`主题名，及服务客户端。
+创建发布器，传入`topic`主题名，及服务客户端。
 
 ```go
 p := micro.NewPublisher("events", service.Client())
@@ -260,7 +260,7 @@ p.Publish(context.TODO(), &proto.Event{Name: "event"})
 
 ### 订阅
 
-创建消息处理器，签名得是`func(context.Context, v interface{}) error`。
+创建消息处理器，签名得是`func(context.Context, v interface{}) error`。
 
 ```go
 func ProcessEvent(ctx context.Context, event *proto.Event) error {
@@ -343,7 +343,7 @@ func main() {
 
 ### 编写插件
 
-插件是构建在Go接口之上的的概念。每个包都维护着高度抽象的接口。简单实现接口并把它作为选项传入服务。
+插件是构建在Go接口之上的的概念。每个包都维护着高度抽象的接口。简单实现接口并把它作为选项传入服务。
 
 服务发现的接口称作[注册（Registry）](https://godoc.org/github.com/micro/go-micro/registry#Registry)。
 任何实现了这个接口的都可以当作注册中心。同样，对于其它包的实现也是如此。
@@ -405,7 +405,7 @@ func (l *logWrapper) Call(ctx context.Context, req client.Request, rsp interface
 	return l.Client.Call(ctx, req, rsp)
 }
 
-// 实现client.Wrapper，充当日志包装器
+// 实现client.Wrapper，充当日志包装器
 func logWrap(c client.Client) client.Client {
 	return &logWrapper{c}
 }
@@ -427,7 +427,7 @@ service := micro.NewService(
 
 [**examples**](https://github.com/micro/examples)的Github目录下包含了各种示例，比如中间件/包装器，选择过滤器，发布/订阅，gRPC，插件等。
 
-greeter示例的完整代码[**examples/greeter**](https://github.com/micro/examples/tree/master/greeter)。
+greeter示例的完整代码[**examples/greeter**](https://github.com/micro/examples/tree/master/greeter)。
 
 所有的示例都可以在GitHub仓库中找到。
 

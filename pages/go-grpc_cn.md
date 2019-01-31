@@ -1,5 +1,5 @@
 ---
-title: Go gRPC
+title: Go gRPC支持
 keywords: go-grpc
 tags: [go-grpc]
 lang: cn
@@ -8,69 +8,50 @@ permalink: "/go-grpc_cn.html"
 summary: 
 ---
 
-A micro gRPC framework. A simplified experience for building gRPC services.
+Micro gRPC是micro的gRPC框架插件，简化开发基于gRPC的服务。
 
-## Overview
+## 概览
 
-Go gRPC makes use of [go-micro](https://github.com/micro/go-micro) plugins to create a simpler framework for gRPC development. It interoperates with 
-standard gRPC services seamlessly, including the [grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway). The go-grpc library uses 
-the go-micro client and server plugins which make use of [github.com/grpc/grpc-go](https://github.com/grpc/grpc-go). This means we ignore 
-the go-micro codec and transport but you get a native grpc experience.
+micro提供有基于Go的gRPC插件[go-micro](https://github.com/micro/go-micro)，该插件可以在内部集成gPRC，并与之无缝交互，让开发gRPC更简单，并支持[grpc-gatewa](https://github.com/grpc-ecosystem/grpc-gateway)。
+
+micro有面向gRPC的[客户端](https://github.com/micro/go-plugins/tree/master/client)和[服务端](https://github.com/micro/go-plugins/tree/master/server)插件，go-grpc库调用客户端/服务端插件生成micro需要的gRPC代码，而客户端/服务端插件都是从[github.com/grpc/grpc-go](https://github.com/grpc/grpc-go)扩展而来，也即是说，我们不需要去知道go-micro是如何编解码或传输节点就可以使用原生的gRPC。
 
 <img src="images/go-grpc.png" />
 
-## Examples
+## 示例
 
-Find an example greeter service in [examples/greeter](https://github.com/micro/go-grpc/tree/master/examples/greeter).
+我们提供了一个简单的节点Greeter问候程序来演示对gRPC的支持：[examples/greeter](https://github.com/micro/go-grpc/tree/cn-lang/examples/greeter)。
 
-## Getting Started
+## 安装protobuf
 
-- [Overview](#overview)
-- [Examples](#examples)
-- [Getting Started](#getting-started)
-- [Install Protobuf](#install-protobuf)
-- [Service Discovery](#service-discovery)
-	- [Consul](#consul)
-	- [mDNS](#mdns)
-- [Writing a Service](#writing-a-service)
-- [Use with Micro](#use-with-micro)
-	- [Go Get](#go-get)
-	- [Build Yourself](#build-yourself)
-- [Use with gRPC Gateway](#use-with-grpc-gateway)
+我们需要使用Protobuf来生成代码，请根据您的环境参考[protobuf](https://github.com/protocolbuffers/protobuf)安装。
 
-
-## Install Protobuf
-
-Protobuf is required for code generation
-
-You'll need to install:
-
+安装好protobuf后，还需要安装
 - [protoc-gen-micro](https://github.com/micro/protoc-gen-micro)
 
-## Service Discovery
+## 服务发现
 
-Service discovery is used to resolve service names to addresses. 
+服务发现负责把服务名到服务所在地址。
 
 ### Consul
 
-[Consul](https://www.consul.io/) is used as the default service discovery system. See the [install guide](https://www.consul.io/intro/getting-started/install.html).
+micro默认使用[Consul](https://www.consul.io/) 作为服务发现的注册中心。您可以查考[install guide](https://www.consul.io/intro/getting-started/install.html)安装。
 
-Discovery is pluggable. Find plugins for etcd, kubernetes, zookeeper and more in the [micro/go-plugins](https://github.com/micro/go-plugins) repo.
+发现机制是可插拔的，我们目前支持使用etcd、kubernetes、zookeeper等等，具体详见[micro/go-plugins](https://github.com/micro/go-plugins)。
 
 ### mDNS
 
-[Multicast DNS](https://en.wikipedia.org/wiki/Multicast_DNS) is a built in alternative for zero dependencies. 
+[组播，Multicast DNS](https://en.wikipedia.org/wiki/Multicast_DNS)已经内置在micro中，mDNS不需要依赖任何注册中心，可以在一般情况下的局域网中使用。
 
-Pass `--registry=mdns` to any command or the enviroment variable `MICRO_REGISTRY=mdns`
+在micro服务的任意启动指令中传入`--registry=mdns`或者声明环境变量`MICRO_REGISTRY=mdns`也可，比如：
 
 ```
 MICRO_REGISTRY=mdns go run main.go
 ```
 
-## Writing a Service
+## 编写服务
 
-Go-grpc service is identical to a go-micro service. Which means you can swap out `micro.NewService` for `grpc.NewService` 
-with zero other code changes.
+Go-grpc服务与go-micro服务一样，也就是说你可以直接将服务声明方式`micro.NewService`换成`grpc.NewService`，而不需要改动其它代码。
 
 ```go
 package main
@@ -106,24 +87,23 @@ func main() {
 }
 ```
 
-## Use with Micro
+## 使用Micro
 
-You may want to use the micro toolkit with grpc services. To do this either use the prebuilt toolkit or 
-simply include the grpc client plugin and rebuild the toolkit.
+您可能需要使用micro的工具集编写grpc服务，micro支持使用工具集预构建或者简单把grpc的客户端插件导入项目中重新编译构建即可。
 
-### Go Get
+### 安装micro
 
 ```
 go get github.com/micro/go-grpc/cmd/micro
 ```
 
-### Build Yourself
+### 或者自行编译
 
 ```
 go get github.com/micro/micro
 ```
 
-Create a plugins.go file
+在main.go目录创建plugins.go文件，专门引入插件
 ```go
 package main
 
@@ -131,21 +111,21 @@ import _ "github.com/micro/go-plugins/client/grpc"
 import _ "github.com/micro/go-plugins/server/grpc"
 ```
 
-Build binary
+重新编译二进制
 ```shell
-// For local use
+// 本地使用
 go build -i -o micro ./main.go ./plugins.go
 ```
 
-Flag usage of plugins
+使用插件
 ```shell
 micro --client=grpc --server=grpc
 ```
 
-## Use with gRPC Gateway
+## gRPC网关
 
-Go-grpc seamlessly integrates with the gRPC ecosystem. This means the grpc-gateway can be used as per usual.
+Go-grpc与gRPC生态是无缝集成的，所以grpc-gateway使用没特别之处。
 
-Find an example greeter api at [examples/grpc/gateway](https://github.com/micro/examples/tree/master/grpc/gateway).
+我们提供了简单的问候Greeter服务，可以参考[examples/grpc/gateway](https://github.com/micro/examples/tree/master/grpc/gateway)。
 
 {% include links.html %}
