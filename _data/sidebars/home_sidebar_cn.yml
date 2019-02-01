@@ -165,16 +165,16 @@ entries:
       url: /go-micro-architecture_cn.html
       output: web, pdf
 
-  - title: Deployment
+  - title: 部署
     output: web, pdf
     folderitems:
 
     - title: Docker
-      url: /deploy-docker.html
+      url: /deploy-docker_cn.html
       output: web, pdf
 
     - title: Kubernetes
-      url: /deploy-kubernetes.html
+      url: /deploy-kubernetes_cn.html
       output: web, pdf
 
   - title: Plugins
