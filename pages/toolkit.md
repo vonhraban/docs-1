@@ -4,10 +4,8 @@ keywords: toolkit
 tags: [micro, toolkit]
 sidebar: home_sidebar
 permalink: /toolkit.html
-summary: A microservice toolkit
+summary: Micro is a toolkit for microservice development
 ---
-
-Micro is a toolkit for microservice development.
 
 # Overview
 

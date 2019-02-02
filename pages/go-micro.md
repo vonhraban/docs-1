@@ -4,10 +4,13 @@ keywords: go-micro
 tags: [go-micro]
 sidebar: home_sidebar
 permalink: "/go-micro.html"
-summary: 
+summary: Go Micro is a framework for microservice development.
 ---
 
-Go Micro is a pluggable framework for micro service development.
+# Overview
+
+Go Micro provides the core requirements for distributed systems development including RPC and Event driven communication. 
+The micro philosophy is sane defaults with a pluggable architecture. We provide defaults to get you started quickly but everything can be easily swapped out.
 
 ## Features
 
