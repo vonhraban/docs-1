@@ -75,6 +75,12 @@ The default namespace is `go.micro.api` and can be changed like so
 MICRO_NAMESPACE=com.example.api micro api
 ```
 
+To disable the namespace set it to be a blank space. This is a hack we'll look to fix.
+
+```shell
+MICRO_NAMESPACE=' '
+```
+
 ## Examples
 
 Here we have an example of a 3 tier architecture

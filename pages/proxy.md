@@ -7,7 +7,7 @@ permalink: proxy.html
 summary: The micro proxy is a service-to-service proxy.
 ---
 
-A service proxy is a network component that acts as an intermediary for requests seeking resources from microservices application components.
+A service proxy is a server which acts as an intermediary for requests from one service to another.
 
 <img src="images/proxy.svg" />
 
