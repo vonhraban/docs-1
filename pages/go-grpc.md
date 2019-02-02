@@ -4,12 +4,10 @@ keywords: go-grpc
 tags: [go-grpc]
 sidebar: home_sidebar
 permalink: "/go-grpc.html"
-summary: 
+summary: Go gRPC is a simpler gRPC framework
 ---
 
-A micro gRPC framework. A simplified experience for building gRPC services.
-
-## Overview
+# Overview
 
 Go gRPC makes use of [go-micro](https://github.com/micro/go-micro) plugins to create a simpler framework for gRPC development. It interoperates with 
 standard gRPC services seamlessly, including the [grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway). The go-grpc library uses 
