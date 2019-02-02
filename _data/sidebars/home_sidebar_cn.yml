@@ -40,10 +40,6 @@ entries:
       url: /features_cn.html
       output: web, pdf
 
-    - title: 项目开发进展
-      url: /roadmap_cn.html
-      output: web, pdf
- 
     - title: 相关资源
       url: /resources_cn.html
       output: web, pdf
