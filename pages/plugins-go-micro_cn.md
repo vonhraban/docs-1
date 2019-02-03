@@ -15,7 +15,7 @@ micro工具集有独立的插件接口，查看[micro/plugin](https://github.com
 
 下面是go-micro插件使用方式。
 
-## Usage
+## 使用方式
 
 go-micro中插件可以通过下面几种方式使用，可以通过命令行参数或者环境变量。
 
