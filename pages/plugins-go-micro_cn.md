@@ -2,6 +2,7 @@
 title: Go Micro插件
 keywords: plugins
 tags: [plugins]
+lang: cn
 sidebar: home_sidebar_cn
 permalink: plugins-go-micro_cn.html
 summary: 
