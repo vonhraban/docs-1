@@ -177,12 +177,12 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Overview
-      url: /plugins.html
+    - title: 概览
+      url: /plugins_cn.html
       output: web, pdf
 
     - title: Go Micro
-      url: /plugins-go-micro.html
+      url: /plugins-go-micro_cn.html
       output: web, pdf
 
     - title: Toolkit
