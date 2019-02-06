@@ -194,5 +194,5 @@ entries:
       output: web, pdf
 
     - title: NATS
-      url: /plugins-nats.html
+      url: /plugins-nats_cn.html
       output: web, pdf
