@@ -189,8 +189,8 @@ entries:
       url: /plugins-go-micro_cn.html
       output: web, pdf
 
-    - title: Toolkit
-      url: /plugins-toolkit.html
+    - title: 工具集
+      url: /plugins-toolkit_cn.html
       output: web, pdf
 
     - title: NATS
