@@ -21,16 +21,16 @@ development. When service A needs to speak to service B it needs the location of
 multicast DNS (mdns), a zeroconf system. You can optionally set gossip using the SWIM protocol for p2p networks or consul for a
 resilient cloud-native setup.
 
-- **Load Balancing** - Client side load balancing built on service discovery. Once we have the addresses of any number of instances  
-of a service we now need a way to decide which node to route to. We use random hashed load balancing to provide even distribution  
-across the services and retry a different node if there's a problem.  
+- **Load Balancing** - Client side load balancing built on service discovery. Once we have the addresses of any number of instances 
+of a service we now need a way to decide which node to route to. We use random hashed load balancing to provide even distribution 
+across the services and retry a different node if there's a problem.
 
-- **Message Encoding** - Dynamic message encoding based on content-type. The client and server will use codecs along with content-type  
-to seamlessly encode and decode Go types for you. Any variety of messages could be encoded and sent from different clients. The client  
+- **Message Encoding** - Dynamic message encoding based on content-type. The client and server will use codecs along with content-type 
+to seamlessly encode and decode Go types for you. Any variety of messages could be encoded and sent from different clients. The client 
 and server handle this by default. This includes proto-rpc and json-rpc by default. 
 
-- **Sync Streaming** - RPC based request/response with support for bidirectional streaming. We provide an abstraction for synchronous  
-communication. A request made to a service will be automatically resolved, load balanced, dialled and streamed. The default  
+- **Request/Response** - RPC based request/response with support for bidirectional streaming. We provide an abstraction for synchronous 
+communication. A request made to a service will be automatically resolved, load balanced, dialled and streamed. The default 
 transport is http/1.1 or http2 when tls is enabled. 
 
 - **Async Messaging** - PubSub is built in as a first class citizen for asynchronous communication and event driven architectures. 
