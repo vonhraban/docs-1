@@ -137,8 +137,8 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Overview
-      url: /go-config.html
+    - title: 概览
+      url: /go-config_cn.html
       output: web, pdf
 
   - title: Go gRPC
