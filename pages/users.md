@@ -15,6 +15,7 @@ If you're using Micro, feel free to add your company
 - [Arex](https://arex.io/)
 - [Bottos](https://bottos.org/)
 - [Capital One](https://www.capitalone.com/)
+- [Coesia](https://www.coesia.com/en)
 - [Dark Cubed](http://darkcubed.com)
 - [Glue](https://glue.group)
 - [Hightech](https://hightech.fm/)
