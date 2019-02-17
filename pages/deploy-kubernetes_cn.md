@@ -195,7 +195,7 @@ MICRO_SELECTOR=static ./service
 
 ### K8s 部署
 
-一个部署示例
+部署示例
 
 ```
 apiVersion: extensions/v1beta1
@@ -229,7 +229,7 @@ spec:
 
 静态选择器将负载均衡迁移到k8s服务。因此，请确保为每个微服务创建了k8s服务。
 
-这是一个服务样例
+服务样例
 
 ```
 apiVersion: v1
@@ -246,12 +246,12 @@ spec:
     app: greeter
 ```
 
-通过 kubectl 部署
+通过kubectl部署
 
 ```
 kubectl create -f service.yaml
 ```
 
-这样，在你的服务中调用微服务"greeter"，会被路由到k8s服务中的greeter服务8080端口上。
+这样，在你的服务中调用greeter微服务，会被路由到k8s服务中的greeter服务8080端口上。
 
 {% include links.html %}
