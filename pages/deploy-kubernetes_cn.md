@@ -1,37 +1,26 @@
 ---
-title: Kubernetes Deployment
+title: 使用Kubernetes发布
 keywords: kubernetes
 tags: [kubernetes]
 sidebar: home_sidebar_cn
+lang: cn
 permalink: deploy-kubernetes_cn.html
 summary: 
 ---
 
-Micro 在 Kubernetes 中是原生 kubernetes 的微服务。
+Micro在Kubernetes中是原生kubernetes的微服务。
 
-Micro是一个微服务工具包。 Kubernetes是一个容器调度平台。
-
-它们共同为微服务平台提供了基础设施。
+Micro是一个微服务工具包，而Kubernetes是一个容器调度平台，它们组合在一起便构成微服务基础设施。
 
 ## 特性
 
 - 无外部依赖
-- 客户端发现缓存
-- 可选的k8s服务负载均衡
+- 客户端缓存服务发现
+- 可选k8s服务负载均衡
 - 使用gRPC传输协议
-- 已初始化的工具包
-
-## 快速入门
-
-- [安装 Micro](#%E5%AE%89%E8%A3%85-micro)
-- [编写服务](#%E7%BC%96%E5%86%99%E6%9C%8D%E5%8A%A1)
-- [部署一个服务](#%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E6%9C%8D%E5%8A%A1)
-- [健康检查 Sidecar](#%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5-sidecar)
-- [K8s 负载负载均衡](#k8s-%E8%B4%9F%E8%BD%BD%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1)
-- [Contribute](#contribute)
+- 预置工具包
 
 ## 安装 Micro
-
 
 ```
 go get github.com/micro/kubernetes/cmd/micro
@@ -43,7 +32,7 @@ go get github.com/micro/kubernetes/cmd/micro
 docker pull microhq/micro:kubernetes
 ```
 
-对于 go-micro
+如果使用go-micro，可以导入：
 
 ```
 import "github.com/micro/kubernetes/go/micro"
@@ -51,8 +40,7 @@ import "github.com/micro/kubernetes/go/micro"
 
 ## 编写服务
 
-像任何其他[go-micro](https://github.com/micro/go-micro)服务一样编写。
-
+在[gp-micro]([go-micro](https://github.com/micro/go-micro))中可以使用其它服务一样集成k8s。
 
 ```go
 import (
@@ -69,9 +57,9 @@ func main() {
 }
 ```
 
-## 部署一个服务
+## 部署服务
 
-以下是k8s部署一个微服务的示例
+以下是k8s部署微服务的示例
 
 ```
 apiVersion: extensions/v1beta1
@@ -106,10 +94,9 @@ spec:
 kubectl create -f greeter.yaml
 ```
 
-## 健康检查 Sidecar
+## 健康检查器
 
-healthchecking sidecar将`/ health`暴露为http端点，并在服务上调用rpc端点`Debug.Health`。
-每个go-micro服务都有一个内置的Debug.Health端点。
+健康检查器（healthchecking sidecar，参考sidecar模式）会调用服务rpc接口`Debug.Health`向外暴露`/ health`端点，而每个go-micro服务都有一个内置的Debug.Health端点。
 
 ### 部署健康检查
 
@@ -125,13 +112,13 @@ docker pull microhq/health:kubernetes
 
 ### 运行健康检查
 
-运行例如healthcheck greeter service，地址为localhost：9091
+例如，运行healthcheck greeter服务，地址为localhost：9091
 
 ```
 health --server_name=greeter --server_address=localhost:9091
 ```
 
-在 localhost:8080 调用 healthchecker 
+在localhost:8080调用healthchecker 
 
 ```
 curl http://localhost:8080/health
@@ -182,10 +169,15 @@ spec:
             periodSeconds: 3
 ```
 
-## K8s 负载负载均衡
-Micro 默认包括客户端负载均衡，但 kubernetes 还提供服务的负载平衡策略。我们可以使用[静态选择器](https://github.com/micro/go-plugins/tree/master/selector/static)和 k8s 服务将负载均衡迁移到k8s中。
+## K8s负载均衡
 
-静态选择器不是进行地址解析，而是返回服务名称和固定端口，例如greeter返回greeter:8080。阅读关于[静态选择器](https://github.com/micro/go-plugins/tree/master/selector/static)的内容。
+Micro默认提供客户端负载均衡，但k8s也提供有服务负载平衡策略。
+
+要把默认的均衡卸掉迁移到k8s，可以使用[静态选择器](https://github.com/micro/go-plugins/tree/master/selector/static)与k8s服务协同的方式。
+
+不同于地址解析，选择器返回服务名与既定端口，例如greeter服务抬greeter:8080。
+
+点击了解更多关于[静态选择器](https://github.com/micro/go-plugins/tree/master/selector/static)。
 
 ### 用法
 
@@ -235,7 +227,7 @@ spec:
 
 ### K8s 服务
 
-静态选择器将负载均衡迁移到k8s服务。 因此，请确保为每个微服务创建了k8s服务。
+静态选择器将负载均衡迁移到k8s服务。因此，请确保为每个微服务创建了k8s服务。
 
 这是一个服务样例
 
@@ -260,7 +252,6 @@ spec:
 kubectl create -f service.yaml
 ```
 
-通过其他服务调用微服务 "greeter" 将会指向 k8s 服务 greeter:8080。
-
+这样，在你的服务中调用微服务"greeter"，会被路由到k8s服务中的greeter服务8080端口上。
 
 {% include links.html %}

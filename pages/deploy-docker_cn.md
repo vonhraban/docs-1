@@ -1,8 +1,9 @@
 ---
-title: Docker Deployment
+title: 使用Docker发布
 keywords: docker
 tags: [docker]
 sidebar: home_sidebar_cn
+lang: cn
 permalink: deploy-docker_cn.html
 summary: 
 ---
@@ -11,19 +12,19 @@ summary:
 
 Micro很容易在docker容器内运行
 
-## 预置的镜像
+## 预置镜像
 
-[Docker Hub](https://hub.docker.com/r/microhq/) 上提供了预置的镜像
+我们在Docker镜像站[Docker Hub](https://hub.docker.com/r/microhq/) 上提供了预置镜像
 
-### Install Micro
+### 获取micro
 
 ```
 docker pull microhq/micro
 ```
 
-## Compose
+## Compose配置
 
-在本地通过 docker compose 运行
+在本地通过compose.yml运行
 
 ```
 consul:
@@ -60,7 +61,7 @@ web:
 
 ## 从原始镜像开始构建
 
-Dockerfile包含在仓库中
+在[micro](https://github.com/micro/micro/blob/master/Dockerfile)仓库中我们放有Dockerfile文件：
 
 ```
 FROM alpine:3.2
