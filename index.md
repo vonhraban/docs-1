@@ -15,7 +15,8 @@ provides well understood concepts to developers.
 
 ## Get Started
 
-Start writing services using [go-micro](https://github.com/micro/go-micro).
+- Start writing services using [go-micro](go-micro.html)
+- Start by exploring the [toolkit](toolkit.html)
 
 ## Overview
 

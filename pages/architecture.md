@@ -59,7 +59,7 @@ Go-micro is a standalone RPC framework for microservices. It's at the core of th
 individual feature of go-micro.
 
 <p align="center">
-  <img src="images/go-micro.png" />
+  <img src="images/go-micro.svg" />
 </p>
 
 ### Registry

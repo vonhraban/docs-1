@@ -4,10 +4,8 @@ keywords: toolkit
 tags: [micro, toolkit]
 sidebar: home_sidebar
 permalink: /toolkit.html
-summary: A microservice toolkit
+summary: Micro is a toolkit for microservice development
 ---
-
-Micro is a toolkit for microservice development.
 
 # Overview
 
@@ -43,31 +41,6 @@ are discovered dynamically.
 - **Web Dashboard:** The web dashboard allows you to explore your services, describe their endpoints, the request and response formats and even 
 query them directly. The dashboard is also includes a built in CLI like experience for developers who want to drop into the terminal on the fly.
 
-## Getting Started
-
-- [Overview](#overview)
-	- [Features](#features)
-	- [Getting Started](#getting-started)
-	- [Install Micro](#install-micro)
-	- [Dependencies](#dependencies)
-	- [Service Discovery](#service-discovery)
-		- [Consul](#consul)
-		- [mDNS](#mdns)
-	- [Protobuf](#protobuf)
-	- [Writing a service](#writing-a-service)
-		- [Generate template](#generate-template)
-	- [Example](#example)
-		- [List services](#list-services)
-		- [Get Service](#get-service)
-		- [Call service](#call-service)
-		- [Run API](#run-api)
-		- [Call API](#call-api)
-	- [Plugins](#plugins)
-		- [Pluggable Features](#pluggable-features)
-		- [Using Plugins](#using-plugins)
-		- [Building Binary](#building-binary)
-		- [Enable Plugins](#enable-plugins)
-
 ## Install Micro
 
 ```shell
@@ -91,10 +64,12 @@ The micro toolkit has two dependencies:
 
 Service discovery is used for name resolution, routing and centralising metadata.
 
-Micro uses the [go-micro](https://github.com/micro/go-micro) registry for service discovery. Consul is the default registry. 
+Micro uses the [go-micro](https://github.com/micro/go-micro) registry for service discovery. MDNS is the default. This 
+enables a zeroconf setup. In case you want something more resilient make use of consul
 
 ### Consul
 
+If you want 
 Install and run consul
 
 ```shell
@@ -105,18 +80,14 @@ brew install consul
 consul agent -dev
 ```
 
-### mDNS
-
-Multicast DNS is an alternative built in registry for zero dependency service discovery.
-
-Pass `--registry=mdns` or set the env var `MICRO_REGISTRY=mdns` for any command
+Pass `--registry=consul` or set the env var `MICRO_REGISTRY=consul` for any command
 
 ```shell
 # Use flag
-micro --registry=mdns list services
+micro --registry=consul list services
 
 # Use env var
-MICRO_REGISTRY=mdns micro list services`
+MICRO_REGISTRY=consul micro list services`
 ```
 
 See [go-plugins](https://github.com/micro/go-plugins) for more service discovery plugins.

@@ -4,10 +4,10 @@ keywords: config
 tags: [config]
 sidebar: home_sidebar
 permalink: /go-config.html
-summary: 
+summary: Go Config is a pluggable dynamic config library
 ---
 
-Go Config is a pluggable dynamic config library
+# Overview
 
 Most config in applications are statically configured or include complex logic to load from multiple sources. 
 Go-config makes this easy, pluggable and mergeable. You'll never have to deal with config in the same way again.

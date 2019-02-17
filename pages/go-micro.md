@@ -4,29 +4,33 @@ keywords: go-micro
 tags: [go-micro]
 sidebar: home_sidebar
 permalink: "/go-micro.html"
-summary: 
+summary: Go Micro is a framework for microservice development.
 ---
 
-Go Micro is a pluggable framework for micro service development.
+# Overview
+
+Go Micro provides the core requirements for distributed systems development including RPC and Event driven communication. 
+The micro philosophy is sane defaults with a pluggable architecture. We provide defaults to get you started quickly but everything can be easily swapped out.
 
 ## Features
 
 Go Micro abstracts away the details of distributed systems. Here are the main features.
 
-- **Service Discovery** - Automatic service registration and name resolution. Service discovery is at the core of micro service  
-development. When service A needs to speak to service B it needs the location of that service. Consul is the default discovery 
-system with multicast DNS (mdns) as a local option or the SWIM protocol (gossip) for zero dependency p2p networks.
+- **Service Discovery** - Automatic service registration and name resolution. Service discovery is at the core of micro service
+development. When service A needs to speak to service B it needs the location of that service. The default discovery mechanism is
+multicast DNS (mdns), a zeroconf system. You can optionally set gossip using the SWIM protocol for p2p networks or consul for a
+resilient cloud-native setup.
 
-- **Load Balancing** - Client side load balancing built on service discovery. Once we have the addresses of any number of instances  
-of a service we now need a way to decide which node to route to. We use random hashed load balancing to provide even distribution  
-across the services and retry a different node if there's a problem.  
+- **Load Balancing** - Client side load balancing built on service discovery. Once we have the addresses of any number of instances 
+of a service we now need a way to decide which node to route to. We use random hashed load balancing to provide even distribution 
+across the services and retry a different node if there's a problem.
 
-- **Message Encoding** - Dynamic message encoding based on content-type. The client and server will use codecs along with content-type  
-to seamlessly encode and decode Go types for you. Any variety of messages could be encoded and sent from different clients. The client  
+- **Message Encoding** - Dynamic message encoding based on content-type. The client and server will use codecs along with content-type 
+to seamlessly encode and decode Go types for you. Any variety of messages could be encoded and sent from different clients. The client 
 and server handle this by default. This includes proto-rpc and json-rpc by default. 
 
-- **Sync Streaming** - RPC based request/response with support for bidirectional streaming. We provide an abstraction for synchronous  
-communication. A request made to a service will be automatically resolved, load balanced, dialled and streamed. The default  
+- **Request/Response** - RPC based request/response with support for bidirectional streaming. We provide an abstraction for synchronous 
+communication. A request made to a service will be automatically resolved, load balanced, dialled and streamed. The default 
 transport is http/1.1 or http2 when tls is enabled. 
 
 - **Async Messaging** - PubSub is built in as a first class citizen for asynchronous communication and event driven architectures. 
@@ -60,6 +64,8 @@ You'll need to install:
 
 Service discovery is used to resolve service names to addresses. 
 
+The default discovery system is multicast DNS which requires zeroconf. If you want something more resilient and multi-host then use consul.
+
 ### Consul
 
 [Consul](https://www.consul.io/) is used as the default service discovery system. 
@@ -68,14 +74,10 @@ Discovery is pluggable. Find plugins for etcd, kubernetes, zookeeper and more in
 
 [Install guide](https://www.consul.io/intro/getting-started/install.html)
 
-### Multicast DNS
-
-[Multicast DNS](https://en.wikipedia.org/wiki/Multicast_DNS) is a built in service discovery plugin for a zero dependency configuration. 
-
-Pass `--registry=mdns` to any command or the enviroment variable `MICRO_REGISTRY=mdns`
+Pass `--registry=consul` to any command or the enviroment variable `MICRO_REGISTRY=consul`
 
 ```
-MICRO_REGISTRY=mdns go run main.go
+MICRO_REGISTRY=consul go run main.go
 ```
 
 ## Writing a service
@@ -406,7 +408,7 @@ Here's an example service handler wrapper which logs the incoming request
 // implements the server.HandlerWrapper
 func logWrapper(fn server.HandlerFunc) server.HandlerFunc {
 	return func(ctx context.Context, req server.Request, rsp interface{}) error {
-		fmt.Printf("[%v] server request: %s", time.Now(), req.Method())
+		fmt.Printf("[%v] server request: %s", time.Now(), req.Endpoint())
 		return fn(ctx, req, rsp)
 	}
 }
@@ -432,7 +434,7 @@ type logWrapper struct {
 }
 
 func (l *logWrapper) Call(ctx context.Context, req client.Request, rsp interface{}, opts ...client.CallOption) error {
-	fmt.Printf("[wrapper] client request to service: %s method: %s\n", req.Service(), req.Method())
+	fmt.Printf("[wrapper] client request to service: %s endpoint: %s\n", req.Service(), req.Endpoint())
 	return l.Client.Call(ctx, req, rsp)
 }
 

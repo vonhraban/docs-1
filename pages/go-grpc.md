@@ -4,19 +4,17 @@ keywords: go-grpc
 tags: [go-grpc]
 sidebar: home_sidebar
 permalink: "/go-grpc.html"
-summary: 
+summary: Go gRPC is a simpler gRPC framework
 ---
 
-A micro gRPC framework. A simplified experience for building gRPC services.
-
-## Overview
+# Overview
 
 Go gRPC makes use of [go-micro](https://github.com/micro/go-micro) plugins to create a simpler framework for gRPC development. It interoperates with 
 standard gRPC services seamlessly, including the [grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway). The go-grpc library uses 
 the go-micro client and server plugins which make use of [github.com/grpc/grpc-go](https://github.com/grpc/grpc-go). This means we ignore 
 the go-micro codec and transport but you get a native grpc experience.
 
-<img src="images/go-grpc.png" />
+<img src="images/go-grpc.svg" />
 
 ## Examples
 
@@ -41,7 +39,7 @@ You'll need to install:
 
 ## Service Discovery
 
-Service discovery is used to resolve service names to addresses. 
+Service discovery is used to resolve service names to addresses. Multicast DNS is the default, a zeroconf system. If you need something more resilient and multi-host use consul.
 
 ### Consul
 
@@ -49,14 +47,10 @@ Service discovery is used to resolve service names to addresses.
 
 Discovery is pluggable. Find plugins for etcd, kubernetes, zookeeper and more in the [micro/go-plugins](https://github.com/micro/go-plugins) repo.
 
-### mDNS
-
-[Multicast DNS](https://en.wikipedia.org/wiki/Multicast_DNS) is a built in alternative for zero dependencies. 
-
-Pass `--registry=mdns` to any command or the enviroment variable `MICRO_REGISTRY=mdns`
+Pass `--registry=consul` to any command or the enviroment variable `MICRO_REGISTRY=consul`
 
 ```
-MICRO_REGISTRY=mdns go run main.go
+MICRO_REGISTRY=consul go run main.go
 ```
 
 ## Writing a Service

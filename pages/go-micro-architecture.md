@@ -10,7 +10,7 @@ summary:
 Go Micro is a pluggable RPC framework. It's used for distributed systems development.
 
 <p align="center">
-  <img src="images/go-micro.png" />
+  <img src="images/go-micro.svg" />
 </p>
 
 ## Features
@@ -32,7 +32,7 @@ Go-micro makes use of the Go interface for it's abstractions. Because of this th
 
 We provide sane defaults out of the box.
 
-- Consul or mDNS for service discovery
+- mDNS, gossip or consul for service discovery
 - Random hashed client side load balancing
 - JSON-RPC 1.0 and PROTO-RPC for message encoding
 - HTTP for communication

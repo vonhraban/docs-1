@@ -17,7 +17,7 @@ stable and performant production grade microservice solution. This version of Mi
 
 ## Getting Started
 
-- [Buy Subscription](#buy-subscription)
+- [Create Subscription](#create-subscription)
 - [Manage Subscription](#manage-subscription)
 - [Generate Token](#generate-token)
 - [Manage Tokens](#manage-tokens)
@@ -25,10 +25,10 @@ stable and performant production grade microservice solution. This version of Mi
 - [Manage Licenses](manage-licenses)
 - [Use License](use-license)
 
-## Buy Subscription
+## Create Subscription
 
 Micro Enterprise is distributed under a commercial license. While the source is available on GitHub you'll need to purchase a 
-subscription to use it. Head to the [pricing](https://micro.mu/pricing/) and subscribe.
+subscription to use it. Head to the [pricing](https://micro.mu/pricing/) to subscribe using a credit card.
 
 ### Pricing
 
@@ -37,10 +37,8 @@ Instances of a service count under a single service so you may run as many insta
 
 ### Example
 
-Services "user", "order", "customer", "account", "login". 5 services each running 3 instances will be billed at 
-$25/service and so will add to $125/month in total.
-
-There is a 5 service minimum for subscription. Your subscription is associated with an email address.
+Services "user", "order", "customer", "account", "login" are each unique services, billed at $25/service/month. This means a 
+monthly total of $125/month. Each service can have unlimited instances. 
 
 ## Manage Subscription
 

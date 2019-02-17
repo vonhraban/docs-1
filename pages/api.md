@@ -1,5 +1,5 @@
 ---
-title: API
+title: API Gateway
 keywords: api
 tags: [api]
 sidebar: home_sidebar
@@ -73,6 +73,12 @@ The default namespace is `go.micro.api` and can be changed like so
 
 ```shell
 MICRO_NAMESPACE=com.example.api micro api
+```
+
+To disable the namespace set it to be a blank space. This is a hack we'll look to fix.
+
+```shell
+MICRO_NAMESPACE=' '
 ```
 
 ## Examples

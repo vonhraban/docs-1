@@ -4,12 +4,12 @@ keywords: go-api
 tags: [go-micro]
 sidebar: home_sidebar
 permalink: "/go-api.html"
-summary: 
+summary: Go API is an api framework
 ---
 
-Go API is a pluggable API framework driven by service discovery to help build powerful public API gateways.
+# Overview
 
-## Overview
+Go API is a pluggable API framework driven by service discovery to help build powerful public API gateways.
 
 The Go API library provides api gateway routing capabilities. A microservice architecture decouples application logic into 
 separate service. An api gateway provides a single entry point to consolidate these services into a unified api. The 
