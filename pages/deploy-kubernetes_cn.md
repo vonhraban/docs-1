@@ -171,7 +171,7 @@ spec:
 
 ## K8s负载均衡
 
-Micro默认提供客户端负载均衡，但k8s也提供有服务负载平衡策略。
+Micro默认提供客户端负载均衡，但k8s也提供有服务负载均衡策略。
 
 要把默认的均衡卸掉迁移到k8s，可以使用[静态选择器](https://github.com/micro/go-plugins/tree/master/selector/static)与k8s服务协同的方式。
 
