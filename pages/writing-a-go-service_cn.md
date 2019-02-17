@@ -234,7 +234,7 @@ if err := service.Run(); err != nil {
 }
 ```
 
-### 6. 完成的服务
+### 6. 完整的服务代码
 <br>
 greeter.go
 
