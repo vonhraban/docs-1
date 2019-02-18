@@ -34,7 +34,7 @@ Web模块提供与运行环境可视化交互的能力。未来它也会成为we
 
 ### Proxy
 
-The proxy is a cli proxy for remote environments.
+命令行工具远程请求代理
 
 <p align="center">
   <img src="images/car.png" />
