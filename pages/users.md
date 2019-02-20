@@ -11,35 +11,37 @@ If you're using Micro, feel free to add your company
 
 ### Companies
 
-- [AdCamie](http://adcamie.com/)
-- [Arex](https://arex.io/)
-- [Bottos](https://bottos.org/)
-- [Capital One](https://www.capitalone.com/)
-- [Coesia](https://www.coesia.com/en)
-- [Dark Cubed](http://darkcubed.com)
-- [Glue](https://glue.group)
-- [Hightech](https://hightech.fm/)
-- [Human Ventures](https://humanventures.co/)
-- [Imgur](https://imgur.com/)
-- [Jumia](https://food.jumia.com/)
-- [Karhoo](https://karhoo.com/)
-- [Kazoup](http://www.kazoup.com)
-- [Kyperion](https://kyperion.com)
-- [Neds](https://www.neds.com.au/)
-- [Pie](http://pie.io/)
-- [Popsa](https://popsa.com/)
-- [Profects](https://profects.com/)
-- [Pydio](https://pydio.com/)
-- [Reserve](https://reserve.com/)
-- [Riverbed](https://www.riverbed.com/gb/)
-- [Savvy](https://www.joinsavvy.com/en/)
-- [Sipsynergy](http://www.sipsynergy.co.uk/)
-- [Sixt](https://www.sixt.com)
-- [Stillwater Supercomputing](http://www.stillwater-sc.com/)
-- [TodayTix](https://www.todaytix.com/)
-- [Vimeo](https://vimeo.com/)
-- [Ulule](https://www.ulule.com/)
-- [Unity Labs](https://www.unitylabs.io/)
-- [Wonderbly](https://www.wonderbly.com/)
+- [AdCamie](http://adcamie.com/) - Social media Ads solution
+- [Ankr](https://www.ankr.network/) - Distributed cloud computing network
+- [Arex](https://arex.io/) - Automated receivable exchange
+- [Bottos](https://bottos.org/) - Decentralised AI network
+- [Capital One](https://www.capitalone.com/) - Financial services
+- [Coesia](https://www.coesia.com/en) - Industrial and packaging solutions
+- [Dark Cubed](http://darkcubed.com) - Cyber security services
+- [Glue](https://glue.group) - Digital development agency
+- [Hightech](https://hightech.fm/) - Tech media platform
+- [Human Ventures](https://humanventures.co/) - NYC based startup studio
+- [Imgur](https://imgur.com/) - Social image sharing platform
+- [Jumia](https://food.jumia.com/) - Food delivery service
+- [Karhoo](https://karhoo.com/) - Urban mobility marketplace
+- [Kazoup](http://www.kazoup.com) - File management platform
+- [Kyperion](https://kyperion.com) - Health & fitness training platform
+- [Neds](https://www.neds.com.au/) - Betting online website
+- [Pie](http://pie.io/) - Fleet management platform
+- [Popsa](https://popsa.com/) - Photo book printing service
+- [Profects](https://profects.com/) - Software studio
+- [Pydio](https://pydio.com/) - File sharing platform
+- [Reserve](https://reserve.com/) - Restaurant booking service
+- [Riverbed](https://www.riverbed.com/gb/) - Software defined networking
+- [Savvy](https://www.joinsavvy.com/en/) - Coupon website
+- [Sipsynergy](http://www.sipsynergy.co.uk/) - Telecommunications services
+- [Sixt](https://www.sixt.com) - Car rental enterprise
+- [Stillwater Supercomputing](http://www.stillwater-sc.com/) - Knowledge processing system
+- [TodayTix](https://www.todaytix.com/) - Ticket reservation service
+- [Vimeo](https://vimeo.com/) - Video sharing platform
+- [Ulule](https://www.ulule.com/) - Crowdfunding platform 
+- [Unity Labs](https://www.unitylabs.io/) - Blockchain development company
+- [VXLab](https://www.vxlab.com/) - Visual programming platform
+- [Wonderbly](https://www.wonderbly.com/) - Childrens book company
 
 {% include links.html %}
