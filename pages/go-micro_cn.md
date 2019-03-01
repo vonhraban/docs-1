@@ -44,11 +44,23 @@ Go Micro把分布式系统的各种细节抽象出来。下面是它的主要特
 
 ### Consul
 
-[Consul](https://www.consul.io/) 在Go Micro中是默认的服务发现注册中心。
+[Consul](https://www.consul.io/) 在Go Micro中是默认（以后的版本可能会更改）的服务发现注册中心。
 
 发现系统可插拔，其它插件像 etcd, kubernetes, zookeeper可以参考[micro/go-plugins](https://github.com/micro/go-plugins) 库。
 
 [Consul安装指导](https://www.consul.io/intro/getting-started/install.html)
+
+安装好后，可以在命令行启动时传入变量或指令便可以使用consul作为注册中心：
+
+```bash
+$ MICRO_REGISTRY=consul go run main.go
+```
+
+或者
+
+```bash
+$ go run main.go --registry=consul
+```
 
 ### Multicast DNS
 
