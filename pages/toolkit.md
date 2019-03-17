@@ -268,7 +268,7 @@ Let's run it so we can query the example service.
 
 ```
 MICRO_API_HANDLER=rpc \
-MICRO_API_NAMESPACE=go.micro.srv \ 
+MICRO_API_NAMESPACE=go.micro.srv \
 micro api
 ```
 
