@@ -21,7 +21,7 @@ Micro API在
 [go-micro](https://github.com/micro/go-micro)之上开发，所以它集成了服务发现、负载均衡、编码及基于RPC的通信。
 
 因为micro api内部使用了go-micro，所以它自身也是可插拔的。
-参考[go-plugins](https://github.com/micro/go-plugins)了解对gRPC、kubernetes、etcd、nats、及rabbitmq等支持。另外，api也使用了[go-api](https://github.com/micro/go-api)，这样，接口handler也是可以配置的。
+参考[go-plugins](https://github.com/micro/go-plugins)了解对gRPC、kubernetes、etcd、nats及rabbitmq等支持。另外，api也使用了[go-api](https://github.com/micro/go-api)，这样，接口handler也是可以配置的。
 
 ## 安装
 
