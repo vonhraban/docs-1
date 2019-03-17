@@ -16,6 +16,7 @@ If you're using Micro, feel free to add your company
 - [Arex](https://arex.io/) - Automated receivable exchange
 - [Bottos](https://bottos.org/) - Decentralised AI network
 - [Capital One](https://www.capitalone.com/) - Financial services
+- [CodersRank](https://codersrank.io/) - Real time profiles for open source contributions
 - [Coesia](https://www.coesia.com/en) - Industrial and packaging solutions
 - [Dark Cubed](http://darkcubed.com) - Cyber security services
 - [Glue](https://glue.group) - Digital development agency
