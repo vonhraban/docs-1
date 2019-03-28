@@ -148,7 +148,7 @@ Micro作为一个微服务工具库，好比一把瑞士军刀，在我们构建
 
 ## 想了解更多
 
-- slack社区 - [slack.micro.mu]([http://slack.micro.mu](https://micro-services.slack.com/messages/CHE2CSDAB/))
+- slack社区 - [slack.micro.mu](https://micro-services.slack.com/messages/CHE2CSDAB/)
 - 博客 - [micro.mu/blog](https://micro.mu/blog)
 - 微博 - [microHQ](https://weibo.com/microhq)
 - 联系我们 - [contact@micro.mu](mailto:contact@micro.mu)
