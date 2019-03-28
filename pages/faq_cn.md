@@ -31,7 +31,7 @@ Micro由开源的库与工具组成，旨在辅助微服务开发。
 
 ### 社区
 
-我们有上千人的社区在Slack平台上：[slack.micro.mu](http://slack.micro.mu/)；
+我们使用Slack作为我的平台沟通工具，现在已经有1600多人加入：[http://slack.micro.mu](https://micro-services.slack.com/messages/CHE2CSDAB/)；
 
 ### 生态系统
 
@@ -148,8 +148,9 @@ Micro作为一个微服务工具库，好比一把瑞士军刀，在我们构建
 
 ## 想了解更多
 
-- slack社区 - [slack.micro.mu](http://slack.micro.mu)
+- slack社区 - [slack.micro.mu]([http://slack.micro.mu](https://micro-services.slack.com/messages/CHE2CSDAB/))
 - 博客 - [micro.mu/blog](https://micro.mu/blog)
+- 微博 - [microHQ](https://weibo.com/microhq)
 - 联系我们 - [contact@micro.mu](mailto:contact@micro.mu)
 
 {% include links.html %}
