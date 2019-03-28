@@ -187,7 +187,7 @@ RPC处理器接收json或protobuf格式的HTTP POST请求，然后向前转成RP
 - Path: `/[service]`
 - Resolver: 请求解析器，路径会被解析成服务名
 - Configure: 配置，在启动时指定`--handler=proxy`或在启动命令前指定环境变量`MICRO_API_HANDLER=proxy`
-- REST can be implemented behind the API as microservices（不太好理解，待翻译）
+- REST风格的服务可以通过API代理，就像常见微服务一样对外提供相应的服务。
 
 ### Event Handler
 

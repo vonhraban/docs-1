@@ -96,7 +96,7 @@ kubectl create -f greeter.yaml
 
 ## 健康检查器
 
-健康检查器（healthchecking sidecar，参考sidecar模式）会调用服务rpc接口`Debug.Health`向外暴露`/ health`端点，而每个go-micro服务都有一个内置的Debug.Health端点。
+健康检查器（healthchecking sidecar，参考sidecar模式）会调用服务rpc接口`Debug.Health`向外暴露`/health`端点，而每个go-micro服务都有一个内置的Debug.Health端点。
 
 ### 部署健康检查
 
