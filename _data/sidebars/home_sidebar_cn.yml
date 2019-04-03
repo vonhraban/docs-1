@@ -11,11 +11,11 @@ entries:
     type: frontmatter
     folderitems:
     - title:
-      url: /titlepage
+      url: /cn/titlepage
       output: pdf
       type: frontmatter
     - title:
-      url: /tocpage
+      url: /cn/tocpage
       output: pdf
       type: frontmatter
 
@@ -24,28 +24,28 @@ entries:
     folderitems:
 
     - title: 简介
-      url: /index_cn.html
+      url: /cn/index.html
       output: web, pdf
       type: homepage
 
     - title: 架构
-      url: /architecture_cn.html
+      url: /cn/architecture.html
       output: web, pdf
 
     - title: 常见问题
-      url: /faq_cn.html
+      url: /cn/faq.html
       output: web, pdf
 
     - title: 特性
-      url: /features_cn.html
+      url: /cn/features.html
       output: web, pdf
 
     - title: 相关资源
-      url: /resources_cn.html
+      url: /cn/resources.html
       output: web, pdf
 
     - title: 相关用户
-      url: /users_cn.html
+      url: /cn/users.html
       output: web, pdf
 
   - title: 相关概念
@@ -53,7 +53,7 @@ entries:
     folderitems:
 
     - title: 微服务
-      url: /microservices_cn.html
+      url: /cn/microservices.html
       output: web, pdf
 
   - title: 指导手册
@@ -61,23 +61,23 @@ entries:
     folderitems:
 
     - title: 安装指导
-      url: /install-guide_cn.html
+      url: /cn/install-guide.html
       output: web, pdf
 
     - title: GRPC 网关
-      url: /grpc-gateway_cn.html
+      url: /cn/grpc-gateway.html
       output: web, pdf
 
     - title: 编写Golang服务
-      url: /writing-a-go-service_cn.html
+      url: /cn/writing-a-go-service.html
       output: web, pdf
 
     - title: 编写Go Function
-      url: /writing-a-go-function_cn.html
+      url: /cn/writing-a-go-function.html
       output: web, pdf
 
     - title: 容错
-      url: /fault-tolerance_cn.html
+      url: /cn/fault-tolerance.html
       output: web, pdf
 
   - title: Micro
@@ -85,31 +85,31 @@ entries:
     folderitems:
 
     - title: 概览
-      url: /toolkit_cn.html
+      url: /cn/toolkit.html
       output: web, pdf
 
     - title: API 网关
-      url: /api_cn.html
+      url: /cn/api.html
       output: web, pdf
 
     - title: Web管理控制台
-      url: /web_cn.html
+      url: /cn/web.html
       output: web, pdf
 
     - title: 服务代理
-      url: /proxy_cn.html
+      url: /cn/proxy.html
       output: web, pdf
 
     - title: 命令行接口
-      url: /cli_cn.html
+      url: /cn/cli.html
       output: web, pdf
 
     - title: Slack小机器人
-      url: /bot_cn.html
+      url: /cn/bot.html
       output: web, pdf
 
     - title: 新建模板
-      url: /new_cn.html
+      url: /cn/new.html
       output: web, pdf
 
   - title: Go API
@@ -117,11 +117,11 @@ entries:
     folderitems:
 
     - title: 概览
-      url: /go-api_cn.html
+      url: /cn/go-api.html
       output: web, pdf
 
     - title: Handler处理器
-      url: /go-api-handlers_cn.html
+      url: /cn/go-api-handlers.html
       output: web, pdf
 
 
@@ -130,7 +130,7 @@ entries:
     folderitems:
 
     - title: 概览
-      url: /go-config_cn.html
+      url: /cn/go-config.html
       output: web, pdf
 
   - title: Go gRPC
@@ -138,7 +138,7 @@ entries:
     folderitems:
 
     - title: 概览
-      url: /go-grpc_cn.html
+      url: /cn/go-grpc.html
       output: web, pdf
 
   - title: Go Micro
@@ -146,11 +146,11 @@ entries:
     folderitems:
 
     - title: 概览
-      url: /go-micro_cn.html
+      url: /cn/go-micro.html
       output: web, pdf
 
     - title: 架构
-      url: /go-micro-architecture_cn.html
+      url: /cn/go-micro-architecture.html
       output: web, pdf
 
   - title: 部署
@@ -158,11 +158,11 @@ entries:
     folderitems:
 
     - title: Docker
-      url: /deploy-docker_cn.html
+      url: /cn/deploy-docker.html
       output: web, pdf
 
     - title: Kubernetes
-      url: /deploy-kubernetes_cn.html
+      url: /cn/deploy-kubernetes.html
       output: web, pdf
 
   - title: Plugins
@@ -170,17 +170,17 @@ entries:
     folderitems:
 
     - title: 概览
-      url: /plugins_cn.html
+      url: /cn/plugins.html
       output: web, pdf
 
     - title: Go Micro
-      url: /plugins-go-micro_cn.html
+      url: /cn/plugins-go-micro.html
       output: web, pdf
 
     - title: 工具集
-      url: /plugins-toolkit_cn.html
+      url: /cn/plugins-toolkit.html
       output: web, pdf
 
     - title: NATS
-      url: /plugins-nats_cn.html
+      url: /cn/plugins-nats.html
       output: web, pdf

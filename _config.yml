@@ -92,3 +92,5 @@ description: "Documentation for Micro the microservice toolkit"
 url: https://micro.mu/docs
 
 google_analytics: UA-70478210-1
+
+baseurl: "/docs"

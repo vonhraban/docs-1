@@ -1,6 +1,6 @@
 # Docs
 
-本仓库包含所有在[micro](https://micro.mu/docs/index_cn.html)中发布的所有文档。
+本仓库包含所有在[micro](https://micro.mu/docs/cn/index.html)中发布的所有文档。
 
 ## 有建议
 

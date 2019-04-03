@@ -33,6 +33,6 @@ topnav_dropdowns:
       - title: English
         folderitems:
           - title: English
-            url: /index.html
+            url: /docs/index.html
           - title: 中文
-            url: /index_cn.html
+            url: /docs/cn/index.html

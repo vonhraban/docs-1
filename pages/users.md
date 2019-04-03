@@ -11,6 +11,7 @@ If you're using Micro, feel free to add your company
 
 ### Companies
 
+- [Agora.io](http://agora.io) -- Real-Time video, audio, and live interactive broadcasting Communication API solution
 - [AdCamie](http://adcamie.com/) - Social media Ads solution
 - [Ankr](https://www.ankr.network/) - Distributed cloud computing network
 - [Arex](https://arex.io/) - Automated receivable exchange
@@ -21,6 +22,7 @@ If you're using Micro, feel free to add your company
 - [Dark Cubed](http://darkcubed.com) - Cyber security services
 - [Glue](https://glue.group) - Digital development agency
 - [Hightech](https://hightech.fm/) - Tech media platform
+- HuanLian（焕链科技）- Blockchain technology
 - [Human Ventures](https://humanventures.co/) - NYC based startup studio
 - [Imgur](https://imgur.com/) - Social image sharing platform
 - [Jumia](https://food.jumia.com/) - Food delivery service
