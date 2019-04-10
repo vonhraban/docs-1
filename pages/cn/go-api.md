@@ -16,6 +16,6 @@ Go API支持网关路由。微服务架构是把应用解耦成逻辑上的相�
 
 <img src="https://micro.mu/docs/images/go-api.png?v=1" alt="Go API" />
 
-Go API是[micro api](https://micro.mu/docs/api_cn.html)的基础。
+Go API是[micro api](https://micro.mu/docs/cn/api.html)的基础。
 
 {% include links.html %}

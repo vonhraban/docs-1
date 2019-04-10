@@ -9,7 +9,7 @@ permalink: /cn/api.html
 
 ---
 
-API参考了[API网关模式](http://microservices.io/patterns/apigateway.html)为服务提供了一个单一的公共入口。基于服务发现，使得micro api可以提供具备http及动态路由的服务。
+API参考了[API网关模式](http://microservices.io/patterns/apigateway.html)为服务提供了一个单一的公共入口。通过服务发现，Micro API以http方式，将请求动态路由到具体的后台服务接口。我们心下简称**API**。
 
 <p align="center">
   <img src="../images/api.png" />
@@ -17,12 +17,11 @@ API参考了[API网关模式](http://microservices.io/patterns/apigateway.html)�
 
 ## 概览
 
-Micro的API基于HTTP协议。请求的API接口通过HTTP协议访问，并且路由是基于服务发现机制向下转发的。
-Micro API在
-[go-micro](https://github.com/micro/go-micro)之上开发，所以它集成了服务发现、负载均衡、编码及基于RPC的通信。
+**API**基于[go-micro](https://github.com/micro/go-micro)开发，所以它天然具备服务发现、负载均衡、编码及RPC通信的能力，故而，**API**也是go-micro体系中的一个微服务，所以它自身也是可插拔的。
 
-因为micro api内部使用了go-micro，所以它自身也是可插拔的。
-参考[go-plugins](https://github.com/micro/go-plugins)了解对gRPC、kubernetes、etcd、nats及rabbitmq等支持。另外，api也使用了[go-api](https://github.com/micro/go-api)，这样，接口handler也是可以配置的。
+有兴趣的同学可以参考[go-plugins](https://github.com/micro/go-plugins)，以了解对micro对gRPC、kubernetes、etcd、nats及rabbitmq等通用工具或组件的支持。
+
+另外，**API**也使用了[go-api](https://github.com/micro/go-api)，这样，它的接口handler处理器也是可以配置的。
 
 ## 安装
 

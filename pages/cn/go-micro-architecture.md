@@ -84,7 +84,7 @@ Broker提供异步通信的消息发布/订阅接口。对于微服务系统及�
 
 ### 编码（Codec）
 
-编码包用于在消息传输到两端时进行编码与解码，可以是json、protobuf、bson、msgpack等等。与其它编码方式不同的我们支持RPC格式的。所以我们有JSON-RPC、PROTO-RPC、BSON-RPC等格式。
+编码包用于在消息传输到两端时进行编码与解码，可以是json、protobuf、bson、msgpack等等。与其它编码方式不同，我们支持RPC格式。所以我们有JSON-RPC、PROTO-RPC、BSON-RPC等格式。
 
 编码包把客户端与服务端的编码隔离开来，并提供强大的方法来集成其它系统，比如gRPC、Vanadium等等。
 
@@ -178,6 +178,6 @@ server.Start会被service.Run调用
 
 ## 如何编写服务
 
-查看[编写Go服务](writing-a-go-service_cn.html)
+查看[编写Go服务](/cn/writing-a-go-service.html)
 
 {% include links.html %}
