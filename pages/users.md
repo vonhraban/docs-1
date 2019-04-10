@@ -29,6 +29,7 @@ If you're using Micro, feel free to add your company
 - [Karhoo](https://karhoo.com/) - Urban mobility marketplace
 - [Kazoup](http://www.kazoup.com) - File management platform
 - [Kyperion](https://kyperion.com) - Health & fitness training platform
+- [Mohu](https://www.mohukeji.com/) - Blockchain Finance solution
 - [Neds](https://www.neds.com.au/) - Betting online website
 - [Pie](http://pie.io/) - Fleet management platform
 - [Popsa](https://popsa.com/) - Photo book printing service
