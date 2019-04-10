@@ -154,6 +154,8 @@ API有如下方法可以配置请求handler：
 
 通过[`/rpc`](#rpc-endpoint)入口可以绕开handler处理器。
 
+目前版本（V1）无法支持多个handler并存运行，也即同时只能使用一个handler。
+
 ### API Handler
 
 API处理器接收任何的HTTP请求，并且向前转发指定格式的RPC请求。
