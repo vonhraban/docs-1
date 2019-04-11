@@ -89,6 +89,8 @@ Micro内置了mDNS组播系统，这是一种零依赖的服务注册发现机�
 
 通过在启动指令中传入`--registry=mdns` 或者在**环境变量**中设置`MICRO_REGISTRY=mdns`。
 
+其实也可以不传，早期版本的go-micro默认注册中心是**consul**，现在换成了**mdns**
+
 ```shell
 # 使用命令行参数
 micro --registry=mdns list services

@@ -85,8 +85,6 @@ MICRO_NAMESPACE=com.example.api micro api
 
 ### 运行示例
 
-先决条件：我们使用Consul作为默认的服务发现，所以请先确定它已经安装好了，并且已经运行，比如执行`consul agent -dev`这样子方式运行。
-
 ```shell
 # 下载示例
 git clone https://github.com/micro/examples

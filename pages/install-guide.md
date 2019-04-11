@@ -9,28 +9,6 @@ summary:
 
 # Install Guide
 
-## Dependencies
-
-We use service discovery to locate services. The default is multicast DNS so a zeroconf configuration. If you needs something multi-host and 
-more resilient use consul. Checkout [go-plugins](https://github.com/micro/go-plugins) to try something else.
-
-### Consul
-
-If using consul
-
-```shell
-brew install consul
-consul agent -dev
-```
-
-Or
-
-```shell
-docker run consul
-```
-
-Pass `--registry=consul` to any commands e.g `micro --registry=consul list services`
-
 ## Go Micro
 
 Go Micro is an RPC framework for development microservices in Go
@@ -77,7 +55,6 @@ List services
 
 ```shell
 $ micro list services
-consul
 go.micro.srv.greeter
 ```
 

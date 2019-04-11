@@ -93,8 +93,6 @@ The full example is at [examples/greeter](https://github.com/micro/examples/tree
 
 ### Run Example
 
-Prerequisite: We use consul by default for service discovery so ensure its installed and running e.g consul agent -dev
-
 ```shell
 # Download example
 git clone https://github.com/micro/examples

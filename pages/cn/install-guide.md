@@ -10,34 +10,9 @@ summary:
 
 # 安装指导
 
-## 基础依赖
-
-我们得有服务发现能力，默认使用Consul，可以签出[go-plugins](https://github.com/micro/go-plugins)，里面有连接上Consul的插件。
-
-### Consul
-
-安装Consul：
-
-```shell
-brew install consul
-consul agent -dev
-```
-
-或者使用docker启动：
-
-```shell
-docker run consul
-```
-
-### 组播DNS（multicast DNS，mDNS）
-
-基于组播DNS，我们可以实现零依赖的服务发现。
-
-当启动参数`--registry=mdns`加到启动命令中，比如：`micro --registry=mdns list services`
-
 ## Go Micro
 
-Go Micro是基于Go语言用于开发的微服务的RPC框架。
+Go Micro是基于Go语言用于开发的微服务的RPC框架，它是Micro的基础。
 
 ### 安装Go Micro
 
@@ -81,7 +56,6 @@ go get github.com/micro/examples/greeter/srv && srv
 
 ```shell
 $ micro list services
-consul
 go.micro.srv.greeter
 ```
 
