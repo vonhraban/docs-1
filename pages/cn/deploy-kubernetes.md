@@ -101,7 +101,7 @@ kubectl create -f greeter.yaml
 ### 部署健康检查
 
 ```
-go get github.com/micro/health
+go get github.com/micro/kubernetes/cmd/health
 ```
 
 或者

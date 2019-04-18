@@ -24,12 +24,19 @@ Together they provide the foundations for a microservice platform.
 
 ## Getting Started
 
+- [Features](#features)
+- [Getting Started](#getting-started)
 - [Installing Micro](#installing-micro)
 - [Writing a Service](#writing-a-service)
 - [Deploying a Service](#deploying-a-service)
 - [Healthchecking Sidecar](#healthchecking-sidecar)
+  - [Install healthchecker](#install-healthchecker)
+  - [Run healtchecker](#run-healtchecker)
+  - [K8s Deployment](#k8s-deployment)
 - [K8s Load Balancing](#k8s-load-balancing)
-- [Contribute](#contribute)
+  - [Usage](#usage)
+  - [K8s Deployment](#k8s-deployment-1)
+  - [K8s Service](#k8s-service)
 
 ## Installing Micro
 
@@ -114,7 +121,7 @@ Every go-micro service has a built in Debug.Health endpoint.
 ### Install healthchecker
 
 ```
-go get github.com/micro/health
+go get github.com/micro/kubernetes/cmd/health
 ```
 
 or
