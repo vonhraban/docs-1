@@ -18,7 +18,7 @@ GRPC网关[grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway)是[prot
 
 ## 代码
 
-可以在[examples/grpc](https://github.com/micro/examples/tree/cn-lang/grpc)中查找相关代码。
+可以在[examples/grpc](https://github.com/micro/examples/tree/master/grpc)中查找相关代码。
 
 ## 预置条件
 
