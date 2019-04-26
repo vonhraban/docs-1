@@ -62,7 +62,7 @@ The event handler serves HTTP and forwards the request as a message over a messa
 
 ## HTTP Handler
 
-The http handler is a http reserve proxy with built in service discovery.
+The http handler is a http reverse proxy with built in service discovery.
 
 - Content-Type: Any
 - Body: Any
@@ -92,7 +92,7 @@ The RPC handler serves json or protobuf HTTP POST requests and forwards as an RP
 
 ## Web Handler
 
-The web handler is a http reserve proxy with built in service discovery and web socket support.
+The web handler is a http reverse proxy with built in service discovery and web socket support.
 
 - Content-Type: Any
 - Body: Any
