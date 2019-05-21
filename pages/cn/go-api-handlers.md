@@ -8,7 +8,7 @@ permalink: "/cn/go-api-handlers.html"
 summary: 
 ---
 
-API的Handler处理器都是用来接收Http请求，然后根据请求类型进行处理，或向前转发，或触发事件，为了方便，handler的注册名都能匹配`http.Handler`字样。
+API的Handler处理器都是用来接收Http请求，然后根据请求类型进行处理，或向前转发，或触发事件，为了方便，handler使用服务方法`http.Handler`的名字来路由。
  
   
 ## API Handlers

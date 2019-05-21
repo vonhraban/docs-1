@@ -40,10 +40,6 @@ Micro依赖[go-micro](https://github.com/micro/go-micro)，通过它来使其变
 - [视频](https://www.youtube.com/watch?v=xspaDovwk34) 2016年在英国Golong会议上，关于micro的简单介绍。
 - [PPT](https://speakerdeck.com/asim)，上面有一些PPT，可供查阅。
 
-## 捐献者
-
-[捐献者](https://micro.mu/#sponsors)
-
 ## 相关用户
 
 可以查看[用户列表](users.html)
