@@ -44,10 +44,6 @@ Micro builds on [go-micro](https://github.com/micro/go-micro), making it a plugg
 - Watch the [video](https://www.youtube.com/watch?v=xspaDovwk34) on Simplifying Microservices with Micro presented at Golang UK Conf 2016.
 - View the [slides](https://speakerdeck.com/asim) for various presentations on speakerdeck.
 
-## Sponsors
-
-See sponsors on the [website](https://micro.mu/#sponsors)
-
 ## Users
 
 See the [users](users.html) list
