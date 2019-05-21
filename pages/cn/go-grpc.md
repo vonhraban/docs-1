@@ -12,7 +12,7 @@ Micro gRPC是micro的gRPC框架插件，简化开发基于gRPC的服务。
 
 ## 概览
 
-micro提供有基于Go的gRPC插件[go-micro](https://github.com/micro/go-micro)，该插件可以在内部集成gPRC，并与之无缝交互，让开发gRPC更简单，并支持[grpc-gatewa](https://github.com/grpc-ecosystem/grpc-gateway)。
+micro提供有基于Go的gRPC插件[go-micro](https://github.com/micro/go-micro)，该插件可以在内部集成gPRC，并与之无缝交互，让开发gRPC更简单，并支持[grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway)。
 
 micro有面向gRPC的[客户端](https://github.com/micro/go-plugins/tree/master/client)和[服务端](https://github.com/micro/go-plugins/tree/master/server)插件，go-grpc库调用客户端/服务端插件生成micro需要的gRPC代码，而客户端/服务端插件都是从[github.com/grpc/grpc-go](https://github.com/grpc/grpc-go)扩展而来，也即是说，我们不需要去知道go-micro是如何编解码或传输节点就可以使用原生的gRPC。
 
