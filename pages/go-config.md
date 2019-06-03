@@ -46,15 +46,15 @@ A `Source` is a backend from which config is loaded. Multiple sources can be use
 
 The following sources are supported:
 
-- [configmap](https://github.com/micro/go-config/tree/master/source/configmap) - read from k8s configmap
-- [consul](https://github.com/micro/go-config/tree/master/source/consul) - read from consul
-- [etcd](https://github.com/micro/go-config/tree/master/source/etcd) - read from etcd v3
-- [env](https://github.com/micro/go-config/tree/master/source/env) - read from environment variables
-- [file](https://github.com/micro/go-config/tree/master/source/file) - read from file
-- [flag](https://github.com/micro/go-config/tree/master/source/flag) - read from flags
-- [grpc](https://github.com/micro/go-config/tree/master/source/grpc) - read from grpc server
-- [memory](https://github.com/micro/go-config/tree/master/source/memory) - read from memory
-- [microcli](https://github.com/micro/go-config/tree/master/source/microcli) - read from micro cli flags
+- [configmap](https://github.com/micro/go-micro/config/tree/master/source/configmap) - read from k8s configmap
+- [consul](https://github.com/micro/go-micro/config/tree/master/source/consul) - read from consul
+- [etcd](https://github.com/micro/go-micro/config/tree/master/source/etcd) - read from etcd v3
+- [env](https://github.com/micro/go-micro/config/tree/master/source/env) - read from environment variables
+- [file](https://github.com/micro/go-micro/config/tree/master/source/file) - read from file
+- [flag](https://github.com/micro/go-micro/config/tree/master/source/flag) - read from flags
+- [grpc](https://github.com/micro/go-micro/config/tree/master/source/grpc) - read from grpc server
+- [memory](https://github.com/micro/go-micro/config/tree/master/source/memory) - read from memory
+- [microcli](https://github.com/micro/go-micro/config/tree/master/source/microcli) - read from micro cli flags
 
 TODO:
 
@@ -206,7 +206,7 @@ Example json config:
 Create a new config (or just make use of the default instance)
 
 ```go
-import "github.com/micro/go-config"
+import "github.com/micro/go-micro/config"
 
 conf := config.NewConfig()
 ```
@@ -217,7 +217,7 @@ Load config from a file source. It uses the file extension to determine config f
 
 ```go
 import (
-	"github.com/micro/go-config"
+	"github.com/micro/go-micro/config"
 )
 
 // Load json config file
@@ -235,8 +235,8 @@ If an extension does not exist, specify the encoder
 
 ```go
 import (
-	"github.com/micro/go-config"
-	"github.com/micro/go-config/source/file"
+	"github.com/micro/go-micro/config"
+	"github.com/micro/go-micro/config/source/file"
 )
 
 enc := toml.NewEncoder()

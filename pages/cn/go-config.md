@@ -42,15 +42,15 @@ Go-config就简单得多，可插拔且可合并。
 
 支持以下格式：
 
-- [configmap](https://github.com/micro/go-config/tree/master/source/configmap) - k8s configmap
-- [consul](https://github.com/micro/go-config/tree/master/source/consul) - consul
-- [etcd](https://github.com/micro/go-config/tree/master/source/etcd) - etcd v3
-- [env](https://github.com/micro/go-config/tree/master/source/env) - 环境变量
-- [file](https://github.com/micro/go-config/tree/master/source/file) - 配置文件
-- [flag](https://github.com/micro/go-config/tree/master/source/flag) - 命令行标识
-- [grpc](https://github.com/micro/go-config/tree/master/source/grpc) - grpc
-- [memory](https://github.com/micro/go-config/tree/master/source/memory) - 内存
-- [microcli](https://github.com/micro/go-config/tree/master/source/microcli) - micro cli flag标识
+- [configmap](https://github.com/micro/go-micro/config/tree/master/source/configmap) - k8s configmap
+- [consul](https://github.com/micro/go-micro/config/tree/master/source/consul) - consul
+- [etcd](https://github.com/micro/go-micro/config/tree/master/source/etcd) - etcd v3
+- [env](https://github.com/micro/go-micro/config/tree/master/source/env) - 环境变量
+- [file](https://github.com/micro/go-micro/config/tree/master/source/file) - 配置文件
+- [flag](https://github.com/micro/go-micro/config/tree/master/source/flag) - 命令行标识
+- [grpc](https://github.com/micro/go-micro/config/tree/master/source/grpc) - grpc
+- [memory](https://github.com/micro/go-micro/config/tree/master/source/memory) - 内存
+- [microcli](https://github.com/micro/go-micro/config/tree/master/source/microcli) - micro cli flag标识
 
 TODO:
 
@@ -188,7 +188,7 @@ JSON json config:
 新增配置（直接使用默认的配置对象也可）
 
 ```go
-import "github.com/micro/go-config"
+import "github.com/micro/go-micro/config"
 
 conf := config.NewConfig()
 ```
@@ -199,7 +199,7 @@ conf := config.NewConfig()
 
 ```go
 import (
-	"github.com/micro/go-config"
+	"github.com/micro/go-micro/config"
 )
 
 // Load json config file
@@ -217,8 +217,8 @@ config.LoadFile("/tmp/config.yaml")
 
 ```go
 import (
-	"github.com/micro/go-config"
-	"github.com/micro/go-config/source/file"
+	"github.com/micro/go-micro/config"
+	"github.com/micro/go-micro/config/source/file"
 )
 
 enc := toml.NewEncoder()

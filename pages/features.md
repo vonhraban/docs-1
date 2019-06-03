@@ -38,7 +38,7 @@ Go Micro helps you write microservices
 * Extensible functionality via wrappers
 * Pluggable interfaces to swap out backend technologies
 
-## [Go Config](https://github.com/micro/go-config)
+## [Go Config](https://github.com/micro/go-micro/config)
 
 Go Config manages the complexity of config
 

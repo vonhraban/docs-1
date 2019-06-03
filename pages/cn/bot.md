@@ -92,7 +92,7 @@ time - Returns the server time
 ### 编写命令
 
 ```go
-import "github.com/micro/go-bot/command"
+import "github.com/micro/go-micro/agent/command"
 
 func Ping() command.Command {
 	usage := "ping"
@@ -109,7 +109,7 @@ func Ping() command.Command {
 把命令加到命令映射表中，命令的key可以通过**golang/regexp.Match**正则匹配。
 
 ```go
-import "github.com/micro/go-bot/command"
+import "github.com/micro/go-micro/agent/command"
 
 func init() {
 	command.Commands["^ping$"] = Ping()
@@ -162,7 +162,7 @@ type Input interface {
 把新的输入注册到映射表中
 
 ```go
-import "github.com/micro/go-bot/input"
+import "github.com/micro/go-micro/agent/input"
 
 func init() {
 	input.Inputs["name"] = MyInput
@@ -191,7 +191,7 @@ CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -ldflags '-w' -i -o micr
 
 小机器人值班时，它会监测它命名空间中注册的服务，默认的命名空间是`go.micro.bot`。所有在这个命名空间内的服务都会自动加到可执行列表中，当命令执行后，小机器人就会通过方法`Command.Exec`来调用服务。它也支持使用`Command.Help` 获取使用信息，当然是注册时要把帮助信息写上。
 
-服务的接口示例如下，也可以在[go-bot/proto](https://github.com/micro/go-bot/blob/master/proto/bot.proto)上找到。
+服务的接口示例如下，也可以在[go-bot/proto](https://github.com/micro/go-micro/agent/blob/master/proto/bot.proto)上找到。
 
 ```proto
 syntax = "proto3";
@@ -235,7 +235,7 @@ import (
 	"github.com/micro/go-micro"
 	"golang.org/x/net/context"
 
-	proto "github.com/micro/go-bot/proto"
+	proto "github.com/micro/go-micro/agent/proto"
 )
 
 type Command struct{}

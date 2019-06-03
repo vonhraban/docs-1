@@ -39,7 +39,7 @@ Go Micro可以帮你编写微服务。
 * 功能可扩展
 * 可插拔的后台交换技术
 
-## [Go Config](https://github.com/micro/go-config)
+## [Go Config](https://github.com/micro/go-micro/config)
 
 Go Config可以管理复杂的配置
 
