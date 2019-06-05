@@ -114,7 +114,7 @@ message HelloResponse {
 
 我们需要**protoc**和**protoc-gen-go**来生成protobuf代码文件，它们负责生成定义的go代码实现。
 
-Go-micro使用代码生成器生成客户端存根方法，这样可以像gRPC减少模板方法。这一步需要[golang/protobuf](https://github.com/golang/protobuf)fork出来的插件[github.com/micro/protobuf](github.com/micro/protobuf).
+Go-micro使用代码生成器生成客户端存根方法，这样可以像gRPC减少模板方法。这一步需要[golang/protobuf](https://github.com/golang/protobuf)fork出来的插件[github.com/micro/protobuf](https://github.com/micro/protobuf).
 
 ```shell
 go get github.com/micro/protobuf/{proto,protoc-gen-go}

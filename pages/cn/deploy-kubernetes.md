@@ -40,7 +40,7 @@ import "github.com/micro/kubernetes/go/micro"
 
 ## 编写服务
 
-在[gp-micro]([go-micro](https://github.com/micro/go-micro))中可以使用其它服务一样集成k8s。
+在[go-micro](https://github.com/micro/go-micro)中可以使用其它服务一样集成k8s。
 
 ```go
 import (

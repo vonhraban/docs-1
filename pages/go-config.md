@@ -46,19 +46,24 @@ A `Source` is a backend from which config is loaded. Multiple sources can be use
 
 The following sources are supported:
 
-- [configmap](https://github.com/micro/go-micro/config/tree/master/source/configmap) - read from k8s configmap
-- [consul](https://github.com/micro/go-micro/config/tree/master/source/consul) - read from consul
-- [etcd](https://github.com/micro/go-micro/config/tree/master/source/etcd) - read from etcd v3
-- [env](https://github.com/micro/go-micro/config/tree/master/source/env) - read from environment variables
-- [file](https://github.com/micro/go-micro/config/tree/master/source/file) - read from file
-- [flag](https://github.com/micro/go-micro/config/tree/master/source/flag) - read from flags
-- [grpc](https://github.com/micro/go-micro/config/tree/master/source/grpc) - read from grpc server
-- [memory](https://github.com/micro/go-micro/config/tree/master/source/memory) - read from memory
-- [microcli](https://github.com/micro/go-micro/config/tree/master/source/microcli) - read from micro cli flags
+- [cli](https://github.com/micro/go-micro/tree/master/config/source/cli) - read from parsed CLI flags
+- [consul](https://github.com/micro/go-micro/tree/master/config/source/consul) - read from consul
+- [env](https://github.com/micro/go-micro/tree/master/config/source/env) - read from environment variables
+- [etcd](https://github.com/micro/go-micro/tree/master/config/source/etcd) - read from etcd v3
+- [file](https://github.com/micro/go-micro/tree/master/config/source/file) - read from file
+- [flag](https://github.com/micro/go-micro/tree/master/config/source/flag) - read from flags
+- [memory](https://github.com/micro/go-micro/tree/master/config/source/memory) - read from memory
+
+There are also community-supported plugins, which support the following sources:
+
+- [configmap](https://github.com/micro/go-plugins/tree/master/config/source/configmap) - read from k8s configmap
+- [grpc](https://github.com/micro/go-plugins/tree/master/config/source/grpc) - read from grpc server
+- [runtimevar](https://github.com/micro/go-plugins/tree/master/config/source/runtimevar) - read from Go Cloud Development Kit runtime variable
+- [url](https://github.com/micro/go-plugins/tree/master/config/source/url) - read from URL
+- [vault](https://github.com/micro/go-plugins/tree/master/config/source/vault) - read from Vault server
 
 TODO:
 
-- vault
 - git url
 
 ### ChangeSet
