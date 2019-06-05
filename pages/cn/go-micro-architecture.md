@@ -178,6 +178,6 @@ server.Start会被service.Run调用
 
 ## 如何编写服务
 
-查看[编写Go服务](/cn/writing-a-go-service.html)
+查看[编写Go服务](cn/writing-a-go-service.html)
 
 {% include links.html %}

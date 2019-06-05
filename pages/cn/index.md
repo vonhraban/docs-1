@@ -20,15 +20,15 @@ Micro是一套微服务构建工具库。对于微服务架构的应用，Micro�
 
 micro工具库由以下几个部分组成：
 
-- [**`api`**](/cn/api.html) - API Gateway 网关。它是独立的HTTP入口，基于服务发现机制实现动态路由。
+- [**`api`**](cn/api.html) - API Gateway 网关。它是独立的HTTP入口，基于服务发现机制实现动态路由。
 
-- [**`web`**](/cn/web.html) - Web Dashboard web控制台。 提供可视化的发现与管理监控界面。
+- [**`web`**](cn/web.html) - Web Dashboard web控制台。 提供可视化的发现与管理监控界面。
 
-- [**`cli`**](/cn/cli.html) - Command line interface 命令行接口。提供描述、查询终端服务的交互入口。 
+- [**`cli`**](cn/cli.html) - Command line interface 命令行接口。提供描述、查询终端服务的交互入口。 
 
-- [**`bot`**](/cn/bot.html) - Slack与hipchat bot消息通知工具。也就是通过消息传递的CLI。
+- [**`bot`**](cn/bot.html) - Slack与hipchat bot消息通知工具。也就是通过消息传递的CLI。
 
-- [**`new`**](/cn/new.html) - 新服务构建模板。
+- [**`new`**](cn/new.html) - 新服务构建模板。
 
 Micro依赖[go-micro](https://github.com/micro/go-micro)，通过它来使其变成可插拨的工具库。
 

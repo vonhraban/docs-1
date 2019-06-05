@@ -20,7 +20,7 @@ micro有面向gRPC的[客户端](https://github.com/micro/go-plugins/tree/master
 
 ## 示例
 
-我们提供了一个简单的节点Greeter问候程序来演示对gRPC的支持：[examples/greeter](https://github.com/micro/go-grpc/tree/cn-lang/examples/greeter)。
+我们提供了一个简单的节点Greeter问候程序来演示对gRPC的支持：[examples/greeter](https://github.com/micro/go-micro/blob/master/service/grpc/README_cn.md)。
 
 ## 安装protobuf
 
