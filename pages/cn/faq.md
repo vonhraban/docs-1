@@ -109,11 +109,11 @@ micro api默认把**go.micro.api**作为API网关服务的命名空间，micro a
 
 Web服务由micro web提供，默认命名空间是**go.micro.web**。我们坚信，web应用作为微服务中的一等公民，所以把构建web管理控制台作为微服务的一部分显得非常重要。micro web其实是一个反向代理，并把http请求基于路径解析到适当的web应用程序。
 
-查看更多内容请求翻阅：[web](https://github.com/micro/micro/tree/master/web)
+查看更多内容请翻阅：[web](https://github.com/micro/micro/tree/master/web)
 
 ### SRV 服务
 
-SRV 服务是RPC服务的基础，也就是你常写的服务类型。我们一般把它称作RPC或后后端服务，因为它作为后台架构的一部分，不应该暴露在最外层。默认情况下，我们使用**go.micro.srv**作为它的命名空间，或者你可以使用像**com.example.srv**这样的名字。
+SRV服务是RPC服务的基础，也就是你常写的服务类型。我们一般把它称作RPC或后端服务，因为它作为后台架构的一部分，不应该暴露在最外层。默认情况下，我们使用**go.micro.srv**作为它的命名空间，或者你可以使用像**com.example.srv**这样的名字。
 
 ## Micro的性能如何
 

@@ -202,7 +202,7 @@ RPC处理器接收json或protobuf格式的HTTP POST请求，然后向前转成RP
 
 ### Web Handler
 
-Web处理器是，它是内置在服务发现中的HTTP反向代理服务，支持web socket。
+Web处理器，它是内置在服务发现中的HTTP反向代理服务，支持web socket。
 
 - Content-Type: 支持任何类型
 - Body: 支持任何格式
