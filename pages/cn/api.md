@@ -9,7 +9,7 @@ permalink: /cn/api.html
 
 ---
 
-API参考了[API网关模式](http://microservices.io/patterns/apigateway.html)为服务提供了一个单一的公共入口。通过服务发现，Micro API以http方式，将请求动态路由到具体的后台服务接口。我们心下简称**API**。
+API参考了[API网关模式](http://microservices.io/patterns/apigateway.html)为服务提供了一个单一的公共入口。通过服务发现，Micro API以http方式，将请求动态路由到具体的后台服务接口。我们以下简称**API**。
 
 <p align="center">
   <img src="../images/api.png" />
