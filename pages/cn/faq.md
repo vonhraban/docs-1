@@ -45,13 +45,13 @@ Micro跨过了单一组合开发的模式，她的开源工具与服务都是由
 
 如果要了解更多的资源可以查阅[开始入门](https://micro.mu/docs/writing-a-go-service.html) ，或者签出[示例](https://github.com/micro/examples)源码。
 
-可以通过[micro](https://github.com/micro/micro)工具集的cli，web ui，slack，或者api网关（api gateway）来访问操控务。
+可以通过[micro](https://github.com/micro/micro)工具集的cli，web ui，slack，或者api网关（api gateway）来访问操控服务。
 
 ## micro有哪些使用者
 
 [相关用户](https://micro.mu/docs/users.html)页面列出了一些使用micro服务的公司（列表更新可能不会太及时）。 
 
-还有很多公司在使用我们的框架但是没有公开列出来，如果你们你们正在使用micro，可以告诉我们，我们会列出来。
+还有很多公司在使用我们的框架但是没有公开列出来，如果你们正在使用micro，可以告诉我们，我们会列出来。
 
 ## 如何才能使用micro
 
@@ -144,7 +144,7 @@ Go-micro则是一个面向微服务的可插拔RPC框架。go-micro是一个只�
 
 Micro作为一个微服务工具库，好比一把瑞士军刀，在我们构建微服务时，可以提供传统的接入点，比如http api gateway，web ui，cli，slack bot等等。Micro使用工具来引导架构关注点之间逻辑上的隔离，推动开发者创建API层的服务来暴露对外的API接口，并且创建隔离于对外API的Web层微服务。
 
-如果想全盘掌控，那么使用go-kit；但是如果想弄一个有想法框架，使用go-micro。
+如果想全盘掌控，那么使用go-kit；但是如果想要一个有思想的框架，使用go-micro。
 
 ## 想了解更多
 
