@@ -72,10 +72,6 @@ entries:
       url: /writing-a-go-service.html
       output: web, pdf
 
-    - title: Writing a Go Function
-      url: /writing-a-go-function.html
-      output: web, pdf
-
     - title: Fault Tolerance
       url: /fault-tolerance.html
       output: web, pdf
@@ -179,8 +175,4 @@ entries:
 
     - title: Toolkit
       url: /plugins-toolkit.html
-      output: web, pdf
-
-    - title: NATS
-      url: /plugins-nats.html
       output: web, pdf

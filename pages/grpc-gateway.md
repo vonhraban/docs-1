@@ -7,8 +7,6 @@ permalink: grpc-gateway.html
 summary: 
 ---
 
-# GRPC Gateway
-
 This guide helps with using the grpc gateway with go-micro services.
 
 The [grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway) is a plugin of [protoc](http://github.com/google/protobuf).

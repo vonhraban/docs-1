@@ -7,8 +7,6 @@ permalink: writing-a-go-function.html
 summary: 
 ---
 
-# Writing a Go Function
-
 This is a guide to getting started with go-micro functions. Functions are one time executing Services.
 
 If you prefer a higher level overview of the toolkit first, checkout the introductory blog post [https://micro.mu/blog/2016/03/20/micro.html](https://micro.mu/blog/2016/03/20/micro.html).

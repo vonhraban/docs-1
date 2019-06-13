@@ -7,8 +7,6 @@ permalink: /toolkit.html
 summary: Micro is a toolkit for microservice development
 ---
 
-# Overview
-
 Micro addresses the key requirements for building scalable systems. It takes the microservice architecture pattern and transforms it into 
 a set of tools which act as the building blocks of a platform. Micro deals with the complexity of distributed systems and provides 
 simple abstractions already understood by developers.

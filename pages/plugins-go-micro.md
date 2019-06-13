@@ -7,8 +7,6 @@ permalink: plugins-go-micro.html
 summary: 
 ---
 
-# Go Micro Plugins
-
 Micro is a pluggable toolkit and framework. The internal features can be swapped out with any [go-plugins](https://github.com/micro/go-plugins).
 
 The toolkit has a separate plugin interface. Learn more at [micro/plugin](https://github.com/micro/micro/tree/master/plugin).

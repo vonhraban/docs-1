@@ -7,8 +7,6 @@ permalink: install-guide.html
 summary: 
 ---
 
-# Install Guide
-
 ## Go Micro
 
 Go Micro is an RPC framework for development microservices in Go

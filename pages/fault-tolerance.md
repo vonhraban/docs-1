@@ -7,8 +7,6 @@ permalink: fault-tolerance.html
 summary: 
 ---
 
-# Fault Tolerance
-
 In a distributed systems world failures are occurring all the time. Micro attempts to address this with some best practices for fault tolerance. 
 This document describes some of the ways in which they can be configured.
 

@@ -7,8 +7,6 @@ permalink: plugins-toolkit.html
 summary: 
 ---
 
-# Toolkit Plugins
-
 Plugins are a way of integrating external code into the Micro toolkit. This is completely separate to go-micro plugins. 
 Using plugins here allows you to add additional flags, commands and HTTP handlers to the toolkit. 
 

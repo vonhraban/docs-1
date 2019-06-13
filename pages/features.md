@@ -7,8 +7,6 @@ permalink: features.html
 summary: 
 ---
 
-# Features
-
 The micro ecosystem is rapidly growing but there's still a lot to do.
 
 The features page keeps track of the most important or noteworthy features.
