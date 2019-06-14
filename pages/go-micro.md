@@ -4,7 +4,7 @@ keywords: go-micro
 tags: [go-micro]
 sidebar: home_sidebar
 permalink: "/go-micro.html"
-summary: Go Micro is a framework for microservice development.
+summary: Go Micro is a framework for microservices development
 ---
 
 # Overview

@@ -1,10 +1,10 @@
 ---
-title: Go Micro Architecture
+title: Internals
 keywords: go-micro
 tags: [go-micro]
 sidebar: home_sidebar
 permalink: /go-micro-architecture.html
-summary: 
+summary: A description of the go-micro internals
 ---
 
 Go Micro is a pluggable RPC framework. It's used for distributed systems development.

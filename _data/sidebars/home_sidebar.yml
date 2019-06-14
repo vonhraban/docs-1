@@ -28,10 +28,6 @@ entries:
       output: web, pdf
       type: homepage
 
-    - title: Architecture
-      url: /architecture.html
-      output: web, pdf
-
     - title: FAQ
       url: /faq.html
       output: web, pdf
@@ -40,20 +36,16 @@ entries:
       url: /features.html
       output: web, pdf
 
+    - title: Microservices
+      url: /microservices.html
+      output: web, pdf
+
     - title: Resources
       url: /resources.html
       output: web, pdf
 
     - title: Users
       url: /users.html
-      output: web, pdf
-
-  - title: Concepts
-    output: web, pdf
-    folderitems:
-
-    - title: Microservices
-      url: /microservices.html
       output: web, pdf
 
   - title: Guides
@@ -84,6 +76,10 @@ entries:
       url: /toolkit.html
       output: web, pdf
 
+    - title: Architecture
+      url: /architecture.html
+      output: web, pdf
+
     - title: API Gateway
       url: /api.html
       output: web, pdf
@@ -100,41 +96,12 @@ entries:
       url: /cli.html
       output: web, pdf
 
-    - title: SlackOps Bot
+    - title: Slack Bot
       url: /bot.html
       output: web, pdf
 
     - title: New Template
       url: /new.html
-      output: web, pdf
-
-  - title: Go API
-    output: web, pdf
-    folderitems:
-
-    - title: Overview
-      url: /go-api.html
-      output: web, pdf
-
-    - title: Handlers
-      url: /go-api-handlers.html
-      output: web, pdf
-
-
-  - title: Go Config
-    output: web, pdf
-    folderitems:
-
-    - title: Overview
-      url: /go-config.html
-      output: web, pdf
-
-  - title: Go gRPC
-    output: web, pdf
-    folderitems:
-
-    - title: Overview
-      url: /go-grpc.html
       output: web, pdf
 
   - title: Go Micro
@@ -147,6 +114,18 @@ entries:
 
     - title: Architecture
       url: /go-micro-architecture.html
+      output: web, pdf
+
+    - title: API
+      url: /go-api.html
+      output: web, pdf
+
+    - title: Config
+      url: /go-config.html
+      output: web, pdf
+
+    - title: GRPC
+      url: /go-grpc.html
       output: web, pdf
 
   - title: Deployment
@@ -173,6 +152,6 @@ entries:
       url: /plugins-go-micro.html
       output: web, pdf
 
-    - title: Toolkit
+    - title: Micro
       url: /plugins-toolkit.html
       output: web, pdf

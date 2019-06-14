@@ -7,8 +7,6 @@ permalink: plugins.html
 summary: 
 ---
 
-# Plugins
-
 Micro provides a pluggable architecture for all tooling. This means underlying implementations can be swapped out.
 
 Go-Micro and the Micro toolkit include separate types of plugins. Navigate from the sidebar to learn more about each.
