@@ -1,9 +1,9 @@
 ---
-title: Toolkit Plugins
+title: Runtime Plugins
 keywords: plugins
 tags: [plugins]
 sidebar: home_sidebar
-permalink: plugins-toolkit.html
+permalink: runtime-plugins.html
 summary: 
 ---
 

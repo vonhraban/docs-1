@@ -1,9 +1,9 @@
 ---
-title: Toolkit
-keywords: toolkit
-tags: [micro, toolkit]
+title: Runtime
+keywords: runtime
+tags: [micro, runtime]
 sidebar: home_sidebar
-permalink: /toolkit.html
+permalink: /runtime.html
 summary: Micro is a runtime for microservices development
 ---
 
@@ -18,7 +18,7 @@ Plug in any stack or underlying technology. Build future-proof systems using mic
 
 ## Features
 
-The toolkit is composed of the following features:
+The runtime is composed of the following features:
 
 - **API Gateway:** A single http entry point with dynamic request routing using service discovery. The API gateway allows you to build a scalable 
 microservice architecture on the backend and consolidate serving a public api on the frontend. The micro api provides powerful routing 
@@ -55,7 +55,7 @@ docker pull microhq/micro
 
 ## Dependencies
 
-The micro toolkit has two dependencies: 
+The micro runtime has two dependencies: 
 
 - [Service Discovery](#service-discovery) - used for name resolution
 - [Protobuf](#protobuf) - used for code generation

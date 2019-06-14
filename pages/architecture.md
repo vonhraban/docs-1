@@ -14,7 +14,7 @@ overview.
 
 This section should explain more about how micro is constructed and how the various libraries/repos relate to each other.
 
-## Toolkit
+## Runtime
 
 ### API
 
@@ -55,6 +55,6 @@ The Micro CLI is a command line version of go-micro which provides a way of obse
 
 ## Plugins
 
-Plugins are a way of adding additional functionality to the toolkit. See the [overview](plugins-toolkit.html).
+Plugins are a way of adding additional functionality to the runtime. See the [overview](runtime-plugins.html).
 
 {% include links.html %}

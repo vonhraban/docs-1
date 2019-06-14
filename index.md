@@ -45,7 +45,7 @@ Go Micro abstracts away the complexity of distributed systems and provides simpl
 ## Getting Started
 
 - Start writing services using the [go-micro](go-micro.html) framework.
-- Interact with your service using the [micro](toolkit.html) toolkit.
+- Interact with your service using the [micro](runtime.html) runtime.
 
 ## Resources
 
