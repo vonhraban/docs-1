@@ -14,7 +14,7 @@ Micro为构建微服务提供了一些基本模板，目标就是要让开发分
 
 本节更多是说明micro是由哪些库组成的，以及这些组成micro的库之间的彼此联系。
 
-## 工具集
+## 运行时
 
 ### API
 
@@ -52,40 +52,8 @@ Bot模块可以理解为一个可内嵌在服务平台的小机器人，它可�
 
 CLI模块很好理解，它是go-micro的命令行工具，提供与实际运行环境的可视化交互的能力。
 
-## Go Micro
-
-Go-micro是独立的RPC框架，它是micro工具集的核心，上面介绍的各个模块组件会基于它来完成工作。下图可以看到每个go-mciro的独立特性。
-
-<p align="center">
-  <img src="{{site.baseurl}}/images/go-micro.svg" />
-</p>
-
-### Registry
-
-Registry注册模块提供可插拔的服务注册与发现功能，当前实现的方式有Consul，etcd，内存和k8s。即使需求不同，接口也比较容易实现。
-
-### Selector
-
-Selector选择器通过选举提供负载均衡机制。当客户端请求服务时，它首先要向查询到服务注册信息，一般情况是返回所需服务的注册成功的节点列表。选择器会选择其中一个用来提供服务。多次调用选择器会触发均衡算法，当前的算法有round robin（循环调度），哈希随机和黑名单。
-
-### Broker
-
-Broker是事件广播/订阅可插拔接口。对于事件驱动的微服务架构，消息广播与订阅得放在首要位置。目前的实现有NATs、rabbitmq、http。
-
-### Transport
-
-Transport传输也是可插拔的点到点消息传输接口，目前的实现有http，rabbitmq，nats。通过提供这种抽象，可以无缝地进行交换传输。
-
-### Client
-
-Client客户端提供发起RPC请求的能力。它集合了注册（registry）、选择器（selector）、broker、传输（transport），当然也具备重试、超时、上下文等等。
-
-### Server
-
-Server服务就是运行了真实的微服务的程序，它提供的服务通过RPC请求的完成。
-
 ## Plugins
 
-go-micro的相关插件可以在链接上查看：[micro/go-plugins](https://github.com/micro/go-plugins).
+Go-Micro支持通过插件的方式管理运行时，更多内容可查看[runtime-plugins](runtime-plugins.html)。
 
 {% include links.html %}

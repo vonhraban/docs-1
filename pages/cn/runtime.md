@@ -1,11 +1,11 @@
 ---
-title: Micro Toolkit
-keywords: toolkit
-tags: [micro, toolkit]
+title: Micro Runtime
+keywords: runtime
+tags: [micro, runtime]
 sidebar: home_sidebar_cn
 lang: cn
-permalink: /cn/toolkit.html
-summary: micro是微服务的工具库
+permalink: /cn/runtime.html
+summary: 微服务运行时管理系统
 ---
 
 Micro是开发微服务的工具库
@@ -26,16 +26,16 @@ micro工具库由以下几个部分组成：
 
 - **Interactive CLI:** 交互式的命令行接口。CLI通过终端可以描述、查询、直接与平台和服务进行交互。CLI提供所有的命令让开发者明白微服务正在处理的事情。CLI也包含了交互模式。
 
-- **Service Proxy:** 服务代理，这是一个在[Go Micro](https://github.com/micro/go-micro)和[MUCP协议](https://github.com/micro/protocol)之上构建的透明的代理服务。它将服务发现、负载均衡、消息编码、中间件、传输及代理插件卸载到单一位置。
+- **Service Proxy:** 服务代理，基于[Go Micro](https://github.com/micro/go-micro)和[MUCP协议](https://github.com/micro/protocol)构建的透明的代理服务。它将服务发现、负载均衡、消息编码、中间件、传输及代理插件卸载到单一位置。
 
 可以单独运行或与服务一起运行。
 
 - **Service Templates:** 服务生成模板，目的是快速生成服务代码，让编写代码飞起来。Micro预置了一些模板用来编写服务。
 保持相同的方式编写服务，提高效率。
 
-- **SlackOps Bot:** Slack小机器人插件，当它运行中服务中时，这个插件允许开发者通过Slack消息来操作平台。MicroBot插件提供聊天配置选项，这样就可以让团队可以通过向小机器人发送聊天消息来做一些我们希望它做的事，这里面当然也包含像动态发现服务一样创建slack命令。
+- **SlackOps Bot:** Slack小机器人插件，当它运行中服务中时，这个插件允许开发者通过Slack消息来操作平台。MicroBot插件提供聊天配置选项，这样就可以让团队通过向小机器人发送聊天消息来做一些我们希望它做的事，这里面当然也包含像动态发现服务一样创建slack命令。
 
-- **Web Dashboard:** Web管理控制台允许直接在Web页面上查看服务的运行情况，展示端点信息，请求与响应状态，甚至直接向服务进行查询。管理控制台也有CLI交互页面提供给开发者在线上处理，就像直接操作终端一样。
+- **Web Dashboard:** 通过Web管理控制台，可以直接在Web页面上查看服务的运行情况，展示端点信息，请求与响应状态，甚至直接向服务进行查询。管理控制台也有CLI交互页面提供给开发者在线上处理，就像直接操作终端一样。
 
 ## 开始使用
 
