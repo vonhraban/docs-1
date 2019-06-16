@@ -9,6 +9,7 @@ permalink: index.html
 Micro addresses the key requirements for building microservice systems. It takes the microservice architecture pattern and transforms 
 it into a set of tools which act as the building blocks for scalable platforms. Micro hides the complexity of distributed systems and 
 provides well understood concepts to developers.
+
 ## Overview
 
 The main piece of software provided is [Micro](https://github.com/micro/micro), a microservice development runtime.
