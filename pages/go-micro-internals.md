@@ -3,7 +3,7 @@ title: Internals
 keywords: go-micro
 tags: [go-micro]
 sidebar: home_sidebar
-permalink: /go-micro-architecture.html
+permalink: /go-micro-internals.html
 summary: A description of the go-micro internals
 ---
 
