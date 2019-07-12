@@ -56,8 +56,8 @@ entries:
       url: /go-micro.html
       output: web, pdf
 
-    - title: Architecture
-      url: /go-micro-architecture.html
+    - title: Internals
+      url: /go-micro-internals.html
       output: web, pdf
 
     - title: API

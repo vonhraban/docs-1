@@ -46,7 +46,6 @@ are pluggable and allows Go Micro to be runtime agnostic. You can plugin any und
 - [Install Protobuf](#install-protobuf)
 - [Service Discovery](#service-discovery)
 - [Writing a Service](#writing-a-service)
-- [Writing a Function](#writing-a-function)
 - [Publish & Subscribe](#publish--subscribe)
 - [Plugins](#plugins)
 - [Wrappers](#wrappers)
@@ -223,50 +222,6 @@ Output
 ```
 Hello John
 ```
-
-## Writing a Function
-
-Go Micro includes the Function programming model. 
-
-A Function is a one time executing Service which exits after completing a request. 
-
-### Defining a Function
-
-```go
-package main
-
-import (
-	"context"
-
-	proto "github.com/micro/examples/function/proto"
-	"github.com/micro/go-micro"
-)
-
-type Greeter struct{}
-
-func (g *Greeter) Hello(ctx context.Context, req *proto.HelloRequest, rsp *proto.HelloResponse) error {
-	rsp.Greeting = "Hello " + req.Name
-	return nil
-}
-
-func main() {
-	// create a new function
-	fnc := micro.NewFunction(
-		micro.Name("greeter"),
-	)
-
-	// init the command line
-	fnc.Init()
-
-	// register a handler
-	fnc.Handle(new(Greeter))
-
-	// run the function
-	fnc.Run()
-}
-```
-
-It's that simple.
 
 ## Publish & Subscribe
 
@@ -461,9 +416,5 @@ An example service can be found in [**examples/service**](https://github.com/mic
 The [**examples**](https://github.com/micro/examples) directory contains examples for using things such as middleware/wrappers, selector filters, pub/sub, grpc, plugins and much more. For the complete greeter example look at [**examples/greeter**](https://github.com/micro/examples/tree/master/greeter). Other examples can be found throughout the GitHub repository.
 
 Watch the [Golang UK Conf 2016](https://www.youtube.com/watch?v=xspaDovwk34) video for a high level overview.
-
-## Other Languages
-
-Check out [ja-micro](https://github.com/Sixt/ja-micro) to write services in Java
 
 {% include links.html %}

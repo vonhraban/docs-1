@@ -1,5 +1,5 @@
 ---
-title: Documentation
+title: Docs
 keywords: homepage
 tags: [introduction]
 sidebar: home_sidebar
