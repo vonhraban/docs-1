@@ -85,7 +85,7 @@ entries:
     folderitems:
 
     - title: 概览
-      url: /cn/toolkit.html
+      url: /cn/runtime.html
       output: web, pdf
 
     - title: API 网关
@@ -177,8 +177,8 @@ entries:
       url: /cn/plugins-go-micro.html
       output: web, pdf
 
-    - title: 工具集
-      url: /cn/plugins-toolkit.html
+    - title: 运行时工具
+      url: /cn/plugins-runtime.html
       output: web, pdf
 
     - title: NATS
