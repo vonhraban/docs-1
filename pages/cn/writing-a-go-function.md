@@ -8,8 +8,6 @@ permalink: /cn/writing-a-go-function.html
 summary: 
 ---
 
-# 编写Golang Function
-
 本篇是指导大家使用go-micro的Function功能，Function是执行一次的服务。（译者按：这里Function并不等同与平常我们编写的函数，而是只执行一次的服务所以我没有直接翻译，以免引起误解）
 
 如果想先从更高的角度了解相关的工具集，可以查看博客[https://micro.mu/blog/2016/03/20/micro.html](https://micro.mu/blog/2016/03/20/micro.html)。

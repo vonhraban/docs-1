@@ -8,8 +8,6 @@ permalink: /cn/plugins.html
 summary: 
 ---
 
-# 相关插件
-
 Micro架构中所有工具都可插拔，也即是说内在实现都是可以剥离出来。
 
 Go-Micro和Micro工具集的插件是各自独立的，可以在导航栏里查看更多的相关信息。

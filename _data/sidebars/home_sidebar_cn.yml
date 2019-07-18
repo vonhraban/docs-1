@@ -27,17 +27,17 @@ entries:
       url: /cn/index.html
       output: web, pdf
       type: homepage
-
-    - title: 架构
-      url: /cn/architecture.html
-      output: web, pdf
-
+  
     - title: 常见问题
       url: /cn/faq.html
       output: web, pdf
 
     - title: 特性
       url: /cn/features.html
+      output: web, pdf
+
+    - title: Mission
+      url: /cn/mission.html
       output: web, pdf
 
     - title: 相关资源
@@ -48,55 +48,51 @@ entries:
       url: /cn/users.html
       output: web, pdf
 
-  - title: 相关概念
-    output: web, pdf
-    folderitems:
-
-    - title: 微服务
-      url: /cn/microservices.html
-      output: web, pdf
-
-  - title: 指导手册
-    output: web, pdf
-    folderitems:
-
-    - title: 安装指导
-      url: /cn/install-guide.html
-      output: web, pdf
-
-    - title: GRPC 网关
-      url: /cn/grpc-gateway.html
-      output: web, pdf
-
-    - title: 编写Golang服务
-      url: /cn/writing-a-go-service.html
-      output: web, pdf
-
-    - title: 编写Go Function
-      url: /cn/writing-a-go-function.html
-      output: web, pdf
-
-    - title: 容错
-      url: /cn/fault-tolerance.html
-      output: web, pdf
-
-  - title: Micro
+  - title: 整体框架
     output: web, pdf
     folderitems:
 
     - title: 概览
+      url: /cn/go-micro.html
+      output: web, pdf 
+       
+    - title: 内部设计
+      url: /cn/go-micro-internals.html
+      output: web, pdf
+    
+    - title: API
+      url: /cn/go-api.html
+      output: web, pdf
+
+    - title: Config
+      url: /cn/go-config.html
+      output: web, pdf
+  
+    - title: GRPC
+      url: /cn/go-grpc.html
+      output: web, pdf
+
+  - title: 运行时工具
+    output: web, pdf
+    folderitems:
+  
+    - title: 概览
       url: /cn/runtime.html
       output: web, pdf
 
-    - title: API 网关
+    - title: 架构
+      url: /cn/architecture.html
+      output: web, pdf
+    
+    - title: API Gateway
       url: /cn/api.html
       output: web, pdf
 
-    - title: Web管理控制台
+    - title: Web 管理控制台
       url: /cn/web.html
       output: web, pdf
 
-    - title: 服务代理
+    - title: 服务Proxy代理
       url: /cn/proxy.html
       output: web, pdf
 
@@ -108,49 +104,8 @@ entries:
       url: /cn/bot.html
       output: web, pdf
 
-    - title: 新建模板
+    - title: 服务模板
       url: /cn/new.html
-      output: web, pdf
-
-  - title: Go API
-    output: web, pdf
-    folderitems:
-
-    - title: 概览
-      url: /cn/go-api.html
-      output: web, pdf
-
-    - title: Handler处理器
-      url: /cn/go-api-handlers.html
-      output: web, pdf
-
-
-  - title: Go Config
-    output: web, pdf
-    folderitems:
-
-    - title: 概览
-      url: /cn/go-config.html
-      output: web, pdf
-
-  - title: Go gRPC
-    output: web, pdf
-    folderitems:
-
-    - title: 概览
-      url: /cn/go-grpc.html
-      output: web, pdf
-
-  - title: Go Micro
-    output: web, pdf
-    folderitems:
-
-    - title: 概览
-      url: /cn/go-micro.html
-      output: web, pdf
-
-    - title: 架构
-      url: /cn/go-micro-architecture.html
       output: web, pdf
 
   - title: 部署
@@ -165,7 +120,27 @@ entries:
       url: /cn/deploy-kubernetes.html
       output: web, pdf
 
-  - title: Plugins
+  - title: 指导
+    output: web, pdf
+    folderitems:
+
+    - title: 安装
+      url: /cn/install-guide.html
+      output: web, pdf
+
+    - title: GRPC 网关
+      url: /cn/grpc-gateway.html
+      output: web, pdf
+
+    - title: 编写服务
+      url: /cn/writing-a-go-service.html
+      output: web, pdf
+
+    - title: 容错
+      url: /cn/fault-tolerance.html
+      output: web, pdf
+
+  - title: 插件
     output: web, pdf
     folderitems:
 
@@ -177,10 +152,6 @@ entries:
       url: /cn/plugins-go-micro.html
       output: web, pdf
 
-    - title: 运行时工具
-      url: /cn/plugins-runtime.html
-      output: web, pdf
-
-    - title: NATS
-      url: /cn/plugins-nats.html
+    - title: Micro
+      url: /cn/runtime-plugins.html
       output: web, pdf

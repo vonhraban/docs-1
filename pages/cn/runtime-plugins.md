@@ -2,8 +2,9 @@
 title: 运行时插件
 keywords: plugins
 tags: [plugins]
-sidebar: home_sidebar
-permalink: runtime-plugins.html
+lang: cn
+sidebar: home_sidebar_cn
+permalink: /cn/runtime-plugins.html
 summary: 
 ---
 

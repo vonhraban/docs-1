@@ -8,8 +8,6 @@ permalink: /cn/grpc-gateway.html
 summary: 
 ---
 
-# GRPC 网关
-
 本篇主要帮助大家在go-micro服务中使用grpc网关。
 
 GRPC网关[grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway)是[protoc](http://github.com/google/protobuf)的一个插件。它遵循[gRPC](http://github.com/grpc/grpc-common)中的服务定义，生成反向代理服务，这个代理就会把RESTful风格的JSON API转成gRPC请求。

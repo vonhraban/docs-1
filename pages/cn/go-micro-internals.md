@@ -4,7 +4,7 @@ keywords: go-micro
 tags: [go-micro]
 lang: cn
 sidebar: home_sidebar_cn
-permalink: /cn/go-micro-architecture.html
+permalink: /cn/go-micro-internals.html
 summary: 
 ---
 

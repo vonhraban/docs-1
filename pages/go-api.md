@@ -38,7 +38,7 @@ The API handler is the default handler. It serves any HTTP requests and forwards
 
 - Content-Type: Any
 - Body: Any
-- Forward Format: [api.Request](https://github.com/micro/go-api/blob/master/proto/api.proto#L11)/[api.Response](https://github.com/micro/go-api/blob/master/proto/api.proto#L21)
+- Forward Format: [api.Request](https://github.com/micro/go-micro/blob/master/api/proto/api.proto#L11)/[api.Response](https://github.com/micro/go-micro/blob/master/api/proto/api.proto#L21)
 - Path: `/[service]/[method]`
 - Resolver: Path is used to resolve service and method
 

@@ -8,8 +8,6 @@ permalink: /cn/install-guide.html
 summary: 
 ---
 
-# 安装指导
-
 ## Go Micro
 
 Go Micro是基于Go语言用于开发的微服务的RPC框架，它是Micro的基础。

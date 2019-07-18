@@ -8,8 +8,6 @@ permalink: /cn/plugins-go-micro.html
 summary: 
 ---
 
-# Go Micro插件
-
 Micro是可插拔的工具库与框架，在[go-plugins](https://github.com/micro/go-plugins)中您可以随意根据需要替换需要的插件。
 
 micro工具集有独立的插件接口，查看[micro/plugin](https://github.com/micro/micro/tree/master/plugin)了解更多。

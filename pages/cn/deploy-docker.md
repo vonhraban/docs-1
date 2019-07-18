@@ -8,8 +8,6 @@ permalink: /cn/deploy-docker.html
 summary: 
 ---
 
-# 使用 Docker 部署
-
 Micro很容易在docker容器内运行
 
 ## 预置镜像

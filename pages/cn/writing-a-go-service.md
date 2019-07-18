@@ -8,8 +8,6 @@ permalink: /cn/writing-a-go-service.html
 summary: 
 ---
 
-# 编写Golang服务
-
 这里主要和大家演示如何使用go-micro。
 
 如果想先从更高的角度了解相关的工具集，可以查看博客[https://micro.mu/blog/2016/03/20/micro.html](https://micro.mu/blog/2016/03/20/micro.html)。

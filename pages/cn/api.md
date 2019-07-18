@@ -160,7 +160,7 @@ API处理器接收任何的HTTP请求，并且向前转发指定格式的RPC请�
 
 - Content-Type: 支持任何类型
 - Body: 支持任何格式
-- Forward Format: 转发格式，[api.Request](https://github.com/micro/go-api/blob/master/proto/api.proto#L11)/[api.Response](https://github.com/micro/go-api/blob/master/proto/api.proto#L21)
+- Forward Format: 转发格式，[api.Request](https://github.com/micro/go-micro/blob/master/api/proto/api.proto#L11)/[api.Response](https://github.com/micro/go-micro/blob/master/api/proto/api.proto#L21)
 - Path: 请求路径，`/[service]/[method]`
 - Resolver: 请求解析器，路径会被解析成服务与方法
 - Configure: 配置，在启动时指定`--handler=api`或在启动命令前指定环境变量`MICRO_API_HANDLER=api`

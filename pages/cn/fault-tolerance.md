@@ -8,8 +8,6 @@ permalink: /cn/fault-tolerance.html
 summary: 
 ---
 
-# 容错（fault tolerance）
-
 分布式系统世界中，随时随地都可能会出现异常。Micro在定位这个问题时，对容错作出了许多最好的尝试。这篇文档介绍一些可配置的容错方式。
 
 ## 心跳（Heartbeating）

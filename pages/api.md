@@ -168,7 +168,7 @@ The API handler serves any HTTP requests and forwards on as an RPC request with 
 
 - Content-Type: Any
 - Body: Any
-- Forward Format: [api.Request](https://github.com/micro/go-api/blob/master/proto/api.proto#L11)/[api.Response](https://github.com/micro/go-api/blob/master/proto/api.proto#L21)
+- Forward Format: [api.Request](https://github.com/micro/go-micro/blob/master/api/proto/api.proto#L11)/[api.Response](https://github.com/micro/go-micro/blob/master/api/proto/api.proto#L21)
 - Path: `/[service]/[method]`
 - Resolver: Path is used to resolve service and method
 - Configure: Flag `--handler=api` or env var `MICRO_API_HANDLER=api`

@@ -8,8 +8,6 @@ permalink: /cn/features.html
 summary: 
 ---
 
-# 特性
-
 Micro的生态系统正在高速发展，但是目前还是有很多事要做。
 
 本页面会一直保持更新最重要的或者值得一提的特性。
