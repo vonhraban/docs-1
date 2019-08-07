@@ -67,7 +67,7 @@ The default discovery system is multicast DNS which requires zeroconf. If you wa
 
 ### Consul
 
-[Consul](https://www.consul.io/) is used as the default service discovery system. 
+[Consul](https://www.consul.io/) can be used as an alternative service discovery system.
 
 Discovery is pluggable. Find plugins for etcd, kubernetes, zookeeper and more in the [micro/go-plugins](https://github.com/micro/go-plugins) repo.
 

@@ -1,9 +1,9 @@
 ---
-title: Go Micro Plugins
+title: Framework Plugins
 keywords: plugins
 tags: [plugins]
 sidebar: home_sidebar
-permalink: plugins-go-micro.html
+permalink: plugins-framework.html
 summary: 
 ---
 

@@ -72,6 +72,10 @@ entries:
       url: /go-grpc.html
       output: web, pdf
 
+    - title: Web
+      url: /go-web.html
+      output: web, pdf
+
   - title: Runtime
     output: web, pdf
     folderitems:
@@ -148,10 +152,10 @@ entries:
       url: /plugins.html
       output: web, pdf
 
-    - title: Go Micro
-      url: /plugins-go-micro.html
+    - title: Framework
+      url: /plugins-framework.html
       output: web, pdf
 
-    - title: Micro
-      url: /runtime-plugins.html
+    - title: Runtime
+      url: /plugins-runtime.html
       output: web, pdf
