@@ -8,11 +8,11 @@ permalink: /cn/index.html
 summary: 简化微服务的开发。该文档可以帮助您快速编写新程序。
 ---
 
-Micro希望能提供构建微服务的关键要素。对于微服务架构的应用，Micro提供平台层面、高度弹性的工具组件，让服务开发者们可以把复杂的分布式系统以简单的方式构建起来，并且尽可能让开发者使用最少的时间完成基础架构的构建。
+在构建微服务中，Micro希望能为大家提供平台层面、高度弹性的工具组件，让服务开发者们可以把复杂的分布式系统以简单的方式构建起来，并且尽可能让开发者使用最少的时间完成基础架构的创建。
 
 ## 概览
 
-在Micro架构中，作为与其同名的运行时管理工具[Micro](https://github.com/micro/micro)就是最主要构件。我们通过下图了解Micro架构：
+在Micro架构中，作为与其同名的运行时管理工具[Micro](https://github.com/micro/micro)就是最主要的构件。我们通过下图了解Micro架构：
 
 <center>
 <img src="https://micro.mu/runtime3.svg" style="width: 100%; max-width: 600px; height: auto; margin-bottom: 25px;" />
@@ -42,7 +42,7 @@ micro由以下几个部分组成：
 ## 相关资源
 
 - [示例](https://github.com/micro/examples)，上面有相关如何使用micro的信息。
-- [搜索](https://micro.mu/explore/)搜索可使用的相关micro开源项目。
+- [搜索](https://micro.mu/explore/)，使用micro的开源项目。
 - [博客](https://micro.mu/blog/)，深入理解micro，了解更多的服务设计思路。
 - [视频](https://www.youtube.com/watch?v=xspaDovwk34) 2016年在英国Golong会议上，关于micro的简单介绍。
 - [PPT](https://speakerdeck.com/asim)，上面有一些PPT，可供查阅。
