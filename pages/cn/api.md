@@ -148,7 +148,7 @@ API有如下方法可以配置请求handler：
 - [`rpc`](#rpc-handler) - 处理json及protobuf格式的POST请求，并转向RPC。
 - [`proxy`](#proxy-handler) - 反向代理。
 - [`event`](#event-handler) - 处理任意的http请求并向消息总线分发消息。
-- [`web`](#web-handler) - 包含websocket的http反向代理。
+- [`web`](#web-handler) - http反向代理，支持websocket。
 
 通过[`/rpc`](#rpc-endpoint)入口可以绕开handler处理器。
 
