@@ -35,7 +35,7 @@ Handler专门用于接收并处理HTTP请求，为了方便，handler使用服�
 
 ## API Handler
 
-处理http请求，通过RPC对控制http请求与响应，API是默认的处理器，它接收任何HTTP请求并转成指定格式的RPC请求。
+API Handler是默认的处理器，负责把内部的RPC服务对外暴露成http接口，它接收并处理http请求，再转成RPC请求转向具体服务，最后返回RPC服务的响应结果。
 
 - Content-Type: 所有类型
 - Body: 任务类型
@@ -45,7 +45,7 @@ Handler专门用于接收并处理HTTP请求，为了方便，handler使用服�
 
 ## Broker Handler
 
-broker handler Pub/Sub 订阅分发处理器，以http的方式实现go-micro的分发接口服务
+broker handler Pub/Sub 订阅分发处理器，将内部的Pub/Sub服务接口对外暴露成Http接口，接收http请求，并根据参数指向的主题发送消息。
 
 - Content-Type: Any
 - Body: Any
@@ -75,7 +75,7 @@ broker handler Pub/Sub 订阅分发处理器，以http的方式实现go-micro的
 
 ## HTTP Handler
 
-Http处理器是HTTP的反向代理，内置在服务发现中。
+Http处理器是HTTP的反向代理，其内置有服务发现。
 
 - Content-Type: Any
 - Body: Any

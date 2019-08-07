@@ -144,11 +144,11 @@ Handler负责持有并管理HTTP请求路由。
 
 API有如下方法可以配置请求handler：
 
-- [`api`](#api-handler) - 处理http请求，通过RPC来完全控制http的请求/响应。
+- [`api`](#api-handler) - 负责把内部的RPC服务对外暴露成http接口，它接收并处理http请求，根据URL转成内部RPC请求，并把RPC服务的响应结果返回客户端。
 - [`rpc`](#rpc-handler) - 处理json及protobuf格式的POST请求，并转向RPC。
-- [`proxy`](#proxy-handler) - 处理http请求并转向反向代理。
+- [`proxy`](#proxy-handler) - 反向代理。
 - [`event`](#event-handler) - 处理任意的http请求并向消息总线分发消息。
-- [`web`](#web-handler) - 包含web socket的http反向代理。
+- [`web`](#web-handler) - http反向代理，支持websocket。
 
 通过[`/rpc`](#rpc-endpoint)入口可以绕开handler处理器。
 
@@ -231,7 +231,6 @@ curl -d 'service=go.micro.srv.greeter' \
 ```
 
 更多信息查看可运行的示例：[github.com/micro/examples/api](https://github.com/micro/examples/tree/master/api)
-
 
 ## Resolver
 
