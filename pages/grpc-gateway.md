@@ -48,7 +48,7 @@ go get -u github.com/micro/protobuf/protoc-gen-go
 
 ## Greeter Service
 
-In the example we've created a greeter microservice using [go-grpc](https://github.com/micro/go-grpc). The service is very simple. 
+In the example we've created a greeter microservice using the gRPC service. The service is very simple. 
 
 The proto is as follows:
 
@@ -80,8 +80,8 @@ import (
 	"time"
 
 	hello "github.com/micro/examples/greeter/srv/proto/hello"
-	"github.com/micro/go-grpc"
 	"github.com/micro/go-micro"
+	"github.com/micro/go-micro/service/grpc"
 
 	"golang.org/x/net/context"
 )

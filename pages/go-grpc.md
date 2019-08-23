@@ -1,24 +1,24 @@
 ---
-title: Go gRPC
-keywords: go-grpc
+title: gRPC Service
+keywords: grpc
 tags: [go-grpc]
 sidebar: home_sidebar
 permalink: "/go-grpc.html"
-summary: Go gRPC is a simpler gRPC framework
+summary: gRPC service integration with go-micro
 ---
 
 # Overview
 
-Go gRPC makes use of [go-micro](https://github.com/micro/go-micro) plugins to create a simpler framework for gRPC development. It interoperates with 
-standard gRPC services seamlessly, including the [grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway). The go-grpc library uses 
-the go-micro client and server plugins which make use of [github.com/grpc/grpc-go](https://github.com/grpc/grpc-go). This means we ignore 
-the go-micro codec and transport but you get a native grpc experience.
+Our gRPC service makes use of [go-micro](https://github.com/micro/go-micro) plugins to create a simpler framework for gRPC development. It interoperates with 
+standard gRPC services seamlessly, including the [grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway). The grpc service uses 
+the go-micro client and server plugins. Because gRPC is a tightly coupled protocol and framework we ignore 
+the go-micro codec and transport plugins.
 
-<img src="images/go-grpc.svg" />
+Internally we make use of the gRPC framework but hide the complexity.
 
 ## Examples
 
-Find an example greeter service in [examples/greeter](https://github.com/micro/go-grpc/tree/master/examples/greeter).
+Find an example greeter service in [examples/greeter](https://github.com/micro/go-micro/service/grpc/tree/master/examples/greeter).
 
 ## Getting Started
 
@@ -65,9 +65,9 @@ import (
 	"context"
 	"time"
 
-	"github.com/micro/go-grpc"
 	"github.com/micro/go-micro"
-	hello "github.com/micro/go-grpc/examples/greeter/server/proto/hello"
+	"github.com/micro/go-micro/service/grpc"
+	hello "github.com/micro/go-micro/service/grpc/examples/greeter/server/proto/hello"
 )
 
 type Say struct{}
@@ -94,43 +94,24 @@ func main() {
 
 ## Use with Micro
 
-You may want to use the micro toolkit with grpc services. To do this either use the prebuilt toolkit or 
-simply include the grpc client plugin and rebuild the toolkit.
+You may want to use the micro toolkit with grpc services. Simply flag flip or use env vars to set the 
+grpc client and server like below.
 
-### Go Get
-
-```
-go get github.com/micro/go-grpc/cmd/micro
-```
-
-### Build Yourself
+### Using env vars
 
 ```
-go get github.com/micro/micro
+MICRO_CLIENT=grpc MICRO_SERVER=grpc micro api
 ```
 
-Create a plugins.go file
-```go
-package main
+### Using flags
 
-import _ "github.com/micro/go-plugins/client/grpc"
-import _ "github.com/micro/go-plugins/server/grpc"
-```
-
-Build binary
 ```shell
-// For local use
-go build -i -o micro ./main.go ./plugins.go
-```
-
-Flag usage of plugins
-```shell
-micro --client=grpc --server=grpc
+micro --client=grpc --server=grpc api
 ```
 
 ## Use with gRPC Gateway
 
-Go-grpc seamlessly integrates with the gRPC ecosystem. This means the grpc-gateway can be used as per usual.
+The micro gRPC plugins seamlessly integrates with the gRPC ecosystem. This means the grpc-gateway can be used as per usual.
 
 Find an example greeter api at [examples/grpc/gateway](https://github.com/micro/examples/tree/master/grpc/gateway).
 
