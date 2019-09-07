@@ -80,7 +80,7 @@ service.Init(
 ```
 
 Go Micro provides predefined flags which are set and parsed if `service.Init` is called. See all the flags 
-[here](https://godoc.org/github.com/micro/go-micro/cmd#pkg-variables).
+[here](https://godoc.org/github.com/micro/go-micro/config/cmd#pkg-variables).
 
 ### 2. Defining the API
 
