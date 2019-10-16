@@ -20,6 +20,7 @@ If you're using Micro, feel free to add your company
 - [CodersRank](https://codersrank.io/) - Real time profiles for open source contributions
 - [Coesia](https://www.coesia.com/en) - Industrial and packaging solutions
 - [Dark Cubed](http://darkcubed.com) - Cyber security services
+- [Elumium](https://www.elumium.com/) - Tenant communications
 - [Glue](https://glue.group) - Digital development agency
 - [Hightech](https://hightech.fm/) - Tech media platform
 - HuanLian（焕链科技）- Blockchain technology
@@ -36,6 +37,7 @@ If you're using Micro, feel free to add your company
 - [Profects](https://profects.com/) - Software studio
 - [Pydio](https://pydio.com/) - File sharing platform
 - [Reserve](https://reserve.com/) - Restaurant booking service
+- [Ridygo](https://www.ridygo.fr/) - Carpooling in realtime for your short-distance trips
 - [Riverbed](https://www.riverbed.com/gb/) - Software defined networking
 - [Savvy](https://www.joinsavvy.com/en/) - Coupon website
 - [Sipsynergy](http://www.sipsynergy.co.uk/) - Telecommunications services

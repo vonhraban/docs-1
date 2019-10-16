@@ -99,6 +99,14 @@ entries:
     - title: Service Proxy
       url: /proxy.html
       output: web, pdf
+  
+    - title: Service Health
+      url: /health.html
+      output: web, pdf
+
+    - title: Service Network
+      url: /network.html
+      output: web, pdf
 
     - title: Service Tunnel
       url: /tunnel.html

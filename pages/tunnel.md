@@ -58,4 +58,16 @@ MICRO_PROXY=go.micro.tunnel go run main.go
 
 Your service will direct all traffic through the tunnel. 
 
+
+## Authentication
+
+Specify a tunnel token to limit access to who can tunnel into the environment. Tokens must match between 
+tunnel clients and servers otherwise the connection is rejected.
+
+```
+MICRO_TUNNEL_TOKEN=foobar go run main.go
+```
+
+By default the token "micro" is used allowing anyone to connect via the tunnel.
+
 {% include links.html %}
