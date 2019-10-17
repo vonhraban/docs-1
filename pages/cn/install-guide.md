@@ -39,7 +39,7 @@ go get github.com/micro/micro
 可以通过docker镜像来安装
 
 ```
-docker pull microhq/micro
+docker pull micro/micro
 ```
 
 ### 测试 CLI

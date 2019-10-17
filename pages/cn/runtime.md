@@ -55,7 +55,7 @@ go get -u github.com/micro/micro
 也可以通过Docker安装
 
 ```shell
-docker pull microhq/micro
+docker pull micro/micro
 ```
 
 ## 依赖

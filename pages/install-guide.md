@@ -38,7 +38,7 @@ go get github.com/micro/micro
 Prebuilt docker images are available
 
 ```
-docker pull microhq/micro
+docker pull micro/micro
 ```
 
 ### Try CLI

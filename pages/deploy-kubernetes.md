@@ -48,7 +48,7 @@ go get github.com/micro/kubernetes/cmd/micro
 or
 
 ```
-docker pull microhq/micro:kubernetes
+docker pull micro/micro:kubernetes
 ```
 
 For go-micro

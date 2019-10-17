@@ -29,7 +29,7 @@ go get github.com/micro/kubernetes/cmd/micro
 或者
 
 ```
-docker pull microhq/micro:kubernetes
+docker pull micro/micro:kubernetes
 ```
 
 如果使用go-micro，可以导入：

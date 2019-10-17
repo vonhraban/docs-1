@@ -18,7 +18,7 @@ Prebuilt images are available on [Docker Hub](https://hub.docker.com/r/microhq/)
 ### Install Micro
 
 ```
-docker pull microhq/micro
+docker pull micro/micro
 ```
 
 ## Compose

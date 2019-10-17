@@ -17,7 +17,7 @@ Micro很容易在docker容器内运行
 ### 获取micro
 
 ```
-docker pull microhq/micro
+docker pull micro/micro
 ```
 
 ## Compose配置
