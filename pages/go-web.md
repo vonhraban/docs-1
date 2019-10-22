@@ -41,16 +41,6 @@ Go Web makes use of Go Micro which means it needs service discovery
 
 See the [go-micro](https://github.com/micro/go-micro#service-discovery) for install instructions
 
-For a quick start use consul
-
-```
-# install
-brew install consul
-
-# run
-consul agent -dev
-```
-
 ## Usage
 
 ```go

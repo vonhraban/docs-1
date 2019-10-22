@@ -18,7 +18,7 @@ Internally we make use of the gRPC framework but hide the complexity.
 
 ## Examples
 
-Find an example greeter service in [examples/greeter](https://github.com/micro/go-micro/service/grpc/tree/master/examples/greeter).
+Find an example greeter service in [examples/grpc](https://github.com/micro/examples/tree/master/grpc)
 
 ## Getting Started
 
@@ -36,22 +36,6 @@ Protobuf is required for code generation
 You'll need to install:
 
 - [protoc-gen-micro](https://github.com/micro/protoc-gen-micro)
-
-## Service Discovery
-
-Service discovery is used to resolve service names to addresses. Multicast DNS is the default, a zeroconf system. If you need something more resilient and multi-host use consul.
-
-### Consul
-
-[Consul](https://www.consul.io/) is used as the default service discovery system. See the [install guide](https://www.consul.io/intro/getting-started/install.html).
-
-Discovery is pluggable. Find plugins for etcd, kubernetes, zookeeper and more in the [micro/go-plugins](https://github.com/micro/go-plugins) repo.
-
-Pass `--registry=consul` to any command or the enviroment variable `MICRO_REGISTRY=consul`
-
-```
-MICRO_REGISTRY=consul go run main.go
-```
 
 ## Writing a Service
 

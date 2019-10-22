@@ -53,6 +53,16 @@ Or via Docker
 docker pull micro/micro
 ```
 
+Latest release binaries
+
+```
+# Mac OS or Linux
+curl -fsSL https://micro.mu/install.sh | /bin/bash
+
+# Windows
+powershell -Command "iwr -useb https://micro.mu/install.ps1 | iex"
+```
+
 ## Dependencies
 
 The micro runtime has two dependencies: 
@@ -67,17 +77,16 @@ Service discovery is used for name resolution, routing and centralising metadata
 Micro uses the [go-micro](https://github.com/micro/go-micro) registry for service discovery. MDNS is the default. This 
 enables a zeroconf setup. In case you want something more resilient make use of consul
 
-### Consul
+### Etcd
 
-If you want 
-Install and run consul
+Etcd is an alternative highly available service discovery mechanism
 
 ```shell
 # install
-brew install consul
+brew install etcd
 
 # run
-consul agent -dev
+etcd
 ```
 
 Pass `--registry=consul` or set the env var `MICRO_REGISTRY=consul` for any command

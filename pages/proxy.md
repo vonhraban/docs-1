@@ -18,23 +18,6 @@ offloading service discovery, load balancing, fault tolerance, plugins, wrappers
 app for infrastructure level concerns, its easier to put them in the proxy. It also allows any language to be integrated with a thin client 
 rather than having to implement all the features.
 
-## Install
-
-```shell
-go get -u github.com/micro/micro
-```
-
-## Dependencies
-
-The proxy uses Go Micro which means it depends on service discovery. The default is MDNS which means zeroconf. 
-
-If you want something more resilient you can install consul and specify with the `--registry=consul` flag.
-
-```
-brew install consul
-consul agent -dev
-```
-
 ## Run Proxy
 
 Start the proxy

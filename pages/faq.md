@@ -13,26 +13,26 @@ The FAQ should provide quick answers to the most common questions.
 
 Micro is a microservice ecosystem focused on simplifying distributed systems development.
 
-- Micro is a [framework](https://github.com/micro/go-micro)
-- Micro is a [toolkit](https://github.com/micro/micro)
-- Micro is a [community](http://slack.micro.mu/)
-- Micro is an [ecosystem](https://micro.mu/explore/)
+- Micro is a [Framework](https://github.com/micro/go-micro)
+- Micro is a [Runtime](https://github.com/micro/micro)
+- Micro is a [Community](https://micro.mu/slack/)
+- Micro is an [Ecosystem](https://micro.mu/explore/)
 
 ### Open Source
 
 Micro consists of open source libraries and tools to help with microservice development.
 
+- **micro** - A microservice runtime environment; API Gateway, CLI, Slackbot, Service Proxy, Multi-Cloud Network and Web UI.
 - **go-micro** - A pluggable Go RPC framework for writing a microservice; service discovery, client/server rpc, pub/sub, etc.
 - **go-plugins** - Plugins for go-micro including etcd, kubernetes, nats, rabbitmq, grpc, etc.
-- **micro** - A microservice toolkit containing traditional entry points; API Gateway, CLI, Slack Bot, Proxy and Web UI.
 
 Various other libraries and services can be found in [github.com/micro](https://github.com/micro).
 
 ### Community
 
-There's a slack community with a thousand members. 
+There's a slack community with thousands of members. 
 
-Invite yourself at [slack.micro.mu](http://slack.micro.mu/).
+Invite yourself at [micro.mu/slack/](https://micro.mu/slack/).
 
 ### Ecosystem
 
@@ -64,29 +64,19 @@ It's quite simple.
 
 Checkout the full [greeter](https://github.com/micro/examples/tree/master/greeter) example.
 
-## Can I use something instead of Consul?
+## Zero Dependency Discovery
 
-Yes! The registry for service discovery is completely pluggable as is every other package. Consul was used as the default due to its features and simplicity.
+Multicast DNS is a built in registry for a zero conf service discovery.
 
-### Etcd
+You don't need to do anything! It's just built in and enabled by default.
 
-As an example. If you would like to use etcd, import the plugin and set the command line flags on your binary.
+## Can I use something instead of MDNS?
 
-```go
-import (
-        _ "github.com/micro/go-plugins/registry/etcd"
-)
-```
+Yes! The registry for service discovery is completely pluggable. Etcd is also included as a default plugin.
 
 ```shell
-service --registry=etcd --registry_address=127.0.0.1:2379
+MICRO_REGISTRY=etcd MICRO_REGISTRY_ADDRESS=127.0.0.1:2379 myservice
 ```
-
-### Zero Dependency
-
-There's a built in Multicast DNS service registry for a zero dependency configuration. 
-
-Pass `--registry=mdns` or `MICRO_REGISTRY=mdns` to your application on startup.
 
 ## Where can I run Micro?
 
@@ -131,7 +121,7 @@ If you're still concerned with performance. The simplest way to extract the most
 
 Yes. There are plugins for a transport, client and server in [micro/go-plugins](https://github.com/micro/go-plugins). 
 
-If you want a quick start just use [micro/go-grpc](https://github.com/micro/go-grpc).
+If you want a quick start just import [go-micro/service/grpc](https://micro.mu/docs/go-grpc.html).
 
 ## Micro vs Go-Kit
 

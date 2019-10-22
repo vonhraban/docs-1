@@ -18,18 +18,15 @@ It mimics the functions of the CLI via messaging.
 
 ## Supported Inputs
 
+- Discord
 - Slack
-- HipChat
+- Telegram
 
 ## Getting Started
 
-### Install Micro
+### Use Slack
 
-```go
-go get github.com/micro/micro
-```
-
-### Run with Slack
+Run with the slack input
 
 ```shell
 micro bot --inputs=slack --slack_token=SLACK_TOKEN
@@ -37,22 +34,12 @@ micro bot --inputs=slack --slack_token=SLACK_TOKEN
 
 <img src="images/slack.png">
 
--
-
-### Run with HipChat
-
-```shell
-micro bot --inputs=hipchat --hipchat_username=XMPP_USER --hipchat_password=XMPP_PASSWORD
-```
-
-<img src="images/hipchat.png">
-
--
+### Multiple Inputs
 
 Use multiple inputs by specifying a comma separated list
 
 ```shell
-micro bot --inputs=hipchat,slack --slack_token=SLACK_TOKEN --hipchat_username=XMPP_USER --hipchat_password=XMPP_PASSWORD
+micro bot --inputs=discord,slack --slack_token=SLACK_TOKEN --discord_token=DISCORD_TOKEN
 ```
 
 ### Help

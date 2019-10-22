@@ -60,19 +60,19 @@ entries:
       url: /go-micro-internals.html
       output: web, pdf
 
-    - title: API
+    - title: API Handlers
       url: /go-api.html
       output: web, pdf
 
-    - title: Config
+    - title: Dynamic Config
       url: /go-config.html
       output: web, pdf
 
-    - title: GRPC
+    - title: gRPC Service
       url: /go-grpc.html
       output: web, pdf
 
-    - title: Web
+    - title: Web Service
       url: /go-web.html
       output: web, pdf
 

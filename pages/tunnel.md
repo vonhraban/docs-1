@@ -16,23 +16,6 @@ A service tunnel is a point to point tunnel used for accessing services in remot
 The micro tunnel provides a way to access services across remote environments. This is great where you want to tunnel to staging, prod 
 or expose local services externally without using something like openvpn or wireguard which would expose all things in your network.
 
-## Install
-
-```shell
-go get -u github.com/micro/micro
-```
-
-## Dependencies
-
-The tunnel uses Go Micro which means it depends on service discovery. The default is MDNS which means zeroconf. 
-
-If you want something more resilient you can install consul and specify with the `--registry=consul` flag.
-
-```
-brew install consul
-consul agent -dev
-```
-
 ## Run Tunnel
 
 Start the tunnel server (Runs on port :8083)

@@ -65,19 +65,18 @@ Service discovery is used to resolve service names to addresses.
 
 The default discovery system is multicast DNS which requires zeroconf. If you want something more resilient and multi-host then use consul.
 
-### Consul
+### Etcd
 
-[Consul](https://www.consul.io/) can be used as an alternative service discovery system.
+[Etcd](https://github.com/etcd-io/etcd) can be used as an alternative service discovery system.
 
-Discovery is pluggable. Find plugins for etcd, kubernetes, zookeeper and more in the [micro/go-plugins](https://github.com/micro/go-plugins) repo.
-
-[Install guide](https://www.consul.io/intro/getting-started/install.html)
-
-Pass `--registry=consul` to any command or the enviroment variable `MICRO_REGISTRY=consul`
+- Download and run [etcd](https://github.com/etcd-io/etcd)
+- Pass `--registry=etcd` to any command or the enviroment variable `MICRO_REGISTRY=etcd`
 
 ```
-MICRO_REGISTRY=consul go run main.go
+MICRO_REGISTRY=etcd go run main.go
 ```
+
+Discovery is pluggable. Find plugins for consul, kubernetes, zookeeper and more in the [micro/go-plugins](https://github.com/micro/go-plugins) repo.
 
 ## Writing a service
 
