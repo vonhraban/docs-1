@@ -58,13 +58,6 @@ Go Micro abstracts away the complexity of distributed systems and provides simpl
 
 - **Development** - Start writing services using the [go-micro](go-micro.html) framework.
 - **Production** - Interact with your service using the [micro](runtime.html) runtime.
-
-## Resources
-
-- Look at [examples](https://github.com/micro/examples) of how to use micro on github.
-- Search the [explorer](https://micro.mu/explore/) to find existing open source projects on github.
-- Read the [blog](https://micro.mu/blog/) for a deeper look at micro and broader microservice ideas.
-- Watch the [video](https://www.youtube.com/watch?v=xspaDovwk34) on Simplifying Microservices with Micro presented at Golang UK Conf 2016.
-- View the [slides](https://speakerdeck.com/asim) for various presentations on speakerdeck.
+- **Examples** - Learn by example with real code [examples](https://github.com/micro/examples)
 
 {% include links.html %}

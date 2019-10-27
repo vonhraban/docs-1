@@ -1,9 +1,9 @@
 ---
-title: Mission
-keywords: intro, mission, microservices
-tags: [intro, mission, microservices]
+title: Goals
+keywords: intro, goals, microservices
+tags: [intro, goals, microservices]
 sidebar: home_sidebar
-permalink: mission.html
+permalink: goals.html
 summary:
 ---
 

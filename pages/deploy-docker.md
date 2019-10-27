@@ -7,13 +7,11 @@ permalink: deploy-docker.html
 summary: 
 ---
 
-# Docker Deployment
-
 Micro easily runs inside docker containers
 
 ## Prebuilt Images
 
-Prebuilt images are available on [Docker Hub](https://hub.docker.com/r/microhq/)
+Prebuilt images are available on [Docker Hub](https://hub.docker.com/r/micro/)
 
 ### Install Micro
 

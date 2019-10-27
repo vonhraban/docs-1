@@ -36,12 +36,8 @@ entries:
       url: /features.html
       output: web, pdf
 
-    - title: Mission
-      url: /mission.html
-      output: web, pdf
-
-    - title: Resources
-      url: /resources.html
+    - title: Goals
+      url: /goals.html
       output: web, pdf
 
     - title: Users
@@ -127,6 +123,10 @@ entries:
   - title: Deployment
     output: web, pdf
     folderitems:
+
+    - title: Local
+      url: /deploy-local.html
+      output: web, pdf
 
     - title: Docker
       url: /deploy-docker.html

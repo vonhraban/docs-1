@@ -44,7 +44,7 @@ query them directly. The dashboard is also includes a built in CLI like experien
 ## Install Micro
 
 ```shell
-go get -u github.com/micro/micro
+go get github.com/micro/micro
 ```
 
 Or via Docker
@@ -72,10 +72,12 @@ The micro runtime has two dependencies:
 
 ## Service Discovery
 
-Service discovery is used for name resolution, routing and centralising metadata.
+Service discovery is used for name resolution, routing and centralising metadata. All services are register themselves in 
+discovery so they can be found by other services.
 
-Micro uses the [go-micro](https://github.com/micro/go-micro) registry for service discovery. MDNS is the default. This 
-enables a zeroconf setup. In case you want something more resilient make use of consul
+Micro uses the [go-micro](https://github.com/micro/go-micro) registry interface for service discovery. Multicast DNS is the default 
+implementation. This enables a zeroconf setup so you don't have to change anything for local development. In case you're using docker, 
+kubernetes or need something more resilient we recommend etcd.
 
 ### Etcd
 
@@ -89,14 +91,20 @@ brew install etcd
 etcd
 ```
 
-Pass `--registry=consul` or set the env var `MICRO_REGISTRY=consul` for any command
+Pass `--registry=etcd` or set the env var `MICRO_REGISTRY=consul` for any command
 
 ```shell
 # Use flag
-micro --registry=consul list services
+micro --registry=etcd list services
 
 # Use env var
-MICRO_REGISTRY=consul micro list services`
+MICRO_REGISTRY=etcd micro list services`
+```
+
+Specify the address of etcd where it's not on the same host.
+
+```
+MICRO_REGISTRY_ADDRESS=10.0.0.1:2379
 ```
 
 See [go-plugins](https://github.com/micro/go-plugins) for more service discovery plugins.
@@ -178,7 +186,7 @@ micro list services
 
 Output
 ```
-consul
+etcd
 go.micro.srv.example
 topic:topic.go.micro.srv.example
 ```
@@ -200,7 +208,7 @@ service  go.micro.srv.example
 version latest
 
 ID	Address	Port	Metadata
-go.micro.srv.example-437d1277-303b-11e8-9be9-f40f242f6897	192.168.1.65	53545	transport=http,broker=http,server=rpc,registry=consul
+go.micro.srv.example-437d1277-303b-11e8-9be9-f40f242f6897	192.168.1.65	53545	transport=http,broker=http,server=rpc,registry=etcd
 
 Endpoint: Example.Call
 Metadata: stream=false
