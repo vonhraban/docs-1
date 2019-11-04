@@ -27,16 +27,28 @@ h1, h2, h3, h4, h5, h6 {
 .nav > .list-group-item {
   border: 0;
   padding: 0;
+  background-color: white;
+  border-color: white;
 }
 
 .nav > .list-group-item a {
-  font-weight: bold;
-  padding: 15px;
+  padding: 5px;
 }
 
-.nav > .list-group-item.active {
-  background-color: white;
-  border-color: white;
+.nav > .list-group-item .highlight {
+  font-weight: bold;
+}
+.nav > .list-group-item .title {
+  font-weight: bold;
+}
+
+.nav > .list-group-item ul {
+  border-left: solid 1px whitesmoke;
+  margin-left: 10px;
+}
+
+.nav > .list-group-item ul li {
+  margin-left: 5px;
 }
 
 .post-title-main {
@@ -411,29 +423,11 @@ a.accordion-toggle, a.accordion-collapsed {
 }
 
 
-.nav li > a > span:after {
-    content: '\2630';
-    font-weight: 200;
-}
-.nav li.active > a > span:after {
-    font-weight: 200;
-    content: '\2636';
-}
-
-.nav li.active > a {
-    background: rgba(0, 0, 0, 0.7);
-    color: #f5f5f5;
-}
-
-.nav a:hover {
-   background: rgba(0, 0, 0, 0.05); 
-}
-
 .nav li a {
     font-size: 12px;
     line-height: 18px;
     padding: 2px 10px;
-    background-color: #F7F9FB;
+    background-color: white;
 }
 
 .nav > li > a {
@@ -460,19 +454,15 @@ ul#mysidebar {
 
 
 .nav ul li a {
-    background-color: #FAFAFA;
+    background-color: white;
 }
 
 .nav li a {
     padding-right:10px;
-}
-
-.nav li.dark > a {
-    background-color: #545b62;
+    background-color: white;
 }
 
 .nav ul li a {
-    border-top:1px solid whitesmoke;
     padding-left:10px;
 }
 /* end sidebar */
@@ -658,8 +648,8 @@ h4 {color: #808080; font-size:120%; font-style:italic;}
 }
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-    background-color: #248ec2;
-    color: white;
+    background-color: white;
+    color: #333333;
 }
 
 ol li ol li {list-style-type: lower-alpha;}
@@ -774,7 +764,7 @@ ol.series li {
 }
 
 #mysidebar .nav ul {
-    background-color: #FAFAFA;
+    background-color: white;
 }
 .nav ul.series li {
     list-style: decimal;
@@ -912,15 +902,21 @@ span.soft {
     }
 }
 
-@media (max-width: 990px) {
+@media (max-width: 770px) {
     #mysidebar {
         position: relative;
     }
 }
 
-@media (min-width: 1000px) {
-
+@media (min-width: 770px) {
     ul#mysidebar {
+	position: fixed;
+    }
+}
+
+@media (min-width: 1000px) {
+    ul#mysidebar {
+	position: fixed;
         width: 225px;
     }
 }
@@ -1066,7 +1062,6 @@ span.label.label-primary {
 
 
 .nav li.active > a.subfoldersTitle {
-    background-color: whitesmoke;
     font-weight: bold;
     color: black;
     }

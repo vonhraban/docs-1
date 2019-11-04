@@ -44,6 +44,14 @@ entries:
       url: /users.html
       output: web, pdf
 
+  - title: Network
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /network.html
+      output: web, pdf
+
   - title: Framework
     output: web, pdf
     folderitems:
@@ -101,7 +109,7 @@ entries:
       output: web, pdf
 
     - title: Service Network
-      url: /network.html
+      url: /service-network.html
       output: web, pdf
 
     - title: Service Tunnel
