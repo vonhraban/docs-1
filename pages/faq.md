@@ -11,34 +11,35 @@ The FAQ should provide quick answers to the most common questions.
 
 ## What is Micro?
 
-Micro is a microservice ecosystem focused on simplifying distributed systems development.
+Micro empowers developers to build, share and collaborate on distributed systems aka microservices.
 
 - Micro is a [Framework](https://github.com/micro/go-micro)
 - Micro is a [Runtime](https://github.com/micro/micro)
+- Micro is a [Network](https://micro/docs/network.html)
 - Micro is a [Community](https://micro.mu/slack/)
-- Micro is an [Ecosystem](https://micro.mu/explore/)
 
 ### Open Source
 
-Micro consists of open source libraries and tools to help with microservice development.
+Micro is built as open source libraries and tools to help with microservice development.
 
-- **micro** - A microservice runtime environment; API Gateway, CLI, Slackbot, Service Proxy, Multi-Cloud Network and Web UI.
-- **go-micro** - A pluggable Go RPC framework for writing a microservice; service discovery, client/server rpc, pub/sub, etc.
-- **go-plugins** - Plugins for go-micro including etcd, kubernetes, nats, rabbitmq, grpc, etc.
+- **Framework** - A Go framework for writing microservices; service discovery, rpc, pub/sub, etc.
+- **Runtime** - A microservice runtime environment; API gateway, cli, slackbot, service proxy, etc.
+- **Plugins** - Plugins for the framework and runtime including etcd, kubernetes, nats, grpc, etc.
 
-Various other libraries and services can be found in [github.com/micro](https://github.com/micro).
+Find all the tools at [github.com/micro](https://github.com/micro).
+
+### Network
+
+Micro provides an open global always-on cloud environment for sharing and running services. The [network](https://micro/docs/network.html) 
+can be joined and used by anyone. It's a great way to unlock public collaboration outside of any one organisation or team.
+
+Explore the [network](https://micro/docs/network.html).
 
 ### Community
 
 There's a slack community with thousands of members. 
 
 Invite yourself at [micro.mu/slack/](https://micro.mu/slack/).
-
-### Ecosystem
-
-Micro spans beyond a single organisation. Open source tools and services are being contributed by the community itself.
-
-Explore the ecosystem at [micro.mu/explore/](https://micro.mu/explore/).
 
 ## Where do I start?
 
@@ -145,8 +146,7 @@ Use go-kit where you want complete control. Use go-micro where you want an opini
 
 ## Where Can I Learn More?
 
-- Join the slack community - [slack.micro.mu](http://slack.micro.mu)
+- Join the slack community - [micro.mu/slack](https://micro.mu/slack)
 - Read the blog - [micro.mu/blog](https://micro.mu/blog)
-- Reach out if you want to talk - [contact@micro.mu](mailto:contact@micro.mu)
 
 {% include links.html %}

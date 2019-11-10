@@ -31,6 +31,12 @@ Running micro is as simple as typing `micro`.
 micro
 ```
 
+To run the stack without connecting to the network
+
+```
+micro --local
+```
+
 ## Verify
 
 Check everythings working by using a few commands

@@ -3,7 +3,7 @@ title: Install Guide
 keywords: install
 tags: [install]
 sidebar: home_sidebar
-permalink: install-guide.html
+permalink: installation.html
 summary: 
 ---
 
@@ -51,7 +51,7 @@ curl -fsSL https://micro.mu/install.sh | /bin/bash
 powershell -Command "iwr -useb https://micro.mu/install.ps1 | iex"
 ```
 
-### Try CLI
+### Usage
 
 Run the greeter service
 
@@ -76,20 +76,19 @@ Output
 ```shell
 service  go.micro.srv.greeter
 
-version 1.0.0
+version 2019.11.09.10.34
 
-Id	Address	Port	Metadata
-go.micro.srv.greeter-34c55534-368b-11e6-b732-68a86d0d36b6	192.168.1.66	62525	server=rpc,registry=consul,transport=http,broker=http
+ID      Address Metadata
+go.micro.srv.greeter-e25a5edd-0936-4d32-b4d7-e62bf454d5f7       172.17.0.1:33031        broker=http,protocol=mucp,registry=mdns,server=mucp,transport=http
 
 Endpoint: Say.Hello
-Metadata: stream=false
 
 Request: {
-	name string
+        name string
 }
 
 Response: {
-	msg string
+        msg string
 }
 ```
 
@@ -106,7 +105,5 @@ Output
 	"msg": "Hello John"
 }
 ```
-
-Visit [github.com/micro/micro](https://github.com/micro/micro) to learn more
 
 {% include links.html %}

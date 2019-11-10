@@ -292,7 +292,7 @@ Here's a good explanation of [Token Economics](https://www.investinblockchain.co
 
 ## Release
 
-Pull v1.14.0 and beyond
+Pull the latest release of micro
 
 ## Contribute
 

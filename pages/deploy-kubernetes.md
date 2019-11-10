@@ -8,25 +8,11 @@ summary:
 ---
 
 
-Micro on Kubernetes is kubernetes native micro.
-
-Micro is a microservice toolkit. Kubernetes is a container orchestrator.
-
-Together they provide the foundations for a microservice platform.
-
-## Features
-
-- No external dependencies
-- Client side discovery caching
-- Optional k8s service load balancing
-- gRPC transport protocol
-- Pre-initialised toolkit
+This doc provides a guide to running micro on kubernetes.
 
 ## Getting Started
 
-- [Features](#features)
-- [Getting Started](#getting-started)
-- [Installing Micro](#installing-micro)
+- [Install Micro](#install-micro)
 - [Writing a Service](#writing-a-service)
 - [Deploying a Service](#deploying-a-service)
 - [Healthchecking Sidecar](#healthchecking-sidecar)
@@ -38,7 +24,7 @@ Together they provide the foundations for a microservice platform.
   - [K8s Deployment](#k8s-deployment-1)
   - [K8s Service](#k8s-service)
 
-## Installing Micro
+## Install Micro
 
 
 ```

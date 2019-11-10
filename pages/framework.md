@@ -1,9 +1,9 @@
 ---
-title: Go Micro
-keywords: go-micro
-tags: [go-micro]
+title: Framework
+keywords: go-micro, framework
+tags: [go-micro, framework]
 sidebar: home_sidebar
-permalink: "/go-micro.html"
+permalink: "/framework.html"
 summary: Go Micro is a framework for microservices development
 ---
 

@@ -44,20 +44,12 @@ entries:
       url: /users.html
       output: web, pdf
 
-  - title: Network
-    output: web, pdf
-    folderitems:
-
-    - title: Overview
-      url: /network.html
-      output: web, pdf
-
   - title: Framework
     output: web, pdf
     folderitems:
 
     - title: Overview
-      url: /go-micro.html
+      url: /framework.html
       output: web, pdf
 
     - title: Internals
@@ -128,6 +120,14 @@ entries:
       url: /new.html
       output: web, pdf
 
+  - title: Network
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /network.html
+      output: web, pdf
+
   - title: Deployment
     output: web, pdf
     folderitems:
@@ -148,16 +148,20 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Install Guide
-      url: /install-guide.html
+    - title: Debugging
+      url: /debugging.html
       output: web, pdf
 
-    - title: GRPC Gateway
-      url: /grpc-gateway.html
+    - title: Installation
+      url: /installation.html
       output: web, pdf
 
     - title: Writing a Go Service
       url: /writing-a-go-service.html
+      output: web, pdf
+
+    - title: Anything as a Service
+      url: /micro-service.html
       output: web, pdf
 
     - title: Fault Tolerance
