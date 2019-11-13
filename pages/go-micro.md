@@ -1,5 +1,5 @@
 ---
-title: Framework
+title: Go Micro
 keywords: go-micro, framework
 tags: [go-micro, framework]
 sidebar: home_sidebar
