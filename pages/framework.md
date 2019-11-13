@@ -117,20 +117,20 @@ Find the full example code at [examples/service](https://github.com/micro/exampl
 
 One of the key requirements of microservices is strongly defined interfaces. Micro uses protobuf to achieve this.
 
-Here we define the Greeter handler with the method Hello. It takes a HelloRequest and HelloResponse both with one string arguments.
+Here we define the Greeter handler with the method Hello. It takes a Request and Response both with one string arguments.
 
 ```proto
 syntax = "proto3";
 
 service Greeter {
-	rpc Hello(HelloRequest) returns (HelloResponse) {}
+	rpc Hello(Request) returns (Response) {}
 }
 
-message HelloRequest {
+message Request {
 	string name = 1;
 }
 
-message HelloResponse {
+message Response {
 	string greeting = 2;
 }
 ```
@@ -167,7 +167,7 @@ import (
 
 type Greeter struct{}
 
-func (g *Greeter) Hello(ctx context.Context, req *proto.HelloRequest, rsp *proto.HelloResponse) error {
+func (g *Greeter) Hello(ctx context.Context, req *proto.Request, rsp *proto.Response) error {
 	rsp.Greeting = "Hello " + req.Name
 	return nil
 }
@@ -235,7 +235,7 @@ func main() {
 	greeter := proto.NewGreeterService("greeter", service.Client())
 
 	// Call the greeter
-	rsp, err := greeter.Hello(context.TODO(), &proto.HelloRequest{Name: "John"})
+	rsp, err := greeter.Hello(context.TODO(), &proto.Request{Name: "John"})
 	if err != nil {
 		fmt.Println(err)
 	}
