@@ -12,6 +12,7 @@ This doc provides a guide to running micro on kubernetes.
 
 ## Getting Started
 
+- [Dependencies](#dependencies)
 - [Install Micro](#install-micro)
 - [Writing a Service](#writing-a-service)
 - [Deploying a Service](#deploying-a-service)
@@ -19,28 +20,48 @@ This doc provides a guide to running micro on kubernetes.
   - [Install healthchecker](#install-healthchecker)
   - [Run healtchecker](#run-healtchecker)
   - [K8s Deployment](#k8s-deployment)
-- [K8s Load Balancing](#k8s-load-balancing)
-  - [Usage](#usage)
-  - [K8s Deployment](#k8s-deployment-1)
-  - [K8s Service](#k8s-service)
+- [Micro API](#micro-api)
+- [Micro Web](#micro-web)
+- [Full Deployment](#full-deployment)
+
+## Dependencies
+
+On kubernetes we would recommend running [etcd](https://github.com/etcd-io/etcd) and [nats](https://github.com/nats-io/nats-server).
+
+- Etcd is used for highly scalable service discovery
+- NATS is used for asynchronous messaging
+
+To install etcd ([instructions](https://github.com/helm/charts/tree/master/stable/etcd-operator))
+
+```
+helm install --name my-release --set customResources.createEtcdClusterCRD=true stable/etcd-operator
+
+# to later uninstall etcd
+helm delete my-release
+```
+
+To install nats ([instructions](https://github.com/nats-io/nats-operator))
+
+```
+kubectl apply -f https://github.com/nats-io/nats-operator/releases/latest/download/00-prereqs.yaml
+kubectl apply -f https://github.com/nats-io/nats-operator/releases/latest/download/10-deployment.yaml
+```
+
+You should now have the required dependencies.
 
 ## Install Micro
 
 
-```
-go get github.com/micro/kubernetes/cmd/micro
-```
-
-or
+Use the below docker image
 
 ```
-docker pull micro/micro:kubernetes
+micro/micro
 ```
 
-For go-micro
+Or use go-micro for development
 
 ```
-import "github.com/micro/kubernetes/go/micro"
+github.com/micro/go-micro
 ```
 
 ## Writing a Service
@@ -50,11 +71,10 @@ Write a service as you would any other [go-micro](https://github.com/micro/go-mi
 ```go
 import (
 	"github.com/micro/go-micro"
-	k8s "github.com/micro/kubernetes/go/micro"
 )
 
 func main() {
-	service := k8s.NewService(
+	service := micro.NewService(
 		micro.Name("greeter")
 	)
 	service.Init()
@@ -74,29 +94,43 @@ metadata:
   name: greeter
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      name: greeter-srv
+      micro: service
   template:
     metadata:
       labels:
-        app: greeter-srv
+        name: greeter-srv
+        micro: service
     spec:
       containers:
         - name: greeter
           command: [
 		"/greeter-srv",
-		"--server_address=0.0.0.0:8080",
-		"--broker_address=0.0.0.0:10001"
 	  ]
-          image: microhq/greeter-srv:kubernetes
+          image: yourimage/yourservice
           imagePullPolicy: Always
           ports:
           - containerPort: 8080
             name: greeter-port
+          env:
+          - name: MICRO_SERVER_ADDRESS
+            value: "0.0.0.0:8080"
+          - name: MICRO_BROKER
+            value: "nats"
+          - name: MICRO_BROKER_ADDRESS
+            value: "nats-cluster"
+          - name: MICRO_REGISTRY
+            value: "etcd"
+          - name: MICRO_REGISTRY_ADDRESS
+            value: "etcd-cluster-client"
 ```
 
 Deploy with kubectl
 
 ```
-kubectl create -f greeter.yaml
+kubectl apply -f greeter.yaml
 ```
 
 ## Healthchecking Sidecar
@@ -107,13 +141,13 @@ Every go-micro service has a built in Debug.Health endpoint.
 ### Install healthchecker
 
 ```
-go get github.com/micro/kubernetes/cmd/health
+go get github.com/micro/cmd/health
 ```
 
 or
 
 ```
-docker pull microhq/health:kubernetes
+docker pull microhq/health
 ```
 
 ### Run healtchecker
@@ -142,23 +176,37 @@ metadata:
   name: greeter
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      name: greeter-srv
+      micro: service
   template:
     metadata:
       labels:
-        app: greeter-srv
+        name: greeter-srv
+        micro: service
     spec:
       containers:
         - name: greeter
           command: [
 		"/greeter-srv",
-		"--server_address=0.0.0.0:8080",
-		"--broker_address=0.0.0.0:10001"
 	  ]
-          image: microhq/greeter-srv:kubernetes
+          image: yourimage/yourservice
           imagePullPolicy: Always
           ports:
           - containerPort: 8080
             name: greeter-port
+          env:
+          - name: MICRO_SERVER_ADDRESS
+            value: "0.0.0.0:8080"
+          - name: MICRO_BROKER
+            value: "nats"
+          - name: MICRO_BROKER_ADDRESS
+            value: "nats-cluster"
+          - name: MICRO_REGISTRY
+            value: "etcd"
+          - name: MICRO_REGISTRY_ADDRESS
+            value: "etcd-cluster-client"
         - name: health
           command: [
 		"/health",
@@ -166,7 +214,7 @@ spec:
 		"--server_name=greeter",
 		"--server_address=0.0.0.0:8080"
 	  ]
-          image: microhq/health:kubernetes
+          image: microhq/health
           livenessProbe:
             httpGet:
               path: /health
@@ -175,89 +223,166 @@ spec:
             periodSeconds: 3
 ```
 
-## K8s Load Balancing
+## Micro API
 
-Micro includes client side load balancing by default but kubernetes also provides Service load balancing strategies. 
-We can offload load balancing to k8s by using the [static selector](https://github.com/micro/go-plugins/tree/master/selector/static) 
-and k8s services.
+To deploy the micro api use the following config. Note the ENABLE_ACME env var where you want Let's Encrypt SSL by default.
 
-Rather than doing address resolution, the static selector returns the service name plus a fixed port e.g greeter returns greeter:8080. 
-Read about the [static selector](https://github.com/micro/go-plugins/tree/master/selector/static).
-
-### Usage
-
-To use the static selector when running your service specify the flag or env var 
-
-```
-MICRO_SELECTOR=static ./service
-```
-
-or
-
-```
-./service --selector=static
-```
-
-### K8s Deployment
-
-An example deployment
-
-```
-apiVersion: extensions/v1beta1
-kind: Deployment
-metadata:
-  namespace: default
-  name: greeter
-spec:
-  replicas: 1
-  template:
-    metadata:
-      labels:
-        app: greeter-srv
-    spec:
-      containers:
-        - name: greeter
-          command: [
-		"/greeter-srv",
-		"--selector=static",
-		"--server_address=0.0.0.0:8080",
-		"--broker_address=0.0.0.0:10001"
-	  ]
-          image: microhq/greeter-srv:kubernetes
-          imagePullPolicy: Always
-          ports:
-          - containerPort: 8080
-            name: greeter-port
-```
-
-### K8s Service
-
-The static selector offloads load balancing to k8s services. So ensure you create a k8s Service for each micro service. 
-
-Here's a sample service
+Create the api service
 
 ```
 apiVersion: v1
 kind: Service
 metadata:
-  name: greeter
+  name: micro-api
+  namespace: default
   labels:
-    app: greeter
+    name: micro-api
+    micro: service
 spec:
   ports:
-  - port: 8080
-    protocol: TCP
+  - name: https
+    port: 443
+    targetPort: 443
   selector:
-    app: greeter
+    name: micro-api
+    micro: service
+  type: LoadBalancer
 ```
 
-Deploy with kubectl
+Create the deployment
 
 ```
-kubectl create -f service.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: default
+  name: micro-api
+  labels:
+    micro: service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      name: micro-api
+      micro: service
+  strategy:
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        name: micro-api
+        micro: service
+    spec:
+      containers:
+      - name: api
+        env:
+        - name: MICRO_ENABLE_STATS
+          value: "true"
+        - name: MICRO_BROKER
+          value: "nats"
+        - name: MICRO_BROKER_ADDRESS
+          value: "nats-cluster"
+        - name: MICRO_REGISTRY
+          value: "etcd"
+        - name: MICRO_REGISTRY_ADDRESS
+          value: "etcd-cluster-client"
+        - name: MICRO_REGISTER_TTL
+          value: "60"
+        - name: MICRO_REGISTER_INTERVAL
+          value: "30"
+        - name: MICRO_ENABLE_ACME
+          value: "true"
+        args:
+        - api
+        image: micro/micro
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 443
+          name: api-port
 ```
 
-Calling micro service "greeter" from your service will route to the k8s service greeter:8080.
+## Micro Web
 
+To deploy the micro web use the following config. Note the ENABLE_ACME env var where you want Let's Encrypt SSL by default.
+
+Create the service
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: micro-web
+  namespace: default
+  labels:
+    name: micro-web
+    micro: service
+spec:
+  ports:
+  - name: https
+    port: 443
+    targetPort: 443
+  selector:
+    name: micro-web
+    micro: service
+  type: LoadBalancer
+```
+
+Create the deployment
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: default
+  name: micro-web
+  labels:
+    micro: service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: micro-web
+      micro: service
+  template:
+    metadata:
+      labels:
+        name: micro-web
+        micro: service
+    spec:
+      containers:
+      - name: web
+        env:
+        - name: MICRO_BROKER
+          value: "nats"
+        - name: MICRO_BROKER_ADDRESS
+          value: "nats-cluster"
+        - name: MICRO_ENABLE_STATS
+          value: "true"
+        - name: MICRO_REGISTRY
+          value: "etcd"
+        - name: MICRO_REGISTRY_ADDRESS
+          value: "etcd-cluster-client"
+        - name: MICRO_ENABLE_ACME
+          value: "true"
+        - name: MICRO_ACME_PROVIDER
+          value: certmagic
+        args:
+        - web
+        image: micro/micro
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 443
+          name: web-port
+```
+
+## Full Deployment
+
+For the full deployment config used by [micro.mu](https://micro.mu) for the cloud platform see:
+
+[https://github.com/micro/micro/tree/master/network/config/kubernetes](https://github.com/micro/micro/tree/master/network/config/kubernetes)
+
+Some of this config is specific to the needs of Micro itself including the use of CloudFlare.
 
 {% include links.html %}
