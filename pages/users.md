@@ -23,6 +23,7 @@ If you're using Micro, feel free to add your company
 - [Elumium](https://www.elumium.com/) - Tenant communications
 - [Glue](https://glue.group) - Digital development agency
 - [Hightech](https://hightech.fm/) - Tech media platform
+- [Honeywell](https://www.honeywell.com/) - Produces commercial and consumer products, engineering services and aerospace systems.
 - HuanLian（焕链科技）- Blockchain technology
 - [Human Ventures](https://humanventures.co/) - NYC based startup studio
 - [Imgur](https://imgur.com/) - Social image sharing platform
