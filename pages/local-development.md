@@ -11,6 +11,12 @@ The micro runtime provides a way to manage the lifecycle of services without the
 By default it provides a simple local process manager which starts your service, watches for changes and rebuilds 
 as required.
 
+You can start the service with one command
+
+```
+micro run service
+```
+
 ## Usage
 
 To run and manage your service locally do the following.
