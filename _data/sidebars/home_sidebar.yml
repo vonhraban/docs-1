@@ -172,8 +172,8 @@ entries:
       url: /fault-tolerance.html
       output: web, pdf
 
-    - title: Running Services
-      url: /run-service.html
+    - title: Local Development
+      url: /local-development.html
       output: web, pdf
 
   - title: Plugins
