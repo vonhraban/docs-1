@@ -120,6 +120,10 @@ entries:
       url: /new.html
       output: web, pdf
 
+    - title: Run Service
+      url: /run-service.html
+      output: web, pdf
+
   - title: Network
     output: web, pdf
     folderitems:
@@ -166,6 +170,10 @@ entries:
 
     - title: Fault Tolerance
       url: /fault-tolerance.html
+      output: web, pdf
+
+    - title: Running Services
+      url: /run-service.html
       output: web, pdf
 
   - title: Plugins
