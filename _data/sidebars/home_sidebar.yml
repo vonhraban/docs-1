@@ -56,6 +56,10 @@ entries:
       url: /go-micro-internals.html
       output: web, pdf
 
+    - title: Errors
+      url: /go-errors.html
+      output: web, pdf
+
     - title: API Handlers
       url: /go-api.html
       output: web, pdf
