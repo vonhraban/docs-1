@@ -38,7 +38,6 @@ Assuming some data provided was invalid
 
 ```
 return errors.BadRequest("com.example.srv.service", "invalid field")
-}
 ```
 
 In the event an internal error occurs
