@@ -53,7 +53,7 @@ entries:
       output: web, pdf
 
     - title: Internals
-      url: /go-micro-internals.html
+      url: /go-internals.html
       output: web, pdf
 
     - title: Errors

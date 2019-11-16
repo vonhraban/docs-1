@@ -3,11 +3,11 @@ title: Internals
 keywords: go-micro
 tags: [go-micro]
 sidebar: home_sidebar
-permalink: /go-micro-internals.html
-summary: A description of the go-micro internals
+permalink: /go--internals.html
+summary: A description of the go-micro internal features
 ---
 
-Go Micro is a pluggable RPC framework. It's used for distributed systems development.
+Go Micro is a framework for microservices development. It provides pluggable abstractions via the use of Go interfaces.
 
 <p align="center">
   <img src="images/go-micro.svg" />
@@ -24,33 +24,23 @@ Go Micro abstracts away the details of distributed systems. Here are the main fe
 - **Message Encoding** - Dynamic encoding based on content-type with protobuf and json out of the box
 - **Service Interface** - All features are packaged in a simple high level interface for developing microservices
 
-Go Micro supports both the Service and Function programming models. Read on to learn more.
+Go Micro supports a services programming model for building distributed systems.
 
 ## Plugins
 
-Go-micro makes use of the Go interface for it's abstractions. Because of this the underlying implementation can be swapped out.
+Go Micro makes use of the Go interface for it's abstractions. Because of this the underlying implementation can be swapped out.
 
-We provide sane defaults out of the box.
+We provide sane defaults out of the box:
 
-- mDNS, gossip or consul for service discovery
+- mDNS for zeroconf service discovery
 - Random hashed client side load balancing
-- JSON-RPC 1.0 and PROTO-RPC for message encoding
-- HTTP for communication
-
-## Examples
-
-
-An example service can be found in [**examples/service**](https://github.com/micro/examples/tree/master/service) and function in [**examples/function**](https://github.com/micro/examples/tree/master/function). 
-
-The [**examples**](https://github.com/micro/examples) directory contains examples for using things such as middleware/wrappers, selector filters, pub/su
-b, grpc, plugins and much more. For the complete greeter example look at [**examples/greeter**](https://github.com/micro/examples/tree/master/greeter). 
-Other examples can be found throughout the GitHub repository.
-
-Watch the [Golang UK Conf 2016](https://www.youtube.com/watch?v=xspaDovwk34) video for a high level overview.
+- json and protobuf encoding based on Content-Type
+- RPC over http synchronous communication
+- HTTP point-to-point pubsub for asynchronous communication
 
 ## Packages
 
-Go micro is composed of a number of packages. 
+Go micro is composed of a number of packages:
 
 - **transport** for sync messaging
 - **broker** for async messaging
@@ -59,6 +49,8 @@ Go micro is composed of a number of packages.
 - **selector** for load balancing
 - **client** for making requests
 - **server** for handling requests
+- **store** for key-value storage
+- **config** for dynamic configuration
 
 Further details are below
 
@@ -104,89 +96,21 @@ The client provides an interface to make requests to services. Again like the se
 for finding services by name using the registry, load balancing using the selector, making synchronous requests with the transport and asynchronous 
 messaging using the broker. 
 
-
 The  above components are combined at the top-level of micro as a **Service**.
 
-## Internals
+We additionally provide some other components for distributed systems development:
 
-Below is an explanation of inner workings of core functions
+### Store
 
-### service.Run()
+The store is a simple key-value storage interface used to abstract away lightweight data storage. We're not trying to implement a full blown sql dialect 
+or storage, just simply the ability to hold state that would otherwise be lost in stateless services. They store interface will become a building block 
+for all forms of storage in the future.
 
-A go-micro service is started by calling service.Run()
+### Config
 
-1. Execute before start functions
+Config is an interface for dynamic config loading from any number of sources which can be combined and merged. Most systems actively require configuration 
+that changes independent of the code. Having a config interface which can dynamically load these values as needed is powerful. It supports 
+many different configuration formats also.
 
-
-        for _, fn := range s.opts.BeforeStart {
-                if err := fn(); err != nil {
-                        return err
-                }
-        }
-
-
-2. Start the server
-
-
-        if err := s.opts.Server.Start(); err != nil {
-                return err
-        }
-
-
-3. Register with service discovery
-
-        if err := s.opts.Server.Register(); err != nil {
-                return err
-        }
-
-
- 4. Execute after start functions
-
-        for _, fn := range s.opts.AfterStart {
-                if err := fn(); err != nil {
-                        return err
-                }
-        }
-
-### server.Start()
-
-server.Start is called by service.Run
-
-1. Call transport.Listen to listen for connections
-
-        ts, err := config.Transport.Listen(config.Address)
-        if err != nil {
-                return err
-        }
-
-2. Call transport.Accept to start accepting connections
-
-        go ts.Accept(s.accept)
-
-3. Call broker.Connect to start connect to the message broker
-        
-        config.Broker.Connect()
-
-4. Wait an exit signal, close the transport and disconnect the broker
-
-        go func() {
-                // wait for exit
-                ch := <-s.exit
-
-                // wait for requests to finish
-                if wait(s.opts.Context) {
-                        s.wg.Wait()
-                }
-
-                // close transport listener
-                ch <- ts.Close()
-
-                // disconnect the broker
-                config.Broker.Disconnect()
-        }()
-
-## Writing a Service
-
-Check out the [getting started doc](writing-a-go-service.html)
 
 {% include links.html %}
