@@ -15,7 +15,7 @@ what's going on beyond the typical Go error string.
 
 We define the following error type:
 
-```
+```go
 type Error struct {
     Id     string `json:"id"`
     Code   int32  `json:"code"`
@@ -36,13 +36,13 @@ Let's assume some error has occurred in your handler. You should then decide wha
 
 Assuming some data provided was invalid
 
-```
+```go
 return errors.BadRequest("com.example.srv.service", "invalid field")
 ```
 
 In the event an internal error occurs
 
-```
+```go
 if err != nil {
 	return errors.InternalServerError("com.example.srv.service", "failed to read db: %v", err.Error())
 }
@@ -50,7 +50,7 @@ if err != nil {
 
 Now lets say you receive some error from the client
 
-```
+```go
 pbClient := pb.NewGreeterService("go.micro.srv.greeter", service.Client())
 rsp, err := pb.Client(context, req)
 if err != nil {
