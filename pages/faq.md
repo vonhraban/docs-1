@@ -30,10 +30,10 @@ Find all the tools at [github.com/micro](https://github.com/micro).
 
 ### Network
 
-Micro provides an open global always-on cloud environment for sharing and running services. The [network](https://micro/docs/network.html) 
+Micro provides an open global always-on cloud environment for sharing and running services. The [network](https://micro.mu/docs/network.html) 
 can be joined and used by anyone. It's a great way to unlock public collaboration outside of any one organisation or team.
 
-Explore the [network](https://micro/docs/network.html).
+Explore the [network](https://micro.mu/docs/network.html).
 
 ### Community
 
