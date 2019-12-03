@@ -34,6 +34,7 @@ If you're using Micro, feel free to add your company
 - [Kytra](https://kytra.app/) - Investing simplified
 - [Mohu](https://www.mohukeji.com/) - Blockchain Finance solution
 - [Neds](https://www.neds.com.au/) - Betting online website
+- [ownCloud](https://owncloud.org/) - Personal cloud collaboration platform
 - [Pie](http://pie.io/) - Fleet management platform
 - [Popsa](https://popsa.com/) - Photo book printing service
 - [Profects](https://profects.com/) - Software studio
