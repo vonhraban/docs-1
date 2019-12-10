@@ -163,7 +163,11 @@ protoc --proto_path=. --micro_out=. --go_out=. proto/example/example.proto
 Now run it like any other go application
 
 ```
-go run main.go
+# cd into your service directory
+cd github.com/micro/example
+
+# run the service
+micro run service --local
 ```
 
 ## Example
