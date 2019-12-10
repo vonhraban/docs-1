@@ -14,7 +14,7 @@ The micro network service is a multi-cloud service networking solution which wor
 ## Overview
 
 The micro network provides multi-cloud capability and builds a large scale flat network over which all services can communicate with each other. 
-It makes use of our proxy, router, tunnel and network packages in go-micro to product global routing across any environment. 
+It makes use of our proxy, router, tunnel and network packages in go-micro to produce global routing across any environment. 
 
 The network generates a routing table based on the local service registry and shares this amongst nodes. It builds in a router and proxy so 
 any request made to any network node can be routed across the global network. It prioritises local routing first and can range up to 3 
