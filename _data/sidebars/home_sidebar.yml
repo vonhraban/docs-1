@@ -44,15 +44,6 @@ entries:
       url: /users.html
       output: web, pdf
 
-  - title: Platform
-    output: web, pdf
-    folderitems:
-
-    - title: Overview
-      url: /platform.html
-      output: web, pdf
-
-
   - title: Framework
     output: web, pdf
     folderitems:
@@ -83,6 +74,14 @@ entries:
 
     - title: Web Service
       url: /go-web.html
+      output: web, pdf
+
+  - title: Platform
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /platform.html
       output: web, pdf
 
   - title: Runtime
