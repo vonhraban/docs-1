@@ -292,7 +292,7 @@ Querying the above service is as simple as the following.
 
 ```go
 // create the greeter client using the service name and client
-greeter := proto.NewGreeterClient("greeter", service.Client())
+greeter := proto.NewGreeterService("greeter", service.Client())
 
 // request the Hello method on the Greeter handler
 rsp, err := greeter.Hello(context.TODO(), &proto.HelloRequest{
