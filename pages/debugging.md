@@ -26,14 +26,36 @@ error
 info
 ```
 
+To view logs from a service
+
+```
+micro log [service]
+```
+
 ## Profiling
 
 To enable profiling via pprof
 
 ```
-MICRO_DEBUG_PROFILE=true
+MICRO_DEBUG_PROFILE=http
 ```
 
-This will write a cpu and heap profile to /tmp/[service name].[service version].{cpu, mem}.pprof
+This will start a http server on :6060
+
+## Stats
+
+To view the current runtime stats
+
+```
+micro stats [service]
+```
+
+## Health
+
+To see if a service is running and responding to RPC queries
+
+```
+micro health [service]
+```
 
 {% include links.html %}
