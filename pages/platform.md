@@ -26,6 +26,6 @@ The **M3O** platform will include the following features:
 
 ## Getting Started
 
-Join the [slack](https://micro.mu/slack) to discuss more. We'll be revealing the details soon for an invite-only beta. 
+Join the #platform channel on [slack](https://micro.mu/slack) to discuss more. We'll be revealing the details soon for an invite-only beta. 
 
 {% include links.html %}
