@@ -4,7 +4,9 @@
 	    {% if page.lang == "cn" %}
 	    <a class="navbar-brand" href="index.html"><span class="projectTitle"> {{site.topnav_title_cn}}</span></a>
 	    {% else %}
-	    <a class="navbar-brand" href="index.html"><span class="projectTitle"> {{site.topnav_title}}</span></a>
+	    <a class="navbar-brand" href="index.html">
+		<img src="https://micro.mu/logo.png" height="50px" width="auto" /><span class="projectTitle"> {{site.topnav_title}}</span>
+	    </a>
 	    {% endif %}
 
 	    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse-1">
