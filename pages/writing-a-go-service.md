@@ -303,7 +303,7 @@ if err != nil {
 	return
 }
 
-fmt.Println(rsp.Greeter)
+fmt.Println(rsp.Greeting)
 ```
 
 `proto.NewGreeterClient` takes the service name and the client used for making requests.
