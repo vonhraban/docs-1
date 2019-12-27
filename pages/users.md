@@ -46,6 +46,7 @@ If you're using Micro, feel free to add your company
 - [Sipsynergy](http://www.sipsynergy.co.uk/) - Telecommunications services
 - [Sixt](https://www.sixt.com) - Car rental enterprise
 - [Stillwater Supercomputing](http://www.stillwater-sc.com/) - Knowledge processing system
+- [Tencent](https://www.tencent.com/en-us/)
 - [TodayTix](https://www.todaytix.com/) - Ticket reservation service
 - [Vimeo](https://vimeo.com/) - Video sharing platform
 - [Ulule](https://www.ulule.com/) - Crowdfunding platform 
