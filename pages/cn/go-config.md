@@ -170,17 +170,17 @@ type Config interface {
 ## 使用方式
 
 
-- [Sample Config](#sample-config)
-- [New Config](#new-config)
-- [Load File](#load-file)
-- [Read Config](#read-config)
-- [Read Values](#read-values)
-- [Watch Path](#watch-path)
-- [Multiple Sources](#merge-sources)
-- [Set Source Encoder](#set-source-encoder)
-- [Add Reader Encoder](#add-reader-encoder)
+- [简单示例](#简单示例)
+- [新增配置实例](#新增配置实例)
+- [加载配置](#加载配置)
+- [读取全部配置](#读取全部配置)
+- [读取指定配置](#读取指定配置)
+- [监控配置](#监控配置)
+- [使用多数据源](#使用多数据源)
+- [设置源编码器](#设置源编码)
+- [增加读编码器](#增加读编码)
 
-### Sample Config
+### 简单示例
 
 配置文件可以是Encoder解码器支持的任何格式：
 
@@ -201,7 +201,7 @@ JSON json config:
 }
 ```
 
-### New Config
+### 新增配置实例
 
 新增配置（直接使用默认的配置对象也可）
 
@@ -211,7 +211,7 @@ import "github.com/micro/go-micro/config"
 conf := config.NewConfig()
 ```
 
-### Load File
+### 加载配置
 
 加载文件配置，文件的扩展名即为配置的格式。
 
@@ -248,7 +248,7 @@ config.Load(file.NewSource(
 ))
 ```
 
-### Read Config
+### 读取全部配置
 
 读取全部配置
 
@@ -280,7 +280,7 @@ config.Scan(&conf)
 fmt.Println(conf.Hosts["database"].Address, conf.Hosts["database"].Port)
 ```
 
-### Read Values
+### 读取指定配置
 
 如果将配置写入结构
 
@@ -308,7 +308,7 @@ address := config.Get("hosts", "database", "address").String("localhost")
 port := config.Get("hosts", "database", "port").Int(3000)
 ```
 
-### Watch Path
+### 监控配置
 
 观测目录的变化。当文件有改动时，新值便可生效。
 
@@ -329,7 +329,7 @@ var host Host
 v.Scan(&host)
 ```
 
-### Multiple Sources
+### 使用多数据源
 
 多资源可以加载并合并，合并优先级顺序则是反向的，即后面导入的优先级高。
 
@@ -346,7 +346,7 @@ config.Load(
 )
 ```
 
-### Set Source Encoder
+### 设置源编码器
 
 资源需要编码器才能将配置编码与解码成所需的changeset格式。
 
@@ -360,7 +360,7 @@ s := consul.NewSource(
 )
 ```
 
-### Add Reader Encoder
+### 增加读编码器
 
 Reader使用各种编码器来解码不同格式源的数据。
 
