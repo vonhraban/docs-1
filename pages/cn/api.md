@@ -73,6 +73,12 @@ API默认的命名空间是`go.micro.api`，当然，也可以修改：
 MICRO_NAMESPACE=com.example.api micro api
 ```
 
+通过设置命名空间为为空禁用命名空间，不过以后会尝试用更好的方式实现。
+```shell
+MICRO_NAMESPACE=' '
+```
+
+
 ## 示例
 
 我们演示一个3层的服务架构：
