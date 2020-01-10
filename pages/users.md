@@ -24,7 +24,7 @@ If you're using Micro, feel free to add your company
 - [Glue](https://glue.group) - Digital development agency
 - [Hightech](https://hightech.fm/) - Tech media platform
 - [Honeywell](https://www.honeywell.com/) - Produces commercial and consumer products, engineering services and aerospace systems.
-- HuanLian（焕链科技）- Blockchain technology
+- [HuanLian（焕链科技）](http://www.hwanc.cn) - Blockchain technology
 - [Human Ventures](https://humanventures.co/) - NYC based startup studio
 - [Imgur](https://imgur.com/) - Social image sharing platform
 - [Jumia](https://food.jumia.com/) - Food delivery service

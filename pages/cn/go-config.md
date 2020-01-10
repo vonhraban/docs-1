@@ -42,19 +42,26 @@ Go-config就简单得多，可插拔且可合并。
 
 支持以下格式：
 
-- [configmap](https://github.com/micro/go-micro/config/tree/master/source/configmap) - k8s configmap
-- [consul](https://github.com/micro/go-micro/config/tree/master/source/consul) - consul
-- [etcd](https://github.com/micro/go-micro/config/tree/master/source/etcd) - etcd v3
-- [env](https://github.com/micro/go-micro/config/tree/master/source/env) - 环境变量
-- [file](https://github.com/micro/go-micro/config/tree/master/source/file) - 配置文件
-- [flag](https://github.com/micro/go-micro/config/tree/master/source/flag) - 命令行标识
-- [grpc](https://github.com/micro/go-micro/config/tree/master/source/grpc) - grpc
-- [memory](https://github.com/micro/go-micro/config/tree/master/source/memory) - 内存
-- [microcli](https://github.com/micro/go-micro/config/tree/master/source/microcli) - micro cli flag标识
+
+
+- [cli](https://github.com/micro/go-micro/tree/master/config/source/cli) - read from parsed CLI flags
+- [consul](https://github.com/micro/go-micro/tree/master/config/source/consul) - read from consul
+- [env](https://github.com/micro/go-micro/tree/master/config/source/env) - read from environment variables
+- [etcd](https://github.com/micro/go-micro/tree/master/config/source/etcd) - read from etcd v3
+- [file](https://github.com/micro/go-micro/tree/master/config/source/file) - read from file
+- [flag](https://github.com/micro/go-micro/tree/master/config/source/flag) - read from flags
+- [memory](https://github.com/micro/go-micro/tree/master/config/source/memory) - read from memory
+
+也存在一些社区支持的插件：
+
+- [configmap](https://github.com/micro/go-plugins/tree/master/config/source/configmap) - read from k8s configmap
+- [grpc](https://github.com/micro/go-plugins/tree/master/config/source/grpc) - read from grpc server
+- [runtimevar](https://github.com/micro/go-plugins/tree/master/config/source/runtimevar) - read from Go Cloud Development Kit runtime variable
+- [url](https://github.com/micro/go-plugins/tree/master/config/source/url) - read from URL
+- [vault](https://github.com/micro/go-plugins/tree/master/config/source/vault) - read from Vault server
 
 TODO:
 
-- vault
 - git url
 
 ### ChangeSet变更集
@@ -162,7 +169,18 @@ type Config interface {
 
 ## 使用方式
 
-### 配置样式
+
+- [简单示例](#简单示例)
+- [新增配置实例](#新增配置实例)
+- [加载配置](#加载配置)
+- [读取全部配置](#读取全部配置)
+- [读取指定配置](#读取指定配置)
+- [监控配置](#监控配置)
+- [使用多数据源](#使用多数据源)
+- [设置源编码器](#设置源编码)
+- [增加读编码器](#增加读编码)
+
+### 简单示例
 
 配置文件可以是Encoder解码器支持的任何格式：
 
@@ -183,7 +201,7 @@ JSON json config:
 }
 ```
 
-### 新增配置
+### 新增配置实例
 
 新增配置（直接使用默认的配置对象也可）
 
@@ -193,7 +211,7 @@ import "github.com/micro/go-micro/config"
 conf := config.NewConfig()
 ```
 
-### 加载配置文件
+### 加载配置
 
 加载文件配置，文件的扩展名即为配置的格式。
 
@@ -230,7 +248,7 @@ config.Load(file.NewSource(
 ))
 ```
 
-### 读取配置
+### 读取全部配置
 
 读取全部配置
 
@@ -262,7 +280,7 @@ config.Scan(&conf)
 fmt.Println(conf.Hosts["database"].Address, conf.Hosts["database"].Port)
 ```
 
-### 读取多个值
+### 读取指定配置
 
 如果将配置写入结构
 
@@ -290,7 +308,7 @@ address := config.Get("hosts", "database", "address").String("localhost")
 port := config.Get("hosts", "database", "port").Int(3000)
 ```
 
-### 观测目录
+### 监控配置
 
 观测目录的变化。当文件有改动时，新值便可生效。
 
@@ -311,7 +329,7 @@ var host Host
 v.Scan(&host)
 ```
 
-### 多资源
+### 使用多数据源
 
 多资源可以加载并合并，合并优先级顺序则是反向的，即后面导入的优先级高。
 
@@ -328,7 +346,7 @@ config.Load(
 )
 ```
 
-### 设置资源编码器
+### 设置源编码器
 
 资源需要编码器才能将配置编码与解码成所需的changeset格式。
 
@@ -342,7 +360,7 @@ s := consul.NewSource(
 )
 ```
 
-### 新增Reader编码器
+### 增加读编码器
 
 Reader使用各种编码器来解码不同格式源的数据。
 
