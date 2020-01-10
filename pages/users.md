@@ -51,6 +51,7 @@ If you're using Micro, feel free to add your company
 - [Vimeo](https://vimeo.com/) - Video sharing platform
 - [Ulule](https://www.ulule.com/) - Crowdfunding platform 
 - [Unity Labs](https://www.unitylabs.io/) - Blockchain development company
+- [Volvo](https://www.volvocars.com/uk) - Car manufacturer
 - [VXLab](https://www.vxlab.com/) - Visual programming platform
 - [Wonderbly](https://www.wonderbly.com/) - Childrens book company
 
