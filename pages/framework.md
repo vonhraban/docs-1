@@ -62,7 +62,7 @@ metadata and endpoint information. See below for more info.
 
 ### Protobuf
 
-You'll need to install:
+You'll need to install protobuf to code generate API interfaces:
 
 - [protoc-gen-micro](https://github.com/micro/protoc-gen-micro)
 
