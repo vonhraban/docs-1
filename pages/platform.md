@@ -16,11 +16,11 @@ hassle of managing infrastructure and the complexity of cloud-native by providin
 
 The **M3O** platform will include the following features:
 
-- **Global service deployment** - Services will run global by default in a multi-cloud system that's fully interconnected
+- **Global service deployment** - Services will run globally by default in a multi-cloud environment
 
-- **Simplified debugging** - Stats, metrics and logs will be available in an easy and clean way for every service
+- **Auto configuration** - Services will be auto configured with the required registry, message broker, etc
 
-- **Auto configuration** - Services will be auto configured with the required registry, message broker, etc via environment variables
+- **Simplified debugging** - Stats, logs and tracing will be available in an easy and clean way for every service
 
 - **Connect from anywhere** - Ability to connect and extend the network beyond the platform. Run services locally or in your own cloud.
 
