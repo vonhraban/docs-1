@@ -28,4 +28,6 @@ The **M3O** platform will include the following features:
 
 Join the #platform channel on [slack](https://micro.mu/slack) to discuss more. We'll be revealing the details soon for an invite-only beta. 
 
+To run your own self-hosted version of the platform go to [GitHub](https://github.com/micro/micro/tree/master/platform).
+
 {% include links.html %}
