@@ -52,6 +52,10 @@ entries:
       url: /framework.html
       output: web, pdf
 
+    - title: Examples
+      url: /go-examples.html
+      output: web, pdf
+
     - title: Internals
       url: /go-internals.html
       output: web, pdf
@@ -74,6 +78,10 @@ entries:
 
     - title: Web Service
       url: /go-web.html
+      output: web, pdf
+
+    - title: Wrappers
+      url: /go-wrapper.html
       output: web, pdf
 
   - title: Platform

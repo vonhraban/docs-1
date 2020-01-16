@@ -49,8 +49,6 @@ are pluggable and allows Go Micro to be runtime agnostic. You can plugin any und
 - [Writing a Service](#writing-a-service)
 - [Publish & Subscribe](#publish--subscribe)
 - [Plugins](#plugins)
-- [Wrappers](#wrappers)
-- [Examples](#examples)
 
 ## Dependencies
 
@@ -401,72 +399,5 @@ type Registry interface {
 ```
 
 Browse [go-plugins](https://github.com/micro/go-plugins) to get a better idea of implementation details.
-
-## Wrappers
-
-Go Micro includes the notion of middleware as wrappers to extend the functionality of your code and integrate 
-external requirements. The client or handlers can be wrapped using what's known as the decorator pattern.
-
-### Handler
-
-Here's an example service handler wrapper which logs the incoming request
-
-```go
-// implements the server.HandlerWrapper
-func logWrapper(fn server.HandlerFunc) server.HandlerFunc {
-	return func(ctx context.Context, req server.Request, rsp interface{}) error {
-		fmt.Printf("[%v] server request: %s", time.Now(), req.Endpoint())
-		return fn(ctx, req, rsp)
-	}
-}
-```
-
-It can be initialised when creating the service
-
-```go
-service := micro.NewService(
-	micro.Name("greeter"),
-	// wrap the handler
-	micro.WrapHandler(logWrapper),
-)
-```
-
-### Client
-
-Here's an example of a client wrapper which logs requests made
-
-```go
-type logWrapper struct {
-	client.Client
-}
-
-func (l *logWrapper) Call(ctx context.Context, req client.Request, rsp interface{}, opts ...client.CallOption) error {
-	fmt.Printf("[wrapper] client request to service: %s endpoint: %s\n", req.Service(), req.Endpoint())
-	return l.Client.Call(ctx, req, rsp)
-}
-
-// implements client.Wrapper as logWrapper
-func logWrap(c client.Client) client.Client {
-	return &logWrapper{c}
-}
-```
-
-It can be initialised when creating the service
-
-```go
-service := micro.NewService(
-	micro.Name("greeter"),
-	// wrap the client
-	micro.WrapClient(logWrap),
-)
-```
-
-## Examples
-
-The example service for the above guide can be found in [**examples/service**](https://github.com/micro/examples/tree/master/service).
-
-Further examples exist in the [**examples**](https://github.com/micro/examples) directory for using things such as middleware/wrappers, 
-selector filters, pub/sub, grpc, plugins and much more. For the complete greeter example look at 
-[**examples/greeter**](https://github.com/micro/examples/tree/master/greeter).
 
 {% include links.html %}
