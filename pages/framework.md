@@ -43,8 +43,6 @@ are pluggable and allows Go Micro to be runtime agnostic. You can plugin any und
 ## Getting started
 
 - [Dependencies](#dependencies)
-  * [Protobuf](#protobuf)
-  * [Discovery](#discovery)
 - [Installation](#installation)
 - [Writing a Service](#writing-a-service)
 - [Publish & Subscribe](#publish--subscribe)
