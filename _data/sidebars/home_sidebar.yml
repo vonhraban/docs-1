@@ -52,6 +52,10 @@ entries:
       url: /framework.html
       output: web, pdf
 
+    - title: Hello World
+      url: /go-helloworld.html
+      output: web, pdf
+
     - title: Config
       url: /go-config.html
       output: web, pdf
