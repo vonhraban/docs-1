@@ -52,28 +52,28 @@ entries:
       url: /framework.html
       output: web, pdf
 
-    - title: Examples
-      url: /go-examples.html
-      output: web, pdf
-
-    - title: Internals
-      url: /go-internals.html
+    - title: Config
+      url: /go-config.html
       output: web, pdf
 
     - title: Errors
       url: /go-errors.html
       output: web, pdf
 
+    - title: Examples
+      url: /go-examples.html
+      output: web, pdf
+
     - title: API Handlers
       url: /go-api.html
       output: web, pdf
 
-    - title: Config
-      url: /go-config.html
-      output: web, pdf
-
     - title: gRPC Service
       url: /go-grpc.html
+      output: web, pdf
+
+    - title: Internals
+      url: /go-internals.html
       output: web, pdf
 
     - title: Plugins
