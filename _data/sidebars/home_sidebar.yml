@@ -76,6 +76,10 @@ entries:
       url: /go-grpc.html
       output: web, pdf
 
+    - title: Plugins
+      url: /go-plugins.html
+      output: web, pdf
+
     - title: Web Service
       url: /go-web.html
       output: web, pdf
