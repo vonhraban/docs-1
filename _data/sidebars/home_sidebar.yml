@@ -81,7 +81,7 @@ entries:
       output: web, pdf
 
     - title: Wrappers
-      url: /go-wrapper.html
+      url: /go-wrappers.html
       output: web, pdf
 
   - title: Platform
