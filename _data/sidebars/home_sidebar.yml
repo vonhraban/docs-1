@@ -68,7 +68,7 @@ entries:
       url: /go-api.html
       output: web, pdf
 
-    - title: Dynamic Config
+    - title: Config
       url: /go-config.html
       output: web, pdf
 
