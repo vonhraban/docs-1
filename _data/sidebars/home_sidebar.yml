@@ -80,6 +80,10 @@ entries:
       url: /go-plugins.html
       output: web, pdf
 
+    - title: PubSub
+      url: /go-pubsub.html
+      output: web, pdf
+
     - title: Web Service
       url: /go-web.html
       output: web, pdf
