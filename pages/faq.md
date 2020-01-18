@@ -109,20 +109,16 @@ SRV services are basically standard RPC services, the usual kind of service you 
 
 ## How performant is it?
 
-Performance is not a current focus of Micro. While code is written to be optimal and avoid overhead, not much time is spent on benchmarks. Comparisons to net/http or other web frameworks make no sense. Micro provides higher level requirements for microservices that include service discovery, load balancing, message encoding, etc. To compare you would need to add all these features in.
+Performance is not a current focus of Micro but always something we strive for. We let the wider Go ecosystem handle 
+the heavy lifting and focus on developer productivity first. This means we're using gRPC beneath the covers and NATS 
+for messaging.
 
-If you're still concerned with performance. The simplest way to extract the most value is simply by running with the following flags:
-
-```
---selector=cache # enables in memory caching of discovered nodes
---client_pool_size=10 # enables the client side connection pool
-```
+Where the default plugins are not performant enough you can use [go-plugins](https://github.com/micro/go-plugins) to 
+switch out to your tool of choice.
 
 ## Does Micro support gRPC?
 
-Yes. There are plugins for a transport, client and server in [micro/go-plugins](https://github.com/micro/go-plugins). 
-
-If you want a quick start just import [go-micro/service/grpc](https://micro.mu/docs/go-grpc.html).
+Yes. In v2 micro makes use of gRPC by default.
 
 ## Micro vs Go-Kit
 
@@ -132,7 +128,7 @@ Go-kit describes itself as a standard library for microservices. Like Go, go-kit
 which can be used to construct your applications. Go-kit is great where you want complete control over how you define 
 your services.
 
-Go-micro is a pluggable RPC framework for microservices. It's an opinionated framework which attempts to simplify 
+Go Micro is a pluggable RPC framework for microservices. It's an opinionated framework which attempts to simplify 
 the communication aspects of distributed systems so you can focus on the business logic itself. Go-micro is great 
 where you want to get up and running quickly while having something pluggable to switch out infrastructure without 
 code changes.
