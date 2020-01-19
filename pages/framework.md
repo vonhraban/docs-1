@@ -20,24 +20,24 @@ Go Micro abstracts away the details of distributed systems. Here are the main fe
 development. When service A needs to speak to service B it needs the location of that service. The default discovery mechanism is
 multicast DNS (mdns), a zeroconf system.
 
-- **Load Balancing** - Client side load balancing built on service discovery. Once we have the addresses of any number of instances 
-of a service we now need a way to decide which node to route to. We use random hashed load balancing to provide even distribution 
+- **Load Balancing** - Client side load balancing built on service discovery. Once we have the addresses of any number of instances
+of a service we now need a way to decide which node to route to. We use random hashed load balancing to provide even distribution
 across the services and retry a different node if there's a problem.
 
-- **Message Encoding** - Dynamic message encoding based on content-type. The client and server will use codecs along with content-type 
-to seamlessly encode and decode Go types for you. Any variety of messages could be encoded and sent from different clients. The client 
-and server handle this by default. This includes proto-rpc and json-rpc by default. 
+- **Message Encoding** - Dynamic message encoding based on content-type. The client and server will use codecs along with content-type
+to seamlessly encode and decode Go types for you. Any variety of messages could be encoded and sent from different clients. The client
+and server handle this by default. This includes protobuf and json by default.
 
-- **Request/Response** - RPC based request/response with support for bidirectional streaming. We provide an abstraction for synchronous 
-communication. A request made to a service will be automatically resolved, load balanced, dialled and streamed. The default 
-transport is http/1.1 or http2 when tls is enabled. 
+- **Request/Response** - RPC based request/response with support for bidirectional streaming. We provide an abstraction for synchronous
+communication. A request made to a service will be automatically resolved, load balanced, dialled and streamed. The default
+transport is [gRPC](https://grpc.io/).
 
-- **Async Messaging** - PubSub is built in as a first class citizen for asynchronous communication and event driven architectures. 
-Event notifications are a core pattern in micro service development. The default messaging is point-to-point http/1.1 or http2 when tls 
-is enabled. 
+- **Async Messaging** - PubSub is built in as a first class citizen for asynchronous communication and event driven architectures.
+Event notifications are a core pattern in micro service development. The default messaging system is an embedded [NATS](https://nats.io/)
+server.
 
-- **Pluggable Interfaces** - Go Micro makes use of Go interfaces for each distributed system abstraction. Because of this these interfaces 
-are pluggable and allows Go Micro to be runtime agnostic. You can plugin any underlying technology. Find plugins in 
+- **Pluggable Interfaces** - Go Micro makes use of Go interfaces for each distributed system abstraction. Because of this these interfaces
+are pluggable and allows Go Micro to be runtime agnostic. You can plugin any underlying technology. Find plugins in
 [github.com/micro/go-plugins](https://github.com/micro/go-plugins).
 
 ## Getting started
