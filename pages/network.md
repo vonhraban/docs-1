@@ -73,9 +73,7 @@ powershell -Command "iwr -useb https://micro.mu/install.ps1 | iex"
 Bootup micro and connect to the network
 
 ```
-export MICRO_NETWORK_TOKEN=micro.mu
-
-micro
+micro --peer
 ```
 
 ### Query
