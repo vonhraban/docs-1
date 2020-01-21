@@ -18,7 +18,7 @@ The **M3O** platform will include the following features:
 
 - **Global service deployment** - Services will run globally by default in a multi-cloud environment
 
-- **Auto configuration** - Services will be auto configured with the required registry, message broker, etc
+- **Auto configuration** - Services will be auto configured with the required registry, broker, etc
 
 - **Simplified debugging** - Stats, logs and tracing will be available in an easy and clean way for every service
 

@@ -19,6 +19,7 @@ If you're using Micro, feel free to add your company
 - [Capital One](https://www.capitalone.com/) - Financial services
 - [CodersRank](https://codersrank.io/) - Real time profiles for open source contributions
 - [Coesia](https://www.coesia.com/en) - Industrial and packaging solutions
+- [CESNET](https://www.cesnet.cz/) - Czech Educational and Research Network
 - [Dark Cubed](http://darkcubed.com) - Cyber security services
 - [Elumium](https://www.elumium.com/) - Tenant communications
 - [Glue](https://glue.group) - Digital development agency
@@ -35,6 +36,8 @@ If you're using Micro, feel free to add your company
 - [Mohu](https://www.mohukeji.com/) - Blockchain Finance solution
 - [Neds](https://www.neds.com.au/) - Betting online website
 - [ownCloud](https://owncloud.org/) - Personal cloud collaboration platform
+- [OnSky](https://www.onskyinc.com/en/home/) - Intelligent home and office security
+- [PaySuper](https://pay.super.com/) - Payments for game developers
 - [Popsa](https://popsa.com/) - Photo book printing service
 - [Profects](https://profects.com/) - Software studio
 - [Pydio](https://pydio.com/) - File sharing platform
