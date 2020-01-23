@@ -78,7 +78,7 @@ import (
 func main() {
 	registry := consul.NewRegistry()
 	broker := kafka.NewBroker()
-	transport := rabbimq.NewTransport()
+	transport := rabbitmq.NewTransport()
 
         service := micro.NewService(
                 micro.Name("greeter"),
