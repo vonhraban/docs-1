@@ -37,6 +37,7 @@ If you're using Micro, feel free to add your company
 - [Neds](https://www.neds.com.au/) - Betting online website
 - [ownCloud](https://owncloud.org/) - Personal cloud collaboration platform
 - [OnSky](https://www.onskyinc.com/en/home/) - Intelligent home and office security
+- [OpenSDS](https://www.opensds.io/) - The open autonomous data platform
 - [PaySuper](https://pay.super.com/) - Payments for game developers
 - [Popsa](https://popsa.com/) - Photo book printing service
 - [Profects](https://profects.com/) - Software studio
