@@ -26,8 +26,8 @@ type Error struct {
 
 Anywhere in the system where you're asked to return an error from a handler or receive one from a client you should assume 
 its either a go-micro error or that you should produce one. By default we return 
-[errors.InternalServerError](https://godoc.org/github.com/micro/go-micro/errors#InternalServerError) where somethin has 
-gone wrong internally and [errors.Timeout](https://godoc.org/github.com/micro/go-micro/errors#Timeout) where a timeout occurred.
+[errors.InternalServerError](https://pkg.go.dev/github.com/micro/go-micro/v2/errors#InternalServerError) where somethin has 
+gone wrong internally and [errors.Timeout](https://pkg.go.dev/github.com/micro/go-micro/v2/errors#Timeout) where a timeout occurred.
 
 ## Usage
 

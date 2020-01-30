@@ -14,7 +14,7 @@ summary:
 
 ## 编写服务
 
-顶级的服务接口[Service](https://godoc.org/github.com/micro/go-micro#Service)，是构建服务所需的主要组件。它把所有Go-Micror的基础包打包成单一组件接口。
+顶级的服务接口[Service](https://pkg.go.dev/github.com/micro/go-micro/v2#Service)，是构建服务所需的主要组件。它把所有Go-Micror的基础包打包成单一组件接口。
 
 ```go
 type Service interface {
@@ -32,7 +32,7 @@ type Service interface {
 可以使用`micro.NewService`创建服务
 
 ```go
-import "github.com/micro/go-micro"
+import "github.com/micro/go-micro/v2"
 
 service := micro.NewService() 
 ```
@@ -46,14 +46,14 @@ service := micro.NewService(
 )
 ```
 
-所有的可选参数参考：[配置项](https://godoc.org/github.com/micro/go-micro#Option)
+所有的可选参数参考：[配置项](https://pkg.go.dev/github.com/micro/go-micro/v2#Option)
 
 Go Micro也提供通过命令行参数`micro.Flags`传递配置参数：
 
 ```go
 import (
         "github.com/micro/cli"
-        "github.com/micro/go-micro"
+        "github.com/micro/go-micro/v2"
 )
 
 service := micro.NewService(
@@ -79,7 +79,7 @@ service.Init(
 )
 ```
 
-Go Micro提供预置的标识，`service.Init`执行时就会设置并解析这些参数。所有的标识[参考](https://godoc.org/github.com/micro/go-micro/cmd#pkg-variables).
+Go Micro提供预置的标识，`service.Init`执行时就会设置并解析这些参数。所有的标识[参考](https://pkg.go.dev/github.com/micro/go-micro/v2/cmd#pkg-variables).
 
 ### 2. 定义API
 
@@ -242,7 +242,7 @@ package main
 import (
         "log"
 
-        "github.com/micro/go-micro"
+        "github.com/micro/go-micro/v2"
         proto "github.com/micro/examples/service/proto"
 
         "golang.org/x/net/context"
@@ -275,7 +275,7 @@ func main() {
 
 ## 编写客户端
 
-[客户端](https://godoc.org/github.com/micro/go-micro/client)包用于查询服务，当创建服务时，也包含了一个客户端，这个客户端匹配服务所使用的初始化包。
+[客户端](https://pkg.go.dev/github.com/micro/go-micro/v2/client)包用于查询服务，当创建服务时，也包含了一个客户端，这个客户端匹配服务所使用的初始化包。
 
 查询上面的服务很简单：
 

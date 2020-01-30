@@ -46,11 +46,11 @@ NATS不支持：
 
 [**Micro**](https://github.com/micro/micro)作为可插拔的微服务架构，它允许只改动小部分代码便能替换依赖的插件。每一个[**Go-Micro**](https://github.com/micro/go-micro)框架中的接口都提供了微服务的构建模块。
 
-[registry](https://godoc.org/github.com/micro/go-micro/registry#Registry)负责服务发现
+[registry](https://pkg.go.dev/github.com/micro/go-micro/v2/registry#Registry)负责服务发现
 
-[transport](https://godoc.org/github.com/micro/go-micro/transport#Transport)负责同步的消息通信
+[transport](https://pkg.go.dev/github.com/micro/go-micro/v2/transport#Transport)负责同步的消息通信
 
-[broker](https://godoc.org/github.com/micro/go-micro/broker#Broker)负责异步的消息通信
+[broker](https://pkg.go.dev/github.com/micro/go-micro/v2/broker#Broker)负责异步的消息通信
 
 ...等等
 

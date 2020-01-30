@@ -60,7 +60,7 @@ or not at all. Sending requests across multiple copies of an application would s
 
 ### Solution
 
-Micro does client side load balancing via the [selector](https://godoc.org/github.com/micro/go-micro/selector#Selector) interface 
+Micro does client side load balancing via the [selector](https://pkg.go.dev/github.com/micro/go-micro/v2/selector#Selector) interface 
 to spread requests across any number of nodes of a service. When a service is started it registers with service discovery as a 
 service node with a unique address and id. When making a request the micro client uses the selector to decide which node to make 
 the request to. The selector uses the service registry to find the nodes of a service, then use a load balancing strategy such as 
@@ -136,8 +136,8 @@ Go-micro services can also use the same flag if the Init method is called. Alter
 
 ```
 import (
-	"github.com/micro/go-micro/client"
-	"github.com/micro/go-micro/selector/cache"
+	"github.com/micro/go-micro/v2/client"
+	"github.com/micro/go-micro/v2/selector/cache"
 )
 
 service := micro.NewService(

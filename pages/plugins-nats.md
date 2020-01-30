@@ -50,9 +50,9 @@ That briefly covers the what's and why's of NATS. So how does it fit in with Mic
 
 [**Micro**](https://github.com/micro/micro) is a microservice toolkit built with a pluggable architecture allowing the underlying dependencies to be swapped out with 
 minimal changes. Each interface of the [**Go-Micro**](https://github.com/micro/go-micro) framework provides a building block for microservices; 
-the [registry](https://godoc.org/github.com/micro/go-micro/registry#Registry) 
-for service discovery, [transport](https://godoc.org/github.com/micro/go-micro/transport#Transport) for synchronous communication, 
-[broker](https://godoc.org/github.com/micro/go-micro/broker#Broker) for asynchronous messaging, etc.
+the [registry](https://pkg.go.dev/github.com/micro/go-micro/v2/registry#Registry) 
+for service discovery, [transport](https://pkg.go.dev/github.com/micro/go-micro/v2/transport#Transport) for synchronous communication, 
+[broker](https://pkg.go.dev/github.com/micro/go-micro/v2/broker#Broker) for asynchronous messaging, etc.
 
 Creating a plugin for each component is as simple as implementing the interface. We'll spend more time detailing 
 how to write plugins in a future blog post. If you want to check out the plugins for NATS or any other systems 

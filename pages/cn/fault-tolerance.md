@@ -55,7 +55,7 @@ service := micro.NewService(
 
 ### 解决方案
 
-微服务客户端通过[选择器](https://godoc.org/github.com/micro/go-micro/selector#Selector)负载均衡，选择器可以把请求分到任意多的服务节点上。服务启动后，它使用唯一的地址与id组合向注册中心注册成服务节点。创建请求时，micro客户端会通过选择器决定向哪一个节点发送请求。选择器在服务注册信息中找到服务的节点，然后用负载均衡策略选择一个节点把请求发送出去，比如随机哈希、轮询。
+微服务客户端通过[选择器](https://pkg.go.dev/github.com/micro/go-micro/v2/selector#Selector)负载均衡，选择器可以把请求分到任意多的服务节点上。服务启动后，它使用唯一的地址与id组合向注册中心注册成服务节点。创建请求时，micro客户端会通过选择器决定向哪一个节点发送请求。选择器在服务注册信息中找到服务的节点，然后用负载均衡策略选择一个节点把请求发送出去，比如随机哈希、轮询。
 
 ### 使用方式
 
@@ -117,8 +117,8 @@ micro --selector=cache api
 
 ```
 import (
-	"github.com/micro/go-micro/client"
-	"github.com/micro/go-micro/selector/cache"
+	"github.com/micro/go-micro/v2/client"
+	"github.com/micro/go-micro/v2/selector/cache"
 )
 
 service := micro.NewService(

@@ -15,7 +15,7 @@ a RESTful JSON API into gRPC.
 
 We use [go-grpc](https://github.com/micro/go-grpc) to write the backend service. Go-GRPC is a simple wrapper around go-micro and 
 the grpc plugins for the client and server. When calling [grpc.NewService](https://godoc.org/github.com/micro/go-grpc#NewService) 
-it returns a [micro.Service](https://godoc.org/github.com/micro/go-micro#Service).
+it returns a [micro.Service](https://pkg.go.dev/github.com/micro/go-micro/v2#Service).
 
 ## Code
 
@@ -80,8 +80,8 @@ import (
 	"time"
 
 	hello "github.com/micro/examples/greeter/srv/proto/hello"
-	"github.com/micro/go-micro"
-	"github.com/micro/go-micro/service/grpc"
+	"github.com/micro/go-micro/v2"
+	"github.com/micro/go-micro/v2/service/grpc"
 
 	"golang.org/x/net/context"
 )

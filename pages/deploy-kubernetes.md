@@ -70,7 +70,7 @@ Write a service as you would any other [go-micro](https://github.com/micro/go-mi
 
 ```go
 import (
-	"github.com/micro/go-micro"
+	"github.com/micro/go-micro/v2"
 )
 
 func main() {

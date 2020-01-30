@@ -13,7 +13,7 @@ If you prefer a higher level overview of the toolkit first, checkout the introdu
 
 ## Writing a Service
 
-The top level [Service](https://godoc.org/github.com/micro/go-micro#Service) interface is the main component for 
+The top level [Service](https://pkg.go.dev/github.com/micro/go-micro/v2#Service) interface is the main component for 
 building a service. It wraps all the underlying packages of Go Micro into a single convenient interface.
 
 ```go
@@ -32,7 +32,7 @@ type Service interface {
 A service is created like so using `micro.NewService`.
 
 ```go
-import "github.com/micro/go-micro"
+import "github.com/micro/go-micro/v2"
 
 service := micro.NewService() 
 ```
@@ -46,14 +46,14 @@ service := micro.NewService(
 )
 ```
 
-All the available options can be found [here](https://godoc.org/github.com/micro/go-micro#Option).
+All the available options can be found [here](https://pkg.go.dev/github.com/micro/go-micro/v2#Option).
 
 Go Micro also provides a way to set command line flags using `micro.Flags`.
 
 ```go
 import (
         "github.com/micro/cli"
-        "github.com/micro/go-micro"
+        "github.com/micro/go-micro/v2"
 )
 
 service := micro.NewService(
@@ -80,7 +80,7 @@ service.Init(
 ```
 
 Go Micro provides predefined flags which are set and parsed if `service.Init` is called. See all the flags 
-[here](https://godoc.org/github.com/micro/go-micro/config/cmd#pkg-variables).
+[here](https://pkg.go.dev/github.com/micro/go-micro/v2/config/cmd#pkg-variables).
 
 ### 2. Defining the API
 
@@ -251,7 +251,7 @@ package main
 import (
         "log"
 
-        "github.com/micro/go-micro"
+        "github.com/micro/go-micro/v2"
         proto "github.com/micro/examples/service/proto"
 
         "golang.org/x/net/context"
@@ -285,7 +285,7 @@ other services. A quick getting started for that is [here](https://github.com/mi
 
 ## Writing a Client
 
-The [client](https://godoc.org/github.com/micro/go-micro/client) package is used to query services. When you create a 
+The [client](https://pkg.go.dev/github.com/micro/go-micro/v2/client) package is used to query services. When you create a 
 Service, a Client is included which matches the initialised packages used by the server.
 
 Querying the above service is as simple as the following.

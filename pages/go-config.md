@@ -211,7 +211,7 @@ Example json config:
 Create a new config (or just make use of the default instance)
 
 ```go
-import "github.com/micro/go-micro/config"
+import "github.com/micro/go-micro/v2/config"
 
 conf := config.NewConfig()
 ```
@@ -222,7 +222,7 @@ Load config from a file source. It uses the file extension to determine config f
 
 ```go
 import (
-	"github.com/micro/go-micro/config"
+	"github.com/micro/go-micro/v2/config"
 )
 
 // Load json config file
@@ -240,8 +240,8 @@ If an extension does not exist, specify the encoder
 
 ```go
 import (
-	"github.com/micro/go-micro/config"
-	"github.com/micro/go-micro/config/source/file"
+	"github.com/micro/go-micro/v2/config"
+	"github.com/micro/go-micro/v2/config/source/file"
 )
 
 enc := toml.NewEncoder()

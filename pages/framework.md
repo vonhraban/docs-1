@@ -86,7 +86,7 @@ Go Micro is a framework for Go based development. You can easily get this with t
 Import go-micro in your service
 
 ```
-import "github.com/micro/go-micro"
+import "github.com/micro/go-micro/v2"
 ```
 
 We provide release tags and would recommend to stick with the latest stable releases. Making use of go modules will enable this.

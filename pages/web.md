@@ -42,7 +42,7 @@ micro --enable_tls --tls_cert_file=/path/to/cert --tls_key_file=/path/to/key web
 ## Web Services
 
 The web dashboard has a built-in proxy for web services. This is the idea of building web applications 
-as micro services which you can do via the [go-micro/web](https://godoc.org/github.com/micro/go-micro/web) package.
+as micro services which you can do via the [go-micro/web](https://pkg.go.dev/github.com/micro/go-micro/v2/web) package.
 
 ### Routing
 

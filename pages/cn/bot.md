@@ -92,7 +92,7 @@ time - Returns the server time
 ### 编写命令
 
 ```go
-import "github.com/micro/go-micro/agent/command"
+import "github.com/micro/go-micro/v2/agent/command"
 
 func Ping() command.Command {
 	usage := "ping"
@@ -109,7 +109,7 @@ func Ping() command.Command {
 把命令加到命令映射表中，命令的key可以通过**golang/regexp.Match**正则匹配。
 
 ```go
-import "github.com/micro/go-micro/agent/command"
+import "github.com/micro/go-micro/v2/agent/command"
 
 func init() {
 	command.Commands["^ping$"] = Ping()
@@ -162,7 +162,7 @@ type Input interface {
 把新的输入注册到映射表中
 
 ```go
-import "github.com/micro/go-micro/agent/input"
+import "github.com/micro/go-micro/v2/agent/input"
 
 func init() {
 	input.Inputs["name"] = MyInput
@@ -232,10 +232,10 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/micro/go-micro"
+	"github.com/micro/go-micro/v2"
 	"golang.org/x/net/context"
 
-	proto "github.com/micro/go-micro/agent/proto"
+	proto "github.com/micro/go-micro/v2/agent/proto"
 )
 
 type Command struct{}
