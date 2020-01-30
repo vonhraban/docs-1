@@ -69,7 +69,7 @@ Commands are functions executed by the bot based on text based pattern matching.
 ### Write a Command
 
 ```go
-import "github.com/micro/go-micro/agent/command"
+import "github.com/micro/go-micro/v2/agent/command"
 
 func Ping() command.Command {
 	usage := "ping"
@@ -86,7 +86,7 @@ func Ping() command.Command {
 Add the command to the Commands map with a pattern key that can be matched by golang/regexp.Match
 
 ```go
-import "github.com/micro/go-micro/agent/command"
+import "github.com/micro/go-micro/v2/agent/command"
 
 func init() {
 	command.Commands["^ping$"] = Ping()
@@ -139,7 +139,7 @@ type Input interface {
 Add the input to the Inputs map.
 
 ```go
-import "github.com/micro/go-micro/agent/input"
+import "github.com/micro/go-micro/v2/agent/input"
 
 func init() {
 	input.Inputs["name"] = MyInput
@@ -213,10 +213,10 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/micro/go-micro"
+	"github.com/micro/go-micro/v2"
 	"golang.org/x/net/context"
 
-	proto "github.com/micro/go-micro/agent/proto"
+	proto "github.com/micro/go-micro/v2/agent/proto"
 )
 
 type Command struct{}

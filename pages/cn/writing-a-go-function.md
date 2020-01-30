@@ -14,7 +14,7 @@ summary:
 
 ## 先写一个Function
 
-[Function](https://godoc.org/github.com/micro/go-micro#Function)作为顶级的接口，它是go-micro中函数式编程模型主要组件。它封装服务接口，并提供执行一次函数的能力。
+[Function](https://pkg.go.dev/github.com/micro/go-micro/v2#Function)作为顶级的接口，它是go-micro中函数式编程模型主要组件。它封装服务接口，并提供执行一次函数的能力。
 
 ```go
 // Function 是只执行一次的函数
@@ -35,7 +35,7 @@ type Function interface {
 Function使用`micro.NewFunction`构建。
 
 ```go
-import "github.com/micro/go-micro"
+import "github.com/micro/go-micro/v2"
 
 function := micro.NewFunction() 
 ```
@@ -49,14 +49,14 @@ function := micro.NewFunction(
 )
 ```
 
-可选参数[参考](https://godoc.org/github.com/micro/go-micro#Option)。
+可选参数[参考](https://pkg.go.dev/github.com/micro/go-micro/v2#Option)。
 
 Go micro也可以通过`micro.Flags`解析命令行的传参。
 
 ```go
 import (
         "github.com/micro/cli"
-        "github.com/micro/go-micro"
+        "github.com/micro/go-micro/v2"
 )
 
 function := micro.NewFunction(
@@ -82,7 +82,7 @@ function.Init(
 )
 ```
 
-Go Micro提供了一些预定义的参数标记，这些标记在执行`function.Init`时解析。所有预定义的标记参数可以[参考](https://godoc.org/github.com/micro/go-micro/cmd#pkg-variables)。
+Go Micro提供了一些预定义的参数标记，这些标记在执行`function.Init`时解析。所有预定义的标记参数可以[参考](https://pkg.go.dev/github.com/micro/go-micro/v2/cmd#pkg-variables)。
 
 ### 2. 定义API
 
@@ -248,7 +248,7 @@ package main
 import (
         "log"
 
-        "github.com/micro/go-micro"
+        "github.com/micro/go-micro/v2"
         proto "github.com/micro/examples/function/proto"
 
         "golang.org/x/net/context"
@@ -282,7 +282,7 @@ func main() {
 
 ## 编写客户端
 
-[客户端](https://godoc.org/github.com/micro/go-micro/client)包用于查询服务，当创建服务时，也包含了一个客户端，这个客户端匹配服务所使用的初始化包。
+[客户端](https://pkg.go.dev/github.com/micro/go-micro/v2/client)包用于查询服务，当创建服务时，也包含了一个客户端，这个客户端匹配服务所使用的初始化包。
 
 查询上面的服务很简单：
 

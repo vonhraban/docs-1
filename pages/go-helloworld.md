@@ -55,7 +55,7 @@ Now that we've defined the service interface we need to implement the service.
 Below is the code for the greeter service. It does the following:
 
 1. Implements the interface defined for the Greeter handler
-2. Initialises a [micro.Service](https://godoc.org/github.com/micro/go-micro#Service)
+2. Initialises a [micro.Service](https://pkg.go.dev/github.com/micro/go-micro/v2#Service)
 3. Registers the Greeter handler
 4. Runs the service
 
@@ -66,7 +66,7 @@ import (
 	"context"
 	"fmt"
 
-	micro "github.com/micro/go-micro"
+	micro "github.com/micro/go-micro/v2"
 	proto "github.com/micro/examples/service/proto"
 )
 
@@ -126,7 +126,7 @@ import (
 	"context"
 	"fmt"
 
-	micro "github.com/micro/go-micro"
+	micro "github.com/micro/go-micro/v2"
 	proto "github.com/micro/examples/service/proto"
 )
 

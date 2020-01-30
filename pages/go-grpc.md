@@ -49,9 +49,9 @@ import (
 	"context"
 	"time"
 
-	"github.com/micro/go-micro"
-	"github.com/micro/go-micro/service/grpc"
-	hello "github.com/micro/go-micro/service/grpc/examples/greeter/server/proto/hello"
+	"github.com/micro/go-micro/v2"
+	"github.com/micro/go-micro/v2/service/grpc"
+	hello "github.com/micro/go-micro/v2/service/grpc/examples/greeter/server/proto/hello"
 )
 
 type Say struct{}

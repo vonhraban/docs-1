@@ -21,7 +21,7 @@ Import the plugins in a Go program then call service.Init to parse the command l
 
 ```go
 import (
-	"github.com/micro/go-micro"
+	"github.com/micro/go-micro/v2"
 	_ "github.com/micro/go-plugins/broker/rabbitmq"
 	_ "github.com/micro/go-plugins/registry/kubernetes"
 	_ "github.com/micro/go-plugins/transport/nats"
@@ -63,7 +63,7 @@ Import and set as options when creating a new service
 
 ```go
 import (
-	"github.com/micro/go-micro"
+	"github.com/micro/go-micro/v2"
 	"github.com/micro/go-plugins/registry/kubernetes"
 )
 

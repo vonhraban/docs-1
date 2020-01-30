@@ -45,7 +45,7 @@ import (
 Plugins are a concept built on Go's interface. Each package maintains a high level interface abstraction. 
 Simply implement the interface and pass it in as an option to the service.
 
-The service discovery interface is called [Registry](https://godoc.org/github.com/micro/go-micro/registry#Registry). 
+The service discovery interface is called [Registry](https://pkg.go.dev/github.com/micro/go-micro/v2/registry#Registry). 
 Anything which implements this interface can be used as a registry. The same applies to the other packages.
 
 ```go

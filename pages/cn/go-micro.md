@@ -124,7 +124,7 @@ import (
 	"context"
 	"fmt"
 
-	micro "github.com/micro/go-micro"
+	micro "github.com/micro/go-micro/v2"
 	proto "github.com/micro/examples/service/proto"
 )
 
@@ -177,7 +177,7 @@ import (
 	"context"
 	"fmt"
 
-	micro "github.com/micro/go-micro"
+	micro "github.com/micro/go-micro/v2"
 	proto "github.com/micro/examples/service/proto"
 )
 
@@ -227,7 +227,7 @@ import (
 	"context"
 
 	proto "github.com/micro/examples/function/proto"
-	"github.com/micro/go-micro"
+	"github.com/micro/go-micro/v2"
 )
 
 type Greeter struct{}
@@ -333,7 +333,7 @@ service --registry=etcdv3 --transport=nats --broker=kafka
 ```go
 
 import (
-        "github.com/micro/go-micro" 
+        "github.com/micro/go-micro/v2" 
         // etcd v3 registry
         "github.com/micro/go-plugins/registry/etcdv3"
         // nats transport
@@ -363,7 +363,7 @@ func main() {
 
 插件是构建在Go接口之上的的概念。每个包都维护着高度抽象的接口。简单实现接口并把它作为选项传入服务。
 
-服务发现的接口称作[注册（Registry）](https://godoc.org/github.com/micro/go-micro/registry#Registry)。
+服务发现的接口称作[注册（Registry）](https://pkg.go.dev/github.com/micro/go-micro/v2/registry#Registry)。
 任何实现了这个接口的都可以当作注册中心。同样，对于其它包的实现也是如此。
 
 ```go

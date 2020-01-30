@@ -44,7 +44,7 @@ import "github.com/micro/kubernetes/go/micro"
 
 ```go
 import (
-	"github.com/micro/go-micro"
+	"github.com/micro/go-micro/v2"
 	k8s "github.com/micro/kubernetes/go/micro"
 )
 

@@ -163,7 +163,7 @@ You can either specify it as the environment variable `MICRO_LICENSE_KEY` or as 
 package main
 
 import (
-	"github.com/micro/go-micro"
+	"github.com/micro/go-micro/v2"
 	emicro "github.com/micro/enterprise/go/micro"
 )
 

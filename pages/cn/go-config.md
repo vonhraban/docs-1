@@ -206,7 +206,7 @@ JSON json config:
 新增配置（直接使用默认的配置对象也可）
 
 ```go
-import "github.com/micro/go-micro/config"
+import "github.com/micro/go-micro/v2/config"
 
 conf := config.NewConfig()
 ```
@@ -217,7 +217,7 @@ conf := config.NewConfig()
 
 ```go
 import (
-	"github.com/micro/go-micro/config"
+	"github.com/micro/go-micro/v2/config"
 )
 
 // Load json config file
@@ -235,8 +235,8 @@ config.LoadFile("/tmp/config.yaml")
 
 ```go
 import (
-	"github.com/micro/go-micro/config"
-	"github.com/micro/go-micro/config/source/file"
+	"github.com/micro/go-micro/v2/config"
+	"github.com/micro/go-micro/v2/config/source/file"
 )
 
 enc := toml.NewEncoder()

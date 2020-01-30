@@ -22,7 +22,7 @@ go-micro中插件可以通过下面几种方式使用，可以通过命令行参
 
 ```go
 import (
-	"github.com/micro/go-micro"
+	"github.com/micro/go-micro/v2"
 	_ "github.com/micro/go-plugins/broker/rabbitmq"
 	_ "github.com/micro/go-plugins/registry/kubernetes"
 	_ "github.com/micro/go-plugins/transport/nats"
@@ -64,7 +64,7 @@ go run service.go
 
 ```go
 import (
-	"github.com/micro/go-micro"
+	"github.com/micro/go-micro/v2"
 	"github.com/micro/go-plugins/registry/kubernetes"
 )
 

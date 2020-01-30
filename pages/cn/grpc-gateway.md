@@ -12,7 +12,7 @@ summary:
 
 GRPC网关[grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway)是[protoc](http://github.com/google/protobuf)的一个插件。它遵循[gRPC](http://github.com/grpc/grpc-common)中的服务定义，生成反向代理服务，这个代理就会把RESTful风格的JSON API转成gRPC请求。
 
-我们使用[go-grpc](https://github.com/micro/go-grpc)写后台服务。Go-GRPC是客户端与服务端的go-micro、grpc插件包装器。当调用[grpc.NewService](https://godoc.org/github.com/micro/go-grpc#NewService)时，它会返回[micro.Service](https://godoc.org/github.com/micro/go-micro#Service)服务。
+我们使用[go-grpc](https://github.com/micro/go-grpc)写后台服务。Go-GRPC是客户端与服务端的go-micro、grpc插件包装器。当调用[grpc.NewService](https://godoc.org/github.com/micro/go-grpc#NewService)时，它会返回[micro.Service](https://pkg.go.dev/github.com/micro/go-micro/v2#Service)服务。
 
 ## 代码
 
@@ -78,7 +78,7 @@ import (
 
 	hello "github.com/micro/examples/greeter/srv/proto/hello"
 	"github.com/micro/go-grpc"
-	"github.com/micro/go-micro"
+	"github.com/micro/go-micro/v2"
 
 	"golang.org/x/net/context"
 )

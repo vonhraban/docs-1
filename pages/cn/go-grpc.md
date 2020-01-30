@@ -61,7 +61,7 @@ import (
 	"time"
 
 	"github.com/micro/go-grpc"
-	"github.com/micro/go-micro"
+	"github.com/micro/go-micro/v2"
 	hello "github.com/micro/go-grpc/examples/greeter/server/proto/hello"
 )
 
