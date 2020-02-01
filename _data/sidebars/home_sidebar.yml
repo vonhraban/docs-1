@@ -36,10 +36,6 @@ entries:
       url: /features.html
       output: web, pdf
 
-    - title: Goals
-      url: /goals.html
-      output: web, pdf
-
     - title: Users
       url: /users.html
       output: web, pdf
