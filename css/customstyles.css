@@ -409,7 +409,7 @@ a.accordion-toggle, a.accordion-collapsed {
 }
 
 .nav a {
-    color: #333;
+    color: #0c2e47;
     display: block;
     outline: none;
     /*-webkit-border-radius: 4px;
@@ -651,7 +651,7 @@ h4 {color: #808080; font-size:120%; font-style:italic;}
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
     background-color: white;
-    color: #333333;
+    color: #0c2e47;
 }
 
 ol li ol li {list-style-type: lower-alpha;}
