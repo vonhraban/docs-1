@@ -95,19 +95,19 @@ greeter.proto
 syntax = "proto3";
 
 service Greeter {
-	rpc Hello(HelloRequest) returns (HelloResponse) {}
+	rpc Hello(Request) returns (Response) {}
 }
 
-message HelloRequest {
+message Request {
 	string name = 1;
 }
 
-message HelloResponse {
+message Response {
 	string greeting = 2;
 }
 ```
 
-Here we're defining a service handler called Greeter with the method Hello which takes the parameter HelloRequest type and returns HelloResponse.
+Here we're defining a service handler called Greeter with the method Hello which takes the parameter Request type and returns Response.
 
 ### 3. Generate the API interface
 
@@ -136,18 +136,18 @@ The types generated can now be imported and used within a **handler** for a serv
 Here's part of the generated code.
 
 ```go
-type HelloRequest struct {
+type Request struct {
 	Name string `protobuf:"bytes,1,opt,name=name" json:"name,omitempty"`
 }
 
-type HelloResponse struct {
+type Response struct {
 	Greeting string `protobuf:"bytes,2,opt,name=greeting" json:"greeting,omitempty"`
 }
 
 // Client API for Greeter service
 
 type GreeterClient interface {
-	Hello(ctx context.Context, in *HelloRequest, opts ...client.CallOption) (*HelloResponse, error)
+	Hello(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error)
 }
 
 type greeterClient struct {
@@ -168,9 +168,9 @@ func NewGreeterClient(serviceName string, c client.Client) GreeterClient {
 	}
 }
 
-func (c *greeterClient) Hello(ctx context.Context, in *HelloRequest, opts ...client.CallOption) (*HelloResponse, error) {
+func (c *greeterClient) Hello(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error) {
 	req := c.c.NewRequest(c.serviceName, "Greeter.Hello", in)
-	out := new(HelloResponse)
+	out := new(Response)
 	err := c.c.Call(ctx, req, out, opts...)
 	if err != nil {
 		return nil, err
@@ -181,7 +181,7 @@ func (c *greeterClient) Hello(ctx context.Context, in *HelloRequest, opts ...cli
 // Server API for Greeter service
 
 type GreeterHandler interface {
-	Hello(context.Context, *HelloRequest, *HelloResponse) error
+	Hello(context.Context, *Request, *Response) error
 }
 
 func RegisterGreeterHandler(s server.Server, hdlr GreeterHandler) {
@@ -198,7 +198,7 @@ As you can see above, a handler signature for the Greeter interface looks like s
 
 ```go
 type GreeterHandler interface {
-        Hello(context.Context, *HelloRequest, *HelloResponse) error
+        Hello(context.Context, *Request, *Response) error
 }
 ```
 
@@ -209,7 +209,7 @@ import proto "github.com/micro/examples/service/proto"
 
 type Greeter struct{}
 
-func (g *Greeter) Hello(ctx context.Context, req *proto.HelloRequest, rsp *proto.HelloResponse) error {
+func (g *Greeter) Hello(ctx context.Context, req *pb.Request, rsp *pb.Response) error {
 	rsp.Greeting = "Hello " + req.Name
 	return nil
 }
@@ -223,7 +223,7 @@ service := micro.NewService(
 	micro.Name("greeter"),
 )
 
-proto.RegisterGreeterHandler(service.Server(), new(Greeter))
+pb.RegisterGreeterHandler(service.Server(), new(Greeter))
 ```
 
 You can also create a bidirectional streaming handler but we'll leave that for another day.
@@ -252,14 +252,14 @@ import (
         "log"
 
         "github.com/micro/go-micro/v2"
-        proto "github.com/micro/examples/service/proto"
+        pb "github.com/micro/examples/service/proto"
 
         "golang.org/x/net/context"
 )
 
 type Greeter struct{}
 
-func (g *Greeter) Hello(ctx context.Context, req *proto.HelloRequest, rsp *proto.HelloResponse) error {
+func (g *Greeter) Hello(ctx context.Context, req *pb.Request, rsp *pb.Response) error {
         rsp.Greeting = "Hello " + req.Name
         return nil
 }
@@ -267,12 +267,11 @@ func (g *Greeter) Hello(ctx context.Context, req *proto.HelloRequest, rsp *proto
 func main() {
         service := micro.NewService(
                 micro.Name("greeter"),
-                micro.Version("latest"),
         )
 
         service.Init()
 
-        proto.RegisterGreeterHandler(service.Server(), new(Greeter))
+        pb.RegisterGreeterHandler(service.Server(), new(Greeter))
 
         if err := service.Run(); err != nil {
                 log.Fatal(err)
@@ -292,10 +291,10 @@ Querying the above service is as simple as the following.
 
 ```go
 // create the greeter client using the service name and client
-greeter := proto.NewGreeterService("greeter", service.Client())
+greeter := pb.NewGreeterService("greeter", service.Client())
 
 // request the Hello method on the Greeter handler
-rsp, err := greeter.Hello(context.TODO(), &proto.HelloRequest{
+rsp, err := greeter.Hello(context.TODO(), &pb.Request{
 	Name: "John",
 })
 if err != nil {
@@ -306,7 +305,7 @@ if err != nil {
 fmt.Println(rsp.Greeting)
 ```
 
-`proto.NewGreeterClient` takes the service name and the client used for making requests.
+`pb.NewGreeterClient` takes the service name and the client used for making requests.
 
 The full example is can be found at [go-micro/examples/service](https://github.com/micro/examples/tree/master/service).
 
