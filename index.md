@@ -15,7 +15,7 @@ provides well understood concepts to developers.
 The main piece of software provided is [Micro](https://github.com/micro/micro), a microservice development runtime.
 
 <center>
-<img src="https://micro.mu/runtime01.svg" style="width: 100%; max-width: 600px; height: auto; margin-bottom: 25px;" />
+<img src="https://micro.mu/runtime01.svg?load" style="width: 100%; max-width: 600px; height: auto; margin-bottom: 25px;" />
 </center>
 
 ## Features
