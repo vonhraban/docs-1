@@ -52,7 +52,7 @@ query them directly. The dashboard also includes a built in CLI like experience 
 Additionally micro provides a Go development framework:
 
 - **go-micro:** Leverage the powerful [Go Micro](https://github.com/micro/go-micro) framework to develop microservices easily and quickly. 
-Go Micro abstracts away the complexity of distributed systems and provides simpler abstractions to build highly scalable microservices.# Getting Started
+Go Micro abstracts away the complexity of distributed systems and provides simpler abstractions to build highly scalable microservices.
 
 ## Getting Started
 
