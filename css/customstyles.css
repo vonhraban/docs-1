@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+
 html, body {
-  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 16px;
   color: #0c2e47;
 }
@@ -20,6 +22,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .projectTitle {
+  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
   font-size: 2.0em;
   font-weight: 1000;
   color: #0c2e47;
