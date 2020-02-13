@@ -45,6 +45,7 @@ If you're using Micro, feel free to add your company
 - [Reserve](https://reserve.com/) - Restaurant booking service
 - [Ridygo](https://www.ridygo.fr/) - Carpooling in realtime for your short-distance trips
 - [Riverbed](https://www.riverbed.com/gb/) - Software defined networking
+- [Routable](https://routable.ai/) - Fleet management API
 - [Sipsynergy](http://www.sipsynergy.co.uk/) - Telecommunications services
 - [Sixt](https://www.sixt.com) - Car rental enterprise
 - [Stillwater Supercomputing](http://www.stillwater-sc.com/) - Knowledge processing system
