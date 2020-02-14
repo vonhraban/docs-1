@@ -44,7 +44,7 @@ query them directly. The dashboard is also includes a built in CLI like experien
 ## Install Micro
 
 ```shell
-go get github.com/micro/micro
+go get github.com/micro/micro/v2
 ```
 
 Or via Docker
@@ -121,7 +121,7 @@ brew install protobuf
 go get -u github.com/golang/protobuf/{proto,protoc-gen-go}
 
 # install protoc-gen-micro
-go get -u github.com/micro/protoc-gen-micro
+go get -u github.com/micro/protoc-gen-micro/v2
 ```
 
 See [protoc-gen-micro](https://github.com/micro/protoc-gen-micro) for more details.

@@ -24,7 +24,7 @@ The **micro cli** is a command line interface for the micro toolkit [micro](http
 ## Install
 
 ```shell
-go get github.com/micro/micro
+go get github.com/micro/micro/v2
 ```
 
 ## Interactive Mode

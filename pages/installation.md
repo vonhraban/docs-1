@@ -32,7 +32,7 @@ Micro provides a runtime for accessing and managing microservices
 From source
 
 ```
-go get github.com/micro/micro
+go get github.com/micro/micro/v2
 ```
 
 Docker image
