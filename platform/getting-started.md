@@ -1,15 +1,27 @@
-# Getting Started
+---
+title: Getting Started
+keywords: platform, M3O
+tags: [platform, M3O]
+sidebar: home_sidebar
+permalink: "/platform/getting-started.html"
+summary: M3O is a serverless microservices platform
+---
 
 ## Introduction
-This is an introduction to M30 (pronounced "em-3-oh"), the fully managed multi-cloud platform which enables you to focus on building products rather managing infrastructure. We've just launched V1.0.0 and we can't wait to get your feedback. 
 
-The functionality offered in V1.0.0 includes:
-* Deploying services from a shared repository (github.com/micro/platform)
-* Monitoring and interacting with services from the CLI
-* Monitoring services from the platform dashboard (micro.mu/platform)
+M3O is a serverless platform for microservices development. A fully managed multi-cloud platform which enables developers 
+to focus on building services rather than managing infrastructure. We're launching an invite only beta. A shared place 
+for the community to build together.
+
+The beta invite only platform includes the following features:
+
+- **Global service deployment** - Services will run globally by default in a multi-cloud environment
+- **Auto configuration** - Services will be auto configured with the required registry, broker, etc
+- **Simplified debugging** - Stats, logs and tracing will be available in an easy and clean way for every service
+- **Connect from anywhere** - Ability to connect and extend the network beyond the platform. Run services locally or in your own cloud.
 
 ## Getting Access
-The M30 us GitHub OAuth to login and verify users. While we're in a closed beta, you must be invited to the Micro community team on GitHub in order to gain access. If you don't have access to this team, please message us on the #platform channel on [Slack](micro-services.slack.com "Slack"). 
+M30 uses GitHub OAuth to login and verify users. While we're in a closed beta, you must be invited to the Micro community team on GitHub in order to gain access. If you don't have access to this team, please message us on the #platform channel on [Slack](micro-services.slack.com "Slack"). 
 
 ## Setup
 Before starting let's ensure you have the latest version of Micro installed locally. To do this, run the following commands in your terminal:
