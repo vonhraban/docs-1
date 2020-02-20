@@ -38,13 +38,11 @@ If the login was successful, you will see the following message: `You have been 
 ## Writing your first service
 As noted above, whilst M30 is in closed beta, the only services which can be deployed must be located within the github.com/micro/services repo. Let's close this repo, using the no checkout flag to speed up the process.
 ```
-git clone --no-checkout https://github.com/micro/services
-cd services
+git clone --no-checkout https://github.com/micro/services && cd services
 ```
 Next, let's create out first servicce 
 ```
-micro new foobar
-cd foobar
+micro new foobar && cd foobar
 ```
 At this point, you have a new micro service ready for deployment. All we need to do prior to deployment is build the proto buffer. We can use the Make command  to do this:
 ```
@@ -53,9 +51,7 @@ make build
 ## Deploying your first service
 When you instruct M30 to run a service, it will pull the latest source code for the platform repo and run whatever service you specify. So firstly, let's push our changes to GitHub:
 ```
-git add .
-git commit -m "My First Service"
-git push
+git add . && git commit -m "Initialising service" && git push
 ```
 Next, let's use the `micro run` command to run the service. Note, foobar must be the directory of the service you wish to deploy.
 ```
