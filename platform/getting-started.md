@@ -31,8 +31,9 @@ go get github.com/micro/micro/v2@master
 ```
 Next, let's go to the [Micro website](https://micro.mu/platform/ "Micro") to get our login token. Press the "Sign in with GitHub button", if you are successfully authenticated, you'll be directed to the platform homepage where you'll see a list of running services and a button to login with CLI. Press this button and copy the command you're given, it will be in the format of:
 ```
-micro login [token]
+micro login $token
 ```
+
 If the login was successful, you will see the following message: `You have been logged in`.
 
 ## Writing your first service
