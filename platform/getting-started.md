@@ -13,7 +13,7 @@ M3O is a serverless platform for microservices development. A fully managed mult
 to focus on building services rather than managing infrastructure. We're launching an invite only beta. A shared place 
 for the community to build together.
 
-The beta invite only platform includes the following features:
+The platform includes the following features:
 
 - **Global service deployment** - Services will run globally by default in a multi-cloud environment
 - **Auto configuration** - Services will be auto configured with the required registry, broker, etc
