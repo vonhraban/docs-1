@@ -1,5 +1,5 @@
 ---
-title: ServicesGetting Started
+title: Services
 keywords: platform, M3O, services
 tags: [platform, M3O, services]
 sidebar: home_sidebar
