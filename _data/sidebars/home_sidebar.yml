@@ -104,6 +104,10 @@ entries:
       url: /platform/getting-started.html
       output: web, pdf
 
+    - title: Services
+      url: /platform/services.html
+      output: web, pdf
+
   - title: Runtime
     output: web, pdf
     folderitems:
