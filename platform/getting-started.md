@@ -39,9 +39,10 @@ If the login was successful, you will see the following message: `You have been 
 ## Writing your first service
 As noted above, whilst M30 is in closed beta, the only services which can be deployed must be located within the github.com/micro/services repo. Let's close this repo, using the no checkout flag to speed up the process.
 ```
-git clone --no-checkout https://github.com/micro/services && cd services
+git clone https://github.com/micro/services && cd services
 ```
-Next, let's create out first servicce 
+
+Next, let's create out first service (use your own first name for fun!) 
 ```
 micro new foobar && cd foobar
 ```
