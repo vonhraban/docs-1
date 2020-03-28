@@ -34,7 +34,7 @@ micro
 To run the stack without connecting to the network
 
 ```
-micro --local
+micro server
 ```
 
 ## Verify
