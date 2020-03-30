@@ -29,7 +29,7 @@ A list of external resources, videos, tutorials and blog posts are below. Feel f
     - [Part 5: Message Broker](https://itnext.io/micro-in-action-part-5-message-broker-a3decf07f26a)
     - [Part 6: Service Discovery](https://itnext.io/micro-in-action-part6-service-discovery-f988988e5936)
     - [Part 7: Circuit Breaker & Rate Limiter](https://itnext.io/micro-in-action-7-circuit-breaker-rate-limiter-431ccff6a120)
-    - [Coda: Distributed Cron Job](https://itnext.io/micro-in-action-coda-distributed-cron-job-a2b577885b24) by Che Dan
+    - [Coda: Distributed Cron Job](https://itnext.io/micro-in-action-coda-distributed-cron-job-a2b577885b24)
 
 
 
