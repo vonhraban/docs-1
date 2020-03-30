@@ -22,6 +22,8 @@ A list of external resources, videos, tutorials and blog posts are below. Feel f
 
 - [Microservices in Golang](https://ewanvalentine.io/microservices-in-golang-part-1/) by Ewan Valentine
 - [Micro in Action](https://itnext.io/micro-in-action-getting-started-a79916ae3cac) by Che Dan
+- [Micro In Action, Coda: Distributed Cron Job](https://itnext.io/micro-in-action-coda-distributed-cron-job-a2b577885b24) by Che Dan
+
 
 
 {% include links.html %}
