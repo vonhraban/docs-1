@@ -40,6 +40,10 @@ entries:
       url: /users.html
       output: web, pdf
 
+    - title: Resources
+      url: /resources.html
+      output: web, pdf
+
   - title: Framework
     output: web, pdf
     folderitems:
